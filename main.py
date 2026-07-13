@@ -1,4 +1,5 @@
 from scanner.scanner import FileScanner
+from scanner.readers import read_file
 
 
 def main():
@@ -7,12 +8,13 @@ def main():
 
     files = scanner.discover_files()
 
-    print("\nScanning completed.\n")
-
     for file in files:
-        print(f"✓ {file}")
 
-    print(f"\nTotal files found: {len(files)}")
+        print(f"\nReading: {file.name}")
+
+        text = read_file(file)
+
+        print(text)
 
 
 if __name__ == "__main__":
