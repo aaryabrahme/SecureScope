@@ -19,8 +19,9 @@ PATTERNS = {
         "risk": "High"
     },
 
-    "PASSWORD": {
-        "regex": r"(?i)(password|pwd)\s*[:=]\s*\S+",
-        "risk": "Critical"
+    "PASSWORD_EXPOSURE": {
+        "regex": r"(?i)(password|passwd|pwd)\s*[:=]\s*([^\s]+)",
+        "risk": "Critical",
+        "reason": "Plaintext password detected in file"
     }
 }

@@ -2,19 +2,31 @@
 
 SecureScope is a Python-based Data Security Posture Management (DSPM) scanner that discovers sensitive information across files, detects potential secrets using Shannon Entropy, and assigns a risk score to each file.
 
-## Features
+### Features
 
+### Data Discovery
 - Recursive file scanning
-- Supports TXT, CSV, DOCX, and PDF
-- Detects:
-  - Email addresses
-  - Phone numbers
-  - PAN numbers
-  - Password patterns
-- Entropy-based secret detection
-- Risk scoring (Low, Medium, High, Critical)
-- Structured scan reports
+- Supports TXT, CSV, PDF, and DOCX files
 
+### Sensitive Data Detection
+- Email detection
+- Phone number detection
+- Plaintext password exposure detection
+- High entropy secret detection
+
+### Risk Analysis
+- Automated risk scoring
+- Severity classification:
+  - LOW
+  - MEDIUM
+  - HIGH
+  - CRITICAL
+
+### Reporting
+- JSON security reports
+- Timestamped scan history
+- Scan metadata
+- Structured findings
 ## Tech Stack
 
 - Python

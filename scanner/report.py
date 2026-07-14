@@ -13,7 +13,16 @@ def scan_file(file_path: Path):
 
     findings = detect_sensitive_data(text)
 
-    secret_findings = detect_high_entropy_strings(text)
+    filtered_text = text
+
+    for finding in findings:
+        filtered_text = filtered_text.replace(
+            finding["value"],
+            ""
+        )
+
+
+    secret_findings = detect_high_entropy_strings(filtered_text)
 
     findings.extend(secret_findings)
 

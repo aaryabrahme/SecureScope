@@ -20,10 +20,10 @@ def detect_high_entropy_strings(text):
 
             findings.append(
                 {
-                    "type": "POSSIBLE_SECRET",
+                    "type": "HIGH_ENTROPY_SECRET",
                     "value": clean_word,
                     "entropy": round(entropy, 2),
-                    "reason": "High randomness detected",
+                    "reason": "String contains high randomness and may represent a secret token",
                     "risk": "High"
                 }
             )

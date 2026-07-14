@@ -1,3 +1,5 @@
-text = """John Doe
+John Doe
+
 Salary: 100000
-Password: admin123"""
+
+Password: admin123

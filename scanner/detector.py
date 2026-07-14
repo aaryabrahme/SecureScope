@@ -13,14 +13,26 @@ def detect_sensitive_data(text: str):
 
         for match in matches:
 
-            findings.append({
+            # Handle regex capture groups
+            if isinstance(match, tuple):
+                value = match[-1]
+            else:
+                value = match
+
+            finding = {
 
                 "type": data_type,
 
-                "value": match,
+                "value": value,
 
                 "risk": details["risk"]
 
-            })
+            }
+
+            if "reason" in details:
+                finding["reason"] = details["reason"]
+
+
+            findings.append(finding)
 
     return findings

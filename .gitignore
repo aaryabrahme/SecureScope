@@ -9,7 +9,7 @@ __pycache__/
 .vscode/
 
 # Reports
-reports/*.pdf
+reports/
 
 # OS
 .DS_Store
