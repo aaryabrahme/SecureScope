@@ -1,19 +1,18 @@
-# Virtual Environment
-.venv/
-
-# Python Cache
+# Python
 __pycache__/
 *.pyc
 
-# VS Code
-.vscode/
+# Virtual Environment
+.venv/
 
-# Reports
+# Generated files
+logs/
 reports/
+models/
+
+# IDE
+.vscode/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# macOS
-.DS_Store
