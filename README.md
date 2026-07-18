@@ -423,6 +423,37 @@ Planned:
 
 
 ---
+# 📸 Screenshots
+
+## Phase 1 — Sensitive Data Discovery
+
+### PII Detection
+
+![PII Detection](assets/phase1_pii_detection.png)
+
+
+### Secret Detection
+
+![Secret Detection](assets/phase1_secret_detection.png)
+
+
+## Phase 2 — Insider Risk Detection
+
+### Security Summary
+
+![Summary](assets/phase2_summary.png)
+
+
+### Risk Ranking
+
+![Ranking](assets/phase2_ranking.png)
+
+
+### Generated Reports
+
+![Reports](assets/phase2_reports.png)
+
+---
 
 # 🤝 Contribution
 
