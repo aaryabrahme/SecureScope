@@ -1,37 +1,111 @@
-import os
+from pathlib import Path
 from datetime import datetime
-from anomaly.logger import logger
+import shutil
 
-REPORTS_DIR = "reports"
+from logger import logger
 
-os.makedirs(REPORTS_DIR, exist_ok=True)
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S"),
+
+REPORTS_DIR = Path("reports")
+
+LATEST_DIR = REPORTS_DIR / "latest"
+
+ARCHIVE_DIR = REPORTS_DIR / "archive"
+
+
+
+def create_report_dirs():
+
+    LATEST_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    ARCHIVE_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
 
 def export_csv(df, timestamp):
-    filename = os.path.join(
-        REPORTS_DIR,
+
+    create_report_dirs()
+
+
+    archive_file = ARCHIVE_DIR / (
         f"insider_risk_{timestamp}.csv"
     )
 
+
+    latest_file = LATEST_DIR / (
+        "insider_risk.csv"
+    )
+
+
+    # archive copy
+
     df.to_csv(
-        filename,
+        archive_file,
         index=False
     )
 
-    return filename
-    logger.info(f"CSV report saved: {filename}")
+
+    # dashboard copy
+
+    df.to_csv(
+        latest_file,
+        index=False
+    )
+
+
+    logger.info(
+        "CSV report saved: %s",
+        latest_file
+    )
+
+
+    return latest_file
+
+
+
 
 def export_json(df, timestamp):
-    filename = os.path.join(
-        REPORTS_DIR,
+
+    create_report_dirs()
+
+
+    archive_file = ARCHIVE_DIR / (
         f"insider_risk_{timestamp}.json"
     )
 
+
+    latest_file = LATEST_DIR / (
+        "insider_risk.json"
+    )
+
+
+    # archive copy
+
     df.to_json(
-        filename,
+        archive_file,
         orient="records",
         indent=4
     )
 
-    return filename
-    logger.info(f"JSON report saved: {filename}")
+
+    # dashboard copy
+
+    df.to_json(
+        latest_file,
+        orient="records",
+        indent=4
+    )
+
+
+    logger.info(
+        "JSON report saved: %s",
+        latest_file
+    )
+
+
+    return latest_file

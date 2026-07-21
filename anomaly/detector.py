@@ -1,50 +1,85 @@
-from sklearn.ensemble import IsolationForest
 
-from anomaly.features import load_dataset, prepare_features
 
 import pandas as pd
+from sklearn.ensemble import IsolationForest
 
-def train_model(X):
+from logger import logger
+from config import (
+    ANOMALY_CONTAMINATION,
+    ISOLATION_ESTIMATORS,
+)
 
-    model = IsolationForest(
-        n_estimators=100,
-        contamination=0.05,
-        random_state=42
+
+def train_model(
+    features: pd.DataFrame,
+) -> IsolationForest:
+    """
+    Train an Isolation Forest anomaly detection model.
+
+    Args:
+        features:
+            Prepared ML feature dataframe.
+
+    Returns:
+        Trained Isolation Forest model.
+    """
+
+    logger.info(
+        "Training Isolation Forest | Samples=%d Features=%d",
+        features.shape[0],
+        features.shape[1],
     )
 
-    model.fit(X)
+    model = IsolationForest(
+        n_estimators=ISOLATION_ESTIMATORS,
+        contamination=ANOMALY_CONTAMINATION,
+        random_state=42,
+    )
+
+    model.fit(features)
+
+    logger.info(
+        "Model training completed."
+    )
 
     return model
-def detect_anomalies(model, X):
 
-    predictions = model.predict(X)
 
-    return predictions
-def add_predictions(df, predictions):
-    df = df.copy()
+def detect_anomalies(
+    model: IsolationForest,
+    features: pd.DataFrame,
+) -> list[int]:
+    """
+    Predict anomalous events.
 
-    df["risk_status"] = [
+    Returns:
+        List of predictions:
+        -1 = anomaly
+         1 = normal
+    """
+
+    logger.info(
+        "Running anomaly detection..."
+    )
+
+    predictions = model.predict(features)
+
+    return predictions.tolist()
+
+
+def add_predictions(
+    df: pd.DataFrame,
+    predictions: list[int],
+) -> pd.DataFrame:
+    """
+    Add anomaly predictions to original dataset.
+    """
+
+    result = df.copy()
+
+    result["risk_status"] = [
         "ANOMALY" if prediction == -1 else "NORMAL"
         for prediction in predictions
     ]
 
-    return df
-if __name__ == "__main__":
-
-    df = load_dataset()
-
-    X = prepare_features(df)
-
-    model = train_model(X)
-
-    predictions = detect_anomalies(model, X)
-
-    result = add_predictions(df, predictions)
-
-    print(result.head())
-
-    print()
-
-    print(
-        result["risk_status"].value_counts()
-    )
+    return result

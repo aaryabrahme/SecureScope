@@ -1,50 +1,119 @@
-"""
-Global configuration for SecureScope.
-"""
-
 from pathlib import Path
 
-# -------------------------------------------------------------------
-# Application
-# -------------------------------------------------------------------
 
-APP_NAME = "SecureScope"
-APP_TAGLINE = "AI-Powered Insider Risk Detection Platform"
-VERSION = "1.3.0"
-
-AUTHOR = "Aarya Brahme"
-
-# -------------------------------------------------------------------
-# Project Paths
-# -------------------------------------------------------------------
+# =====================================
+# Project Root
+# =====================================
 
 BASE_DIR = Path(__file__).resolve().parent
 
-REPORTS_DIR = BASE_DIR / "reports"
-LOGS_DIR = BASE_DIR / "logs"
-ASSETS_DIR = BASE_DIR / "assets"
-SAMPLE_DATA_DIR = BASE_DIR / "sample_data"
 
-# -------------------------------------------------------------------
-# Dashboard
-# -------------------------------------------------------------------
 
-PAGE_TITLE = APP_NAME
-PAGE_ICON = ASSETS_DIR / "icon.png"
+# =====================================
+# Dataset Configuration
+# =====================================
 
-LOGO = ASSETS_DIR / "logo.png"
+DATASET_DIR = BASE_DIR / "datasets"
 
-# -------------------------------------------------------------------
-# ML
-# -------------------------------------------------------------------
+ACCESS_LOG_PATH = (
+    DATASET_DIR /
+    "access_logs.csv"
+)
 
-MODEL_NAME = "Isolation Forest"
 
-# -------------------------------------------------------------------
-# Risk Levels
-# -------------------------------------------------------------------
+# Scanner sample data
 
-LOW = "LOW"
-MEDIUM = "MEDIUM"
-HIGH = "HIGH"
-CRITICAL = "CRITICAL"
+SAMPLE_DATA_DIR = (
+    BASE_DIR /
+    "sample_data"
+)
+
+
+
+# =====================================
+# Model Configuration
+# =====================================
+
+MODEL_DIR = (
+    BASE_DIR /
+    "models"
+)
+
+
+MODEL_NAME = "isolation_forest.pkl"
+
+
+MODEL_PATH = (
+    MODEL_DIR /
+    MODEL_NAME
+)
+
+
+# Saved feature schema
+# Used to ensure inference features
+# match training features
+
+FEATURE_SCHEMA_PATH = (
+    MODEL_DIR /
+    "feature_schema.pkl"
+)
+
+
+
+# =====================================
+# Reports Configuration
+# =====================================
+
+REPORTS_DIR = (
+    BASE_DIR /
+    "reports"
+)
+
+
+SCANNER_REPORTS_DIR = (
+    REPORTS_DIR /
+    "scanner"
+)
+
+
+ANOMALY_REPORTS_DIR = (
+    REPORTS_DIR /
+    "anomaly"
+)
+
+
+MODEL_REPORTS_DIR = (
+    REPORTS_DIR /
+    "model"
+)
+
+
+
+# =====================================
+# Logs Configuration
+# =====================================
+
+LOGS_DIR = (
+    BASE_DIR /
+    "logs"
+)
+
+
+LOG_FILE = (
+    LOGS_DIR /
+    "securescope.log"
+)
+
+
+
+# =====================================
+# Machine Learning Configuration
+# =====================================
+
+ANOMALY_CONTAMINATION = 0.05
+
+
+ISOLATION_ESTIMATORS = 100
+
+
+RANDOM_STATE = 42

@@ -1,45 +1,83 @@
-def calculate_risk(event):
+from typing import Any
+
+from constants import (
+    AFTER_HOURS_SCORE,
+    CRITICAL,
+    CRITICAL_FILE_SCORE,
+    CRITICAL_THRESHOLD,
+    HIGH,
+    HIGH_THRESHOLD,
+    HIGH_VOLUME_ACCESS_SCORE,
+    LOW,
+    ML_ANOMALY_SCORE,
+    MEDIUM,
+    MEDIUM_THRESHOLD,
+    PERSONAL_DEVICE_SCORE,
+    VPN_SCORE,
+)
+
+
+def calculate_risk(
+    event: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Calculate business risk score for an access event.
+
+    Combines:
+        - User behavior signals
+        - Data sensitivity
+        - ML anomaly prediction
+
+    Returns:
+        Risk score, severity, and explanation reasons.
+    """
 
     score = 0
     reasons = []
 
-    if event["login_hour"] < 6:
-        score += 20
+    if event.get("login_hour", 24) < 6:
+        score += AFTER_HOURS_SCORE
         reasons.append("After-hours login")
 
-    if event["device"] == "Personal":
-        score += 15
+    if event.get("device") == "Personal":
+        score += PERSONAL_DEVICE_SCORE
         reasons.append("Personal device")
 
-    if event["location"] == "VPN":
-        score += 15
+    if event.get("location") == "VPN":
+        score += VPN_SCORE
         reasons.append("VPN access")
 
-    if event["files_accessed"] > 100:
-        score += 25
+    if event.get("files_accessed", 0) > 100:
+        score += HIGH_VOLUME_ACCESS_SCORE
         reasons.append("High volume file access")
 
-    if event["file_sensitivity"] == "CRITICAL":
-        score += 15
+    if event.get("file_sensitivity") == "CRITICAL":
+        score += CRITICAL_FILE_SCORE
         reasons.append("Critical file accessed")
 
-    if event["risk_status"] == "ANOMALY":
-        score += 30
+    if event.get("risk_status") == "ANOMALY":
+        score += ML_ANOMALY_SCORE
         reasons.append("ML anomaly detected")
 
     score = min(score, 100)
 
-    if score >= 80:
-        severity = "CRITICAL"
-    elif score >= 60:
-        severity = "HIGH"
-    elif score >= 40:
-        severity = "MEDIUM"
+
+    if score >= CRITICAL_THRESHOLD:
+        severity = CRITICAL
+
+    elif score >= HIGH_THRESHOLD:
+        severity = HIGH
+
+    elif score >= MEDIUM_THRESHOLD:
+        severity = MEDIUM
+
     else:
-        severity = "LOW"
+        severity = LOW
+
 
     return {
         "risk_score": score,
         "severity": severity,
-        "reasons": reasons
+        "reasons": reasons,
+        "risk_factors": len(reasons),
     }

@@ -60,5 +60,5 @@ def print_summary(
 
     print()
     print("=" * 50)
-    print("✓ Report exported successfully")
+    print("[OK] Report exported successfully")
     print(f"Location: {report_path}")

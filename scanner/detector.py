@@ -1,10 +1,8 @@
 from typing import Any
 import re
 
-from logging_config import setup_logging
+from logger import logger
 from scanner.regex_patterns import PATTERNS
-
-logger = setup_logging()
 
 
 def detect_sensitive_data(text: str) -> list[dict[str, Any]]:

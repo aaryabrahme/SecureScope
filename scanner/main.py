@@ -1,34 +1,31 @@
 import time
 
-from logging_config import setup_logging
+from config import SAMPLE_DATA_DIR
+from logger import logger
 
 from scanner.console import (
     print_banner,
     print_report,
     print_summary,
 )
-from config import SAMPLE_DATA_DIR
-scanner = FileScanner(SAMPLE_DATA_DIR)
 from scanner.exporter import export_json
 from scanner.report import scan_file
 from scanner.scanner import FileScanner
 
-logger = setup_logging()
-
 
 def main() -> None:
     """
-    Entry point for the SecureScope scanner.
+    Entry point for the SecureScope Scanner.
 
-    Discovers files, scans each file, prints results,
-    and exports the final JSON report.
+    Discovers supported files, scans each file for sensitive
+    information, prints results, and exports a JSON report.
     """
 
-    logger.info("Starting SecureScope scan...")
+    logger.info("Starting SecureScope scanner...")
 
     start_time = time.perf_counter()
 
-    scanner = FileScanner("sample_data")
+    scanner = FileScanner(SAMPLE_DATA_DIR)
     files = scanner.discover_files()
 
     total_files = 0

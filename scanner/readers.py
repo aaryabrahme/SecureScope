@@ -5,10 +5,7 @@ import pandas as pd
 import PyPDF2
 from docx import Document
 
-from logging_config import setup_logging
-
-logger = setup_logging()
-
+from logger import logger
 
 def read_txt(file_path: Path) -> str:
     """

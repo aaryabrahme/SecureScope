@@ -1,56 +1,152 @@
-from scanner.scanner import FileScanner
-from scanner.report import scan_file
-from scanner.exporter import export_json
+import subprocess
+import json
+from pathlib import Path
+import sys
+
+from logger import logger
+
+from core.correlation import (
+    correlate_reports,
+    save_final_report,
+)
+
+
+def run_module(module_name):
+    """
+    Execute a SecureScope module.
+    """
+
+    logger.info(
+        "Running module: %s",
+        module_name
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            module_name
+        ],
+        capture_output=True,
+        text=True,
+    )
+
+
+    if result.returncode != 0:
+
+        logger.error(
+            "%s failed",
+            module_name
+        )
+
+        print(result.stderr)
+
+        raise RuntimeError(
+            f"{module_name} failed"
+        )
+
+
+    print(result.stdout)
+
+
+
+def find_latest_report(prefix):
+
+    reports_dir = Path("reports")
+
+    files = list(
+        reports_dir.glob(
+            f"{prefix}*.json"
+        )
+    )
+
+
+    if not files:
+        raise FileNotFoundError(
+            f"No report found for {prefix}"
+        )
+
+
+    return max(
+        files,
+        key=lambda file: file.stat().st_mtime
+    )
+
+
 
 def main():
-    scanner = FileScanner("sample_data")
-    files = scanner.discover_files()
 
-    total_files = 0
-    total_findings = 0
-    all_reports = []
+    print("=" * 70)
+    print("              SecureScope Platform")
+    print("=" * 70)
 
-    print("\n========== SecureScope ==========\n")
 
-    for file in files:
-        report = scan_file(file)
-        all_reports.append(report)
-        total_files += 1
-        total_findings += len(report["findings"])
+    # -------------------------
+    # Phase 1
+    # -------------------------
 
-        print("=" * 50)
-        print(f"File       : {report['file']}")
-        print(f"Risk Score : {report['risk_score']}")
-        print(f"Risk Level : {report['risk_level']}")
-        print()
+    run_module(
+        "scanner.main"
+    )
 
-        if not report["findings"]:
-            print("No sensitive data found.\n")
-            continue
 
-        print("Findings:\n")
+    scanner_report = Path(
+        "reports/scanner/latest/scan_report.json"
+    )
 
-        for finding in report["findings"]:
-            print(f"[{finding['risk']}] {finding['type']}")
-            print(f"Value      : {finding['value']}")
 
-            if "entropy" in finding:
-                print(f"Entropy    : {finding['entropy']}")
+    # -------------------------
+    # Phase 2
+    # -------------------------
 
-            if "reason" in finding:
-                print(f"Reason     : {finding['reason']}")
+    run_module(
+        "anomaly.main"
+    )
 
-            print()
 
-    print("=" * 50)
-    print("Scan Summary")
-    print("=" * 50)
-    print(f"Files Scanned : {total_files}")
-    print(f"Total Findings: {total_findings}")
-    output_path = export_json(all_reports)
+    anomaly_report = Path(
+        "reports/latest/insider_risk.json"
+    )
+
+
+    # -------------------------
+    # Phase 3
+    # -------------------------
+
+    logger.info(
+        "Starting risk correlation..."
+    )
+
+
+    final_events = correlate_reports(
+        scanner_report,
+        anomaly_report,
+    )
+
+
+    final_report = save_final_report(
+        final_events
+    )
+
+
     print()
-    print("=" * 50)
-    print(f"JSON report exported to: {output_path}")
+
+    print("=" * 70)
+    print("          SecureScope Complete")
+    print("=" * 70)
+
+    print()
+
+    print(
+        f"Final Report: {final_report}"
+    )
+
+
+    logger.info(
+        "SecureScope execution completed successfully"
+    )
+
+
 
 if __name__ == "__main__":
     main()

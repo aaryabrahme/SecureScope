@@ -1,18 +1,35 @@
-from anomaly.features import load_dataset, prepare_features
+import pandas as pd
 
 from anomaly.detector import (
-    train_model,
+    add_predictions,
     detect_anomalies,
-    add_predictions
+    train_model,
 )
-
+from anomaly.features import load_dataset, prepare_features
+from logger import logger
+from anomaly.model_manager import (
+    load_model,
+    save_model,
+    load_feature_schema,
+)
 from anomaly.risk import calculate_risk
 
-from anomaly.logger import logger
 
-from anomaly.model_manager import load_model, save_model
+def run_pipeline() -> pd.DataFrame:
+    """
+    Execute the complete anomaly detection pipeline.
 
-def run_pipeline():
+    Pipeline steps:
+        1. Load the dataset.
+        2. Prepare features.
+        3. Load or train the Isolation Forest model.
+        4. Detect anomalies.
+        5. Calculate business risk scores.
+
+    Returns:
+        DataFrame containing anomaly predictions,
+        risk scores, severity levels, and reasons.
+    """
 
     logger.info("Loading dataset...")
     df = load_dataset()
@@ -20,20 +37,44 @@ def run_pipeline():
     logger.info("Preparing features...")
     X = prepare_features(df)
 
-    logger.info("Training Isolation Forest model...")
+    feature_columns = X.columns
+
+    feature_schema = None
+
+    logger.info("Loading trained model...")
     model = load_model()
 
-    if model is None:
+    feature_schema = load_feature_schema()
 
-        logger.info("Training new model...")
 
-        model = train_model(X)
+    if model is None or feature_schema is None:
 
-        save_model(model)
+        logger.info(
+            "Training new model..."
+        )
+
+        model = train_model(
+            X
+        )
+
+
+        save_model(
+            model,
+            X.columns
+        )
+
 
     else:
 
-        logger.info("Using existing trained model.")
+        logger.info(
+            "Using existing trained model."
+        )
+
+
+    X = X.reindex(
+        columns=feature_schema,
+        fill_value=0
+    )
 
     logger.info("Detecting anomalies...")
     predictions = detect_anomalies(model, X)
@@ -41,23 +82,27 @@ def run_pipeline():
     logger.info("Adding predictions to dataset...")
     df = add_predictions(df, predictions)
 
-    logger.info("Calculating risk scores...")
+    logger.info("Calculating business risk scores...")
 
-    risk_scores = []
-    severities = []
-    reasons_list = []
+    risk_results = []
 
     for _, event in df.iterrows():
+        risk_results.append(calculate_risk(event))
 
-        risk = calculate_risk(event)
+    df["risk_score"] = [
+        result["risk_score"]
+        for result in risk_results
+    ]
 
-        risk_scores.append(risk["risk_score"])
-        severities.append(risk["severity"])
-        reasons_list.append(", ".join(risk["reasons"]))
+    df["severity"] = [
+        result["severity"]
+        for result in risk_results
+    ]
 
-    df["risk_score"] = risk_scores
-    df["severity"] = severities
-    df["reasons"] = reasons_list
+    df["reasons"] = [
+        ", ".join(result["reasons"])
+        for result in risk_results
+    ]
 
     logger.info("Pipeline completed successfully.")
 

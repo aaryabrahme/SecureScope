@@ -1,14 +1,12 @@
 from pathlib import Path
 from typing import Any
 
-from logging_config import setup_logging
+from logger import logger
 
 from scanner.detector import detect_sensitive_data
 from scanner.readers import read_file
 from scanner.risk import calculate_risk
 from scanner.secret_detector import detect_high_entropy_strings
-
-logger = setup_logging()
 
 
 def scan_file(file_path: Path) -> dict[str, Any]:

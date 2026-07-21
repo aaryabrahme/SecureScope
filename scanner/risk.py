@@ -16,26 +16,28 @@ def calculate_risk(
     findings: list[dict[str, Any]]
 ) -> tuple[int, str]:
     """
-    Calculate the cumulative risk score for a file.
+    Calculate risk score based on finding severity.
 
-    Each finding contributes a weighted score based on
-    its assigned risk category.
-
-    The final score is capped at 100 and mapped to
-    an overall severity level.
-
-    Returns:
-        Tuple containing:
-        (risk_score, risk_level)
+    Each finding contributes according to its severity.
     """
 
     score = 0
 
     for finding in findings:
-        risk = finding.get("risk")
-        score += RISK_WEIGHTS.get(risk, 0)
 
-    score = min(score, 100)
+        risk = finding.get("risk")
+
+        print(
+            "DEBUG RISK:",
+            risk,
+            "WEIGHT:",
+            RISK_WEIGHTS.get(risk)
+        )
+
+        score += RISK_WEIGHTS.get(
+            risk,
+            0
+        )
 
     if score >= CRITICAL_THRESHOLD:
         level = CRITICAL
@@ -48,5 +50,6 @@ def calculate_risk(
 
     else:
         level = LOW
+
 
     return score, level

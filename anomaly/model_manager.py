@@ -1,33 +1,114 @@
-import os
 import joblib
+from sklearn.ensemble import IsolationForest
 
-from anomaly.logger import logger
-
-MODELS_DIR = "models"
-
-os.makedirs(MODELS_DIR, exist_ok=True)
-
-MODEL_PATH = os.path.join(
-    MODELS_DIR,
-    "isolation_forest.pkl"
-)
+from logger import logger
+from config import MODEL_PATH
 
 
-def save_model(model):
+FEATURE_PATH = MODEL_PATH.parent / "feature_schema.pkl"
 
-    joblib.dump(model, MODEL_PATH)
 
-    logger.info(f"Model saved to {MODEL_PATH}")
+
+def save_model(
+    model: IsolationForest,
+    feature_columns,
+) -> None:
+    """
+    Save model and feature schema.
+    """
+
+    try:
+
+        MODEL_PATH.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+
+        joblib.dump(
+            model,
+            MODEL_PATH,
+        )
+
+
+        joblib.dump(
+            list(feature_columns),
+            FEATURE_PATH,
+        )
+
+
+        logger.info(
+            "Model saved successfully: %s",
+            MODEL_PATH,
+        )
+
+        logger.info(
+            "Feature schema saved successfully: %s",
+            FEATURE_PATH,
+        )
+
+
+    except Exception as error:
+
+        logger.error(
+            "Failed saving model: %s",
+            error,
+        )
+
+        raise
+
+
 
 
 def load_model():
+    """
+    Load trained model.
+    """
 
-    if not os.path.exists(MODEL_PATH):
+    if not MODEL_PATH.exists():
 
-        logger.info("No saved model found.")
+        logger.info(
+            "No saved model found."
+        )
 
         return None
 
-    logger.info("Loading trained model...")
 
-    return joblib.load(MODEL_PATH)
+    try:
+
+        logger.info(
+            "Loading trained model..."
+        )
+
+
+        return joblib.load(
+            MODEL_PATH
+        )
+
+
+    except Exception as error:
+
+        logger.error(
+            "Failed loading model: %s",
+            error,
+        )
+
+        return None
+
+
+
+
+def load_feature_schema():
+
+    if not FEATURE_PATH.exists():
+
+        logger.info(
+            "No feature schema found."
+        )
+
+        return None
+
+
+    return joblib.load(
+        FEATURE_PATH
+    )
