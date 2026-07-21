@@ -1,56 +1,92 @@
-from scanner.scanner import FileScanner
-from scanner.report import scan_file
-from scanner.exporter import export_json
+import time
 
-def main():
+from logging_config import setup_logging
+
+from scanner.console import (
+    print_banner,
+    print_report,
+    print_summary,
+)
+from config import SAMPLE_DATA_DIR
+scanner = FileScanner(SAMPLE_DATA_DIR)
+from scanner.exporter import export_json
+from scanner.report import scan_file
+from scanner.scanner import FileScanner
+
+logger = setup_logging()
+
+
+def main() -> None:
+    """
+    Entry point for the SecureScope scanner.
+
+    Discovers files, scans each file, prints results,
+    and exports the final JSON report.
+    """
+
+    logger.info("Starting SecureScope scan...")
+
+    start_time = time.perf_counter()
+
     scanner = FileScanner("sample_data")
     files = scanner.discover_files()
 
     total_files = 0
     total_findings = 0
+    total_score = 0
+
+    high_risk_files = 0
+    critical_files = 0
+
     all_reports = []
 
-    print("\n========== SecureScope ==========\n")
+    print_banner()
 
-    for file in files:
-        report = scan_file(file)
+    for file_path in files:
+
+        report = scan_file(file_path)
+
         all_reports.append(report)
+
         total_files += 1
         total_findings += len(report["findings"])
+        total_score += report["risk_score"]
 
-        print("=" * 50)
-        print(f"File       : {report['file']}")
-        print(f"Risk Score : {report['risk_score']}")
-        print(f"Risk Level : {report['risk_level']}")
-        print()
+        if report["risk_level"] == "HIGH":
+            high_risk_files += 1
 
-        if not report["findings"]:
-            print("No sensitive data found.\n")
-            continue
+        elif report["risk_level"] == "CRITICAL":
+            critical_files += 1
 
-        print("Findings:\n")
+        print_report(report)
 
-        for finding in report["findings"]:
-            print(f"[{finding['risk']}] {finding['type']}")
-            print(f"Value      : {finding['value']}")
+    report_path = export_json(all_reports)
 
-            if "entropy" in finding:
-                print(f"Entropy    : {finding['entropy']}")
+    elapsed = time.perf_counter() - start_time
 
-            if "reason" in finding:
-                print(f"Reason     : {finding['reason']}")
+    average_score = (
+        total_score / total_files
+        if total_files
+        else 0
+    )
 
-            print()
+    print_summary(
+        total_files=total_files,
+        total_findings=total_findings,
+        high_risk_files=high_risk_files,
+        critical_files=critical_files,
+        average_score=average_score,
+        scan_time=elapsed,
+        report_path=report_path,
+    )
 
-    print("=" * 50)
-    print("Scan Summary")
-    print("=" * 50)
-    print(f"Files Scanned : {total_files}")
-    print(f"Total Findings: {total_findings}")
-    output_path = export_json(all_reports)
-    print()
-    print("=" * 50)
-    print(f"JSON report exported to: {output_path}")
+    logger.info(
+        "Scan completed | Files=%d Findings=%d Duration=%.2fs",
+        total_files,
+        total_findings,
+        elapsed,
+    )
+
 
 if __name__ == "__main__":
     main()

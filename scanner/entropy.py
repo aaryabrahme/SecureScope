@@ -3,19 +3,32 @@ from collections import Counter
 
 
 def calculate_entropy(text: str) -> float:
+    """
+    Calculate the Shannon entropy of a string.
+
+    Higher entropy indicates greater randomness and may
+    suggest the presence of secrets such as API keys,
+    tokens, or passwords.
+
+    Args:
+        text: Input string.
+
+    Returns:
+        Shannon entropy as a float.
+    """
 
     if not text:
-        return 0
+        return 0.0
 
     character_counts = Counter(text)
 
-    entropy = 0
+    entropy = 0.0
 
-    length = len(text)
+    text_length = len(text)
 
-    for character, count in character_counts.items():
+    for count in character_counts.values():
 
-        probability = count / length
+        probability = count / text_length
 
         entropy += probability * math.log2(probability)
 
