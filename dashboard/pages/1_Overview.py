@@ -15,7 +15,7 @@ except FileNotFoundError as error:
     empty_state("No unified intelligence report", str(error))
     st.stop()
 
-sidebar(data.generated_at)
+sidebar(data.generated_at, active_page="Security Posture")
 page_header(
     "Security Command Center",
     "Enterprise posture analytics and prioritized security intelligence from the latest unified assessment.",

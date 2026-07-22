@@ -23,7 +23,7 @@ except FileNotFoundError as error:
     empty_state("No unified intelligence report", str(error))
     st.stop()
 
-sidebar(data.generated_at)
+sidebar(data.generated_at, active_page="Overview")
 page_header(
     "Executive Security Overview",
     "A consolidated view of organizational posture, data exposure, and prioritized insider-risk signals.",

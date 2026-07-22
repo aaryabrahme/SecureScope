@@ -56,6 +56,16 @@ def risk_table(dataframe: pd.DataFrame, columns: list[str]):
     if not visible_columns:
         return
 
+    display_data = dataframe[visible_columns].copy()
+    if "severity" in display_data:
+        severity_labels = {
+            "CRITICAL": "● CRITICAL",
+            "HIGH": "● HIGH",
+            "MEDIUM": "● MEDIUM",
+            "LOW": "● LOW",
+        }
+        display_data["severity"] = display_data["severity"].map(severity_labels).fillna(display_data["severity"])
+
     column_config = {}
     if "risk_score" in visible_columns:
         column_config["risk_score"] = st.column_config.ProgressColumn(
@@ -66,7 +76,7 @@ def risk_table(dataframe: pd.DataFrame, columns: list[str]):
         )
 
     st.dataframe(
-        dataframe[visible_columns],
+        display_data,
         use_container_width=True,
         hide_index=True,
         column_config=column_config,

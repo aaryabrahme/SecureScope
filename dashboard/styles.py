@@ -7,6 +7,21 @@ def load_css():
         <style>
         .stApp { background: radial-gradient(circle at top right, #102842 0, #07111f 36rem); color: #e5edf7; }
         [data-testid="stSidebar"] { background: linear-gradient(180deg, #0e2035, #081423); border-right: 1px solid #23344c; }
+        [data-testid="stSidebarNav"] { display: none; }
+        .sidebar-brand { padding: .8rem .25rem 1.45rem; }
+        .brand-name { color: #f4f8ff !important; font-size: 1.35rem; font-weight: 780; margin-top: .65rem; }
+        .brand-subtitle { color: #91adc9 !important; font-size: .74rem; margin-top: .2rem; }
+        .nav-section-label { color: #7793af !important; font-size: .68rem; font-weight: 750; letter-spacing: .09rem; margin: 1.1rem 0 .45rem; }
+        .active-nav, .disabled-nav { border-radius: 9px; padding: .65rem .7rem; font-weight: 650; margin: .15rem 0; }
+        .active-nav { background: rgba(50,151,166,.2); border: 1px solid rgba(94,201,212,.38); color: #dbfbff !important; }
+        .active-nav span, .disabled-nav span { margin-right: .5rem; }
+        .disabled-nav { color: #617c98 !important; }
+        .disabled-nav small { float: right; font-size: .64rem; font-weight: 600; }
+        [data-testid="stSidebar"] [data-testid="stPageLink"] a { border-radius: 9px; color: #b9cce0 !important; font-weight: 620; padding: .6rem .65rem; }
+        [data-testid="stSidebar"] [data-testid="stPageLink"] a:hover { background: rgba(80,185,197,.12); color: #f4f8ff !important; }
+        .sidebar-spacer { height: 2rem; }
+        .sidebar-report-label { color: #7793af !important; font-size: .65rem; font-weight: 750; letter-spacing: .08rem; margin-top: 1rem; }
+        .sidebar-footer { color: #6f8aa6 !important; border-top: 1px solid #233e5a; font-size: .72rem; line-height: 1.6; margin-top: 1rem; padding-top: .85rem; }
         .page-hero { background: linear-gradient(120deg, rgba(16,45,82,.96), rgba(11,107,117,.88)); border: 1px solid #32768a; border-radius: 18px; padding: 2rem; margin-bottom: 1.75rem; box-shadow: 0 20px 45px rgba(0,0,0,.2); }
         .eyebrow { color: #9fd7dd !important; font-size: .75rem; font-weight: 700; letter-spacing: .08rem; }
         .hero-title { color: #ffffff !important; font-size: 2.25rem; font-weight: 750; margin-top: .35rem; }

@@ -22,7 +22,7 @@ except FileNotFoundError as error:
     empty_state("No unified intelligence report", str(error))
     st.stop()
 
-sidebar(data.generated_at)
+sidebar(data.generated_at, active_page="Risk Explorer")
 page_header(
     "Priority Investigations",
     "Filter and investigate the highest-risk insider events supplied by the current unified report.",

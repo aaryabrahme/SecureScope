@@ -16,7 +16,7 @@ except FileNotFoundError as error:
     empty_state("No unified intelligence report", str(error))
     st.stop()
 
-sidebar(data.generated_at)
+sidebar(data.generated_at, active_page="Reports")
 page_header(
     "Unified Security Report",
     "Review scanner and insider-risk findings, then export the current enterprise assessment.",

@@ -43,6 +43,10 @@ def load_security_report() -> dict[str, Any]:
     return _read_report(REPORT_PATH.stat().st_mtime)
 
 
+def load_unified_report() -> dict[str, Any]:
+    return load_security_report()
+
+
 def load_dashboard_data() -> DashboardData:
     report = load_security_report()
     summary = report.get("summary", {})
@@ -76,6 +80,30 @@ def get_insider_risk_users() -> pd.DataFrame:
 
 def get_security_score() -> int:
     return load_dashboard_data().security_score
+
+
+def get_data_security_summary() -> dict[str, int]:
+    data = load_dashboard_data()
+    return {
+        "files_scanned": data.summary["files_scanned"],
+        "sensitive_findings": data.summary["sensitive_findings"],
+        "high_risk_files": data.summary["high_risk_files"],
+        "critical_exposures": len(data.critical_files),
+    }
+
+
+def get_insider_risk_summary() -> dict[str, int]:
+    data = load_dashboard_data()
+    highest_risk_score = 0
+    if not data.risky_users.empty and "risk_score" in data.risky_users:
+        highest_risk_score = int(data.risky_users["risk_score"].max())
+
+    return {
+        "events_analyzed": data.summary["events_analyzed"],
+        "anomalies_detected": data.summary["anomalies_detected"],
+        "critical_users": count_severity(data.risky_users, "CRITICAL"),
+        "highest_risk_score": highest_risk_score,
+    }
 
 
 def score_status(score: int) -> tuple[str, str]:
