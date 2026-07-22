@@ -1,326 +1,62 @@
-import streamlit as st
 import json
 
+import streamlit as st
 
-from theme import (
-    setup_page,
-    sidebar,
-    page_header,
-    section_header,
-    premium_divider,
-)
+from theme import page_header, premium_divider, section_header, setup_page, sidebar
+from utils import available_columns, load_dashboard_data, score_status
 
-
-from utils import (
-    load_security_report,
-    get_risky_users_dataframe,
-    get_high_risk_files_dataframe,
-)
-
-
-
-# ==========================
-# Setup
-# ==========================
 
 setup_page()
-sidebar()
-
-
-page_header(
-    "Security Reports",
-    "Review and export unified SecureScope intelligence reports."
-)
-
-
-
-# ==========================
-# Load Report
-# ==========================
 
 try:
-
-    report = load_security_report()
-
-
-except FileNotFoundError:
-
-
-    st.warning(
-        "No unified security report found. Run intelligence pipeline first."
-    )
-
+    data = load_dashboard_data()
+except FileNotFoundError as error:
+    sidebar()
+    st.error("The unified security report is unavailable.")
+    st.caption(str(error))
     st.stop()
 
-
-
-# ==========================
-# Summary
-# ==========================
-
-summary = report["summary"]
-
-
-section_header(
-    "📊 Executive Report Summary"
+sidebar(data.generated_at)
+page_header(
+    "Unified Security Report",
+    "Review and export the current consolidated security assessment.",
+    data.generated_at,
 )
 
+status, alert_type = score_status(data.security_score)
+metrics = st.columns(4)
+metrics[0].metric("Security score", f"{data.security_score}/100", status)
+metrics[1].metric("Events analyzed", data.summary["events_analyzed"])
+metrics[2].metric("High-risk files", data.summary["high_risk_files"])
+metrics[3].metric("Critical files", len(data.critical_files))
 
-
-col1, col2, col3, col4 = st.columns(4)
-
-
-
-with col1:
-
-    st.metric(
-        "Files Scanned",
-        summary["files_scanned"]
-    )
-
-
-with col2:
-
-    st.metric(
-        "Sensitive Findings",
-        summary["sensitive_findings"]
-    )
-
-
-with col3:
-
-    st.metric(
-        "Events Analysed",
-        summary["events_analyzed"]
-    )
-
-
-with col4:
-
-    st.metric(
-        "Anomalies",
-        summary["anomalies_detected"]
-    )
-
-
+message = f"Current posture: {status}."
+getattr(st, alert_type)(message)
 
 premium_divider()
-
-
-
-# ==========================
-# Security Score
-# ==========================
-
-
-section_header(
-    "🛡 Security Score"
-)
-
-
-score = report.get(
-    "security_score",
-    0
-)
-
-
-if score >= 70:
-
-    st.error(
-        f"""
-## 🔴 High Risk
-
-Security Score:
-
-# {score}/100
-"""
-    )
-
-
-elif score >= 40:
-
-    st.warning(
-        f"""
-## 🟡 Moderate Risk
-
-Security Score:
-
-# {score}/100
-"""
-    )
-
-
+section_header("Data security findings", "High-risk and critical files identified by the scanner.")
+if data.high_risk_files.empty:
+    st.info("No high-risk files are present in this report.")
 else:
-
-    st.success(
-        f"""
-## 🟢 Low Risk
-
-Security Score:
-
-# {score}/100
-"""
-    )
-
-
+    columns = available_columns(data.high_risk_files, ["file", "path", "risk_level", "risk_score", "findings"])
+    st.dataframe(data.high_risk_files[columns], use_container_width=True, hide_index=True)
 
 premium_divider()
-
-
-
-# ==========================
-# Data Exposure Report
-# ==========================
-
-
-section_header(
-    "🔐 Data Security Findings"
-)
-
-
-
-files_df = get_high_risk_files_dataframe()
-
-
-
-if not files_df.empty:
-
-
-    st.dataframe(
-
-        files_df[
-            [
-                "file",
-                "risk_level",
-                "risk_score",
-            ]
-        ],
-
-        use_container_width=True,
-
-        hide_index=True
-    )
-
-
-else:
-
-    st.info(
-        "No high-risk files detected."
-    )
-
-
-
-premium_divider()
-
-
-
-# ==========================
-# Insider Risk Report
-# ==========================
-
-
-section_header(
-    "🚨 Insider Risk Events"
-)
-
-
-
-users_df = get_risky_users_dataframe()
-
-
-
-st.dataframe(
-
-    users_df[
-
-        [
-            "employee_id",
-            "file_name",
-            "action",
-            "severity",
-            "risk_score",
-            "reasons",
-        ]
-
-    ],
-
-    use_container_width=True,
-
-    hide_index=True
-
-)
-
-
-
-premium_divider()
-
-
-
-# ==========================
-# Downloads
-# ==========================
-
-
-section_header(
-    "⬇️ Export Reports"
-)
-
-
-
-json_data = json.dumps(
-    report,
-    indent=4
-)
-
-
-
-csv_data = users_df.to_csv(
-    index=False
-)
-
-
-
-col1, col2 = st.columns(2)
-
-
-
-with col1:
-
+section_header("Export report", "Download the unchanged unified-report payload or its priority-event CSV view.")
+left, right = st.columns(2)
+with left:
     st.download_button(
-
-        "📦 Download Full JSON Report",
-
-        json_data,
-
+        "Download unified JSON",
+        json.dumps(data.report, indent=2),
         file_name="securescope_security_report.json",
-
         mime="application/json",
-
-        use_container_width=True
-
+        use_container_width=True,
     )
-
-
-
-with col2:
-
-
+with right:
     st.download_button(
-
-        "📄 Download Insider Risk CSV",
-
-        csv_data,
-
-        file_name="securescope_insider_risk.csv",
-
+        "Download priority events CSV",
+        data.risky_users.to_csv(index=False),
+        file_name="securescope_priority_events.csv",
         mime="text/csv",
-
-        use_container_width=True
-
+        use_container_width=True,
     )
-
-
-
-st.caption(
-    "🛡 SecureScope • Version 1.3 • AI-Powered Security Intelligence"
-)

@@ -1,247 +1,69 @@
 import streamlit as st
 
-from theme import setup_page, sidebar, page_header, section_header, premium_divider
+from charts import security_score_gauge, severity_chart
+from theme import page_header, premium_divider, section_header, setup_page, sidebar
+from utils import available_columns, load_dashboard_data, score_status
 
-from utils import (
-    get_summary,
-    get_security_score,
-    get_risky_users_dataframe,
-    get_high_risk_files_dataframe,
-)
-
-from charts import risk_gauge
-
-
-# ==========================
-# Setup
-# ==========================
 
 setup_page()
-sidebar()
 
+try:
+    data = load_dashboard_data()
+except FileNotFoundError as error:
+    sidebar()
+    st.error("The unified security report is unavailable.")
+    st.caption(str(error))
+    st.stop()
 
-# ==========================
-# Load Data
-# ==========================
-
-summary = get_summary()
-
-security_score = get_security_score()
-
-users_df = get_risky_users_dataframe()
-
-files_df = get_high_risk_files_dataframe()
-
-
-
-# ==========================
-# Header
-# ==========================
-
+sidebar(data.generated_at)
 page_header(
     "Security Command Center",
-    "AI-powered overview of organizational security posture and insider risk."
+    "A unified view of current data exposure and prioritized insider-risk signals.",
+    data.generated_at,
 )
 
-
-
-# ==========================
-# Security Score
-# ==========================
-
-col1, col2, col3, col4 = st.columns(4)
-
-
-with col1:
-
-    st.metric(
-        "Security Score",
-        f"{security_score}/100"
-    )
-
-
-with col2:
-
-    st.metric(
-        "Files Scanned",
-        summary["files_scanned"]
-    )
-
-
-with col3:
-
-    st.metric(
-        "Sensitive Findings",
-        summary["sensitive_findings"]
-    )
-
-
-with col4:
-
-    st.metric(
-        "Anomalies",
-        summary["anomalies_detected"]
-    )
-
-
+status, alert_type = score_status(data.security_score)
+metrics = st.columns(4)
+metrics[0].metric("Security score", f"{data.security_score}/100", status)
+metrics[1].metric("Files scanned", data.summary["files_scanned"])
+metrics[2].metric("Sensitive findings", data.summary["sensitive_findings"])
+metrics[3].metric("Anomalies detected", data.summary["anomalies_detected"])
 
 premium_divider()
+left, right = st.columns([1, 1])
+with left:
+    section_header("Security posture", "The report's authoritative security score.")
+    st.plotly_chart(security_score_gauge(data.security_score), use_container_width=True)
 
+with right:
+    section_header("Priority event severity", "Distribution within the report's top-risk event list.")
+    if data.risky_users.empty:
+        st.info("No prioritized insider-risk events are present in this report.")
+    else:
+        st.plotly_chart(severity_chart(data.risky_users), use_container_width=True)
 
-
-# ==========================
-# Risk Gauge
-# ==========================
-
-section_header(
-    "🛡 Organizational Security Posture"
-)
-
-
-dummy = users_df.copy()
-
-if not dummy.empty:
-
-    fig, ori = risk_gauge(dummy)
-
-    st.plotly_chart(
-        fig,
-        use_container_width=True
-    )
-
-
-
-premium_divider()
-
-
-
-# ==========================
-# Top Threats
-# ==========================
-
-
-section_header(
-    "🚨 Highest Risk Users",
-    "Employees requiring immediate investigation."
-)
-
-
-
-if not users_df.empty:
-
-    display = users_df[
-        [
-            "employee_id",
-            "file_name",
-            "action",
-            "device",
-            "severity",
-            "risk_score",
-            "reasons"
-        ]
-    ]
-
-
-    st.dataframe(
-        display,
-        use_container_width=True,
-        hide_index=True
-    )
-
-
-
-premium_divider()
-
-
-
-# ==========================
-# Data Exposure
-# ==========================
-
-
-section_header(
-    "🔐 Sensitive Data Exposure",
-    "Files containing high-risk security findings."
-)
-
-
-
-if not files_df.empty:
-
-
-    display = files_df[
-        [
-            "file",
-            "risk_level",
-            "risk_score"
-        ]
-    ]
-
-
-    st.dataframe(
-        display,
-        use_container_width=True,
-        hide_index=True
-    )
-
-
-
-premium_divider()
-
-
-
-# ==========================
-# Analyst Summary
-# ==========================
-
-
-section_header(
-    "🤖 Security Analyst Summary"
-)
-
-
-if security_score >= 70:
-
-    st.error(
-        """
-### High Risk Environment
-
-SecureScope detected elevated security concerns.
-
-Recommended actions:
-
-- Investigate top risky employees
-- Rotate exposed credentials
-- Review critical file access
-- Monitor anomalous behaviour
-"""
-    )
-
-
-elif security_score >= 40:
-
-    st.warning(
-        """
-### Moderate Risk Environment
-
-Additional monitoring is recommended.
-
-Review suspicious activity and sensitive data exposure.
-"""
-    )
-
-
+if alert_type == "success":
+    st.success("Security posture is strong. Continue monitoring the prioritized events below.")
+elif alert_type == "warning":
+    st.warning("Security posture needs attention. Review the highest-risk files and events.")
 else:
+    st.error("Security posture indicates elevated risk. Prioritize containment and investigation.")
 
-    st.success(
-        """
-### Healthy Security Posture
-
-No major security risks detected.
-"""
+premium_divider()
+section_header("Priority investigations", "Top-risk events supplied by the unified report.")
+if data.risky_users.empty:
+    st.info("No risky users are available.")
+else:
+    columns = available_columns(
+        data.risky_users,
+        ["employee_id", "file_name", "action", "severity", "risk_score", "reasons"],
     )
+    st.dataframe(data.risky_users[columns], use_container_width=True, hide_index=True)
 
-
-st.caption(
-    "🛡 SecureScope • Version 1.3 • AI-Powered Security Intelligence"
-)
+premium_divider()
+section_header("High-risk data exposure", "Files requiring security review.")
+if data.high_risk_files.empty:
+    st.info("No high-risk files are available.")
+else:
+    columns = available_columns(data.high_risk_files, ["file", "risk_level", "risk_score"])
+    st.dataframe(data.high_risk_files[columns], use_container_width=True, hide_index=True)
