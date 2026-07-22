@@ -11,58 +11,92 @@ def section_header(title, subtitle=""):
     st.markdown(
         f"""
         <div style="margin-bottom:1rem;">
-            <div style="font-size:2rem;font-weight:700;color:#111827;">
+
+            <div style="
+                font-size:2rem;
+                font-weight:800;
+                color:#F8FAFC;
+            ">
                 {title}
             </div>
-            <div style="color:#6B7280;font-size:1rem;margin-top:0.25rem;">
+
+
+            <div style="
+                color:#94A3B8;
+                font-size:1rem;
+                margin-top:0.25rem;
+            ">
                 {subtitle}
             </div>
+
         </div>
         """,
         unsafe_allow_html=True
     )
 
 
-def metric_card(icon, value, label, color="#2563EB"):
+
+def metric_card(icon, value, label, color="#60A5FA"):
 
     st.markdown(
         f"""
         <div style="
-            background:#FFFFFF;
-            border:1px solid #E5E7EB;
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(30,41,59,.95),
+                rgba(15,23,42,.95)
+            );
+
+            border:
+            1px solid #334155;
+
             border-radius:20px;
+
             padding:1.5rem;
-            box-shadow:0 8px 24px rgba(15,23,42,0.06);
+
+            box-shadow:
+            0 15px 35px rgba(0,0,0,.35);
+
             min-height:170px;
-            display:flex;
-            flex-direction:column;
-            justify-content:space-between;
+
         ">
 
-            <div style="font-size:2rem;">{icon}</div>
+
+            <div style="
+                font-size:2rem;
+            ">
+                {icon}
+            </div>
+
+
 
             <div style="
                 font-size:2.6rem;
-                font-weight:700;
+                font-weight:800;
                 color:{color};
-                line-height:1;
-                margin:0.75rem 0;
+                margin:.75rem 0;
             ">
                 {value}
             </div>
 
+
+
             <div style="
-                color:#6B7280;
-                font-size:0.95rem;
+                color:#CBD5E1;
+                font-size:.95rem;
                 font-weight:600;
             ">
                 {label}
             </div>
 
+
         </div>
         """,
         unsafe_allow_html=True
     )
+
 
 
 def info_card(title, content):
@@ -70,36 +104,46 @@ def info_card(title, content):
     st.markdown(
         f"""
         <div style="
-            background:#FFFFFF;
-            border:1px solid #E5E7EB;
+
+            background:
+            rgba(15,23,42,.85);
+
+            border:
+            1px solid #334155;
+
             border-radius:20px;
+
             padding:1.75rem;
-            box-shadow:0 8px 24px rgba(15,23,42,0.06);
+
+            box-shadow:
+            0 10px 30px rgba(0,0,0,.35);
+
         ">
+
 
             <div style="
                 font-size:1.15rem;
-                font-weight:700;
+                font-weight:800;
+                color:#F8FAFC;
                 margin-bottom:1rem;
-                color:#111827;
             ">
                 {title}
             </div>
 
+
+
             <div style="
-                color:#374151;
+                color:#CBD5E1;
                 line-height:1.7;
-                font-size:1rem;
             ">
                 {content}
             </div>
+
 
         </div>
         """,
         unsafe_allow_html=True
     )
-
-
 # ==========================================================
 # DASHBOARD METRICS
 # ==========================================================
@@ -227,7 +271,15 @@ def style_risk_table(df):
             .apply(severity_badge)
         )
 
-    return display_df
+    return (
+        display_df.style
+        .set_properties(
+            **{
+                "color": "#F8FAFC",
+                "background-color": "#111827"
+            }
+        )
+    )
 
 
 # ==========================================================

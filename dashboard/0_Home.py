@@ -1,7 +1,22 @@
 from pathlib import Path
+import sys
 import streamlit as st
 
-from theme import setup_page, sidebar, page_header
+
+# ==========================================================
+# Add Project Root
+# ==========================================================
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
+
+
+from dashboard.theme import (
+    setup_page,
+    sidebar,
+    page_header,
+)
+
 
 # ==========================================================
 # Setup
@@ -15,7 +30,7 @@ sidebar()
 # Assets
 # ==========================================================
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
 LOGO = ASSETS / "logo.png"

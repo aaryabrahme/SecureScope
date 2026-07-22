@@ -1,22 +1,30 @@
 from pathlib import Path
 from datetime import datetime
+import sys
 
 import streamlit as st
 
-from styles import load_css
 
-from config import (
-    PAGE_TITLE,
-    PAGE_ICON,
-    LOGO,
-    APP_TAGLINE,
-)
+# ==========================================================
+# Add project root to Python path
+# ==========================================================
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+
+from dashboard.styles import load_css
+PAGE_TITLE = "SecureScope"
+PAGE_ICON = "🛡️"
+
 
 # ==========================================================
 # Paths
 # ==========================================================
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = ROOT_DIR
 
 ASSETS = ROOT / "assets"
 
@@ -31,8 +39,8 @@ ICON = ASSETS / "icon.png"
 def setup_page():
 
     st.set_page_config(
-        page_title="SecureScope",
-        page_icon=str(ICON),
+        page_title=PAGE_TITLE,
+        page_icon=PAGE_ICON,
         layout="wide",
         initial_sidebar_state="expanded",
     )
@@ -48,19 +56,14 @@ def sidebar():
 
     with st.sidebar:
 
-        # ----------------------------------------
-        # Logo
-        # ----------------------------------------
-
         if ICON.exists():
 
             left, right = st.columns([1, 3])
 
             with left:
-
                 st.image(
-                    str(ICON),
-                    width=70,
+                    str(LOGO),
+                    use_container_width=True
                 )
 
             with right:
@@ -70,20 +73,19 @@ def sidebar():
                     <div style="margin-top:4px;">
 
                     <div style="
-                        font-size:24px;
-                        font-weight:800;
-                        color:#111827;
-                        line-height:1;
+                    font-size:24px;
+                    font-weight:800;
+                    color:#111827;
                     ">
-                        SecureScope
+                    SecureScope
                     </div>
 
                     <div style="
-                        color:#6B7280;
-                        font-size:13px;
-                        margin-top:6px;
+                    color:#6B7280;
+                    font-size:13px;
+                    margin-top:6px;
                     ">
-                        Executive Security Intelligence
+                    Executive Security Intelligence
                     </div>
 
                     </div>
@@ -95,13 +97,11 @@ def sidebar():
 
             st.title("🛡 SecureScope")
 
+
         st.markdown("<br>", unsafe_allow_html=True)
 
         st.divider()
 
-        # ----------------------------------------
-        # Navigation
-        # ----------------------------------------
 
         st.markdown(
             """
@@ -141,15 +141,12 @@ CSV / JSON exports
 """
         )
 
+
         st.markdown("<br>", unsafe_allow_html=True)
 
-        st.info(
-            "Version **1.3**"
-        )
+        st.info("Version **1.3**")
 
-        st.caption(
-            "© 2026 Aarya"
-        )
+        st.caption("© 2026 Aarya")
 
 
 # ==========================================================
@@ -162,7 +159,7 @@ def page_header(
     last_scan=None,
 ):
 
-    if last_scan is not None:
+    if last_scan:
 
         scan_time = datetime.fromtimestamp(
             last_scan
@@ -174,10 +171,10 @@ def page_header(
 
         scan_time = "No scan available"
 
+
     st.markdown(
         f"""
 <div style="
-
 background:linear-gradient(
 135deg,
 #2563EB,
@@ -189,12 +186,9 @@ border-radius:24px;
 
 color:white;
 
-box-shadow:
-0 18px 40px rgba(37,99,235,.22);
-
 margin-bottom:30px;
-
 ">
+
 
 <div style="
 font-size:15px;
@@ -206,6 +200,7 @@ font-weight:600;
 
 </div>
 
+
 <div style="
 font-size:40px;
 font-weight:800;
@@ -216,29 +211,25 @@ margin-top:8px;
 
 </div>
 
+
 <div style="
 font-size:17px;
 opacity:.95;
 margin-top:10px;
-max-width:850px;
-line-height:1.6;
 ">
 
 {subtitle}
 
 </div>
 
+
 <div style="margin-top:25px;">
 
 <span style="
 background:rgba(255,255,255,.16);
-
 padding:10px 18px;
-
 border-radius:50px;
-
 font-size:14px;
-
 font-weight:600;
 ">
 
@@ -248,10 +239,12 @@ font-weight:600;
 
 </div>
 
+
 </div>
 """,
         unsafe_allow_html=True,
     )
+
 
 
 # ==========================================================
@@ -263,9 +256,24 @@ def section_header(
     subtitle=None,
 ):
 
+    description = ""
+
+    if subtitle:
+
+        description = f"""
+<div style="
+color:#6B7280;
+margin-top:6px;
+font-size:15px;
+">
+{subtitle}
+</div>
+"""
+
+
     st.markdown(
         f"""
-<div style="margin-top:12px;margin-bottom:22px;">
+<div style="margin-bottom:22px;">
 
 <div style="
 font-size:28px;
@@ -277,12 +285,13 @@ color:#111827;
 
 </div>
 
-{"<div style='color:#6B7280;margin-top:6px;font-size:15px;'>"+subtitle+"</div>" if subtitle else ""}
+{description}
 
 </div>
 """,
         unsafe_allow_html=True,
     )
+
 
 
 # ==========================================================

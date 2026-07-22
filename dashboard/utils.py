@@ -1,34 +1,77 @@
-import json
 from pathlib import Path
+import json
 import pandas as pd
 
 
-def load_latest_report():
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-    report_dir = Path("reports")
+REPORT_PATH = (
+    BASE_DIR
+    / "reports"
+    / "unified"
+    / "security_report.json"
+)
 
-    json_files = list(report_dir.glob("*.json"))
 
-    if not json_files:
-        return None, None
+def load_security_report():
 
-    latest_file = max(
-        json_files,
-        key=lambda x: x.stat().st_mtime
+    if not REPORT_PATH.exists():
+
+        raise FileNotFoundError(
+            f"Missing report: {REPORT_PATH}"
+        )
+
+
+    with open(
+        REPORT_PATH,
+        "r"
+    ) as file:
+
+        return json.load(file)
+
+
+
+def get_summary():
+
+    report = load_security_report()
+
+    return report["summary"]
+
+
+
+def get_security_score():
+
+    report = load_security_report()
+
+    return report.get(
+        "security_score",
+        0
     )
 
-    with open(latest_file, "r") as file:
-        data = json.load(file)
 
-    return (
-        pd.DataFrame(data),
-        latest_file.stat().st_mtime
+
+def get_risky_users_dataframe():
+
+    report = load_security_report()
+
+    users = (
+        report
+        ["insider_risk"]
+        ["top_risky_users"]
     )
 
+    return pd.DataFrame(users)
 
-def convert_to_json(df):
 
-    return json.dumps(
-        df.to_dict(orient="records"),
-        indent=4
+
+def get_high_risk_files_dataframe():
+
+    report = load_security_report()
+
+    files = (
+        report
+        ["data_security"]
+        ["high_risk_files"]
     )
+
+    return pd.DataFrame(files)

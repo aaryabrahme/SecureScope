@@ -7,388 +7,264 @@ def load_css():
         """
 <style>
 
-/* =====================================================
-   IMPORT FONT
-===================================================== */
+/* =========================
+GLOBAL
+========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+.stApp {
 
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #0f172a
+    );
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-html,
-body,
-[class*="css"]{
-    font-family:'Inter',sans-serif;
-}
-
-.stApp{
-
-    background:#F5F7FB;
-    color:#111827;
+    color:#f8fafc;
 
 }
 
 
-/* =====================================================
-   MAIN PAGE
-===================================================== */
+h1,h2,h3,h4,h5,h6 {
 
-.block-container{
-
-    padding-top:2rem;
-    padding-bottom:2rem;
-    padding-left:3rem;
-    padding-right:3rem;
-    max-width:1500px;
+    color:#f8fafc !important;
 
 }
 
 
-/* =====================================================
-   HEADINGS
-===================================================== */
+p,span,div {
 
-h1{
-
-    font-size:2.4rem;
-    font-weight:800;
-    color:#111827;
-    letter-spacing:-0.5px;
-
-}
-
-h2{
-
-    font-size:1.7rem;
-    font-weight:700;
-    color:#111827;
-
-}
-
-h3{
-
-    font-size:1.3rem;
-    font-weight:600;
-    color:#111827;
+    color:#cbd5e1;
 
 }
 
 
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
-section[data-testid="stSidebar"]{
-
-    background:#FFFFFF;
-    border-right:1px solid #E5E7EB;
-
-}
-
-section[data-testid="stSidebar"] .block-container{
-
-    padding-top:2rem;
-    padding-left:1.4rem;
-    padding-right:1.4rem;
-
-}
+/* =========================
+SIDEBAR
+========================= */
 
 
-/* =====================================================
-   DIVIDERS
-===================================================== */
+section[data-testid="stSidebar"] {
 
-hr{
 
-    border:none;
-    border-top:1px solid #E5E7EB;
-    margin:2rem 0;
+    background:
+    linear-gradient(
+        180deg,
+        #020617,
+        #111827
+    );
+
+
+    border-right:
+    1px solid #1e293b;
+
 
 }
 
 
-/* =====================================================
-   CONTAINERS
-===================================================== */
 
-div[data-testid="stVerticalBlockBorderWrapper"]{
+section[data-testid="stSidebar"] * {
 
-    border-radius:22px;
-    border:1px solid #E5E7EB;
-    background:#FFFFFF;
 
-    box-shadow:
-        0 10px 30px rgba(15,23,42,.05);
+    color:#f8fafc !important;
 
-    padding:.3rem;
-
-    transition:.25s;
-
-}
-
-div[data-testid="stVerticalBlockBorderWrapper"]:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 18px 40px rgba(15,23,42,.08);
 
 }
 
 
-/* =====================================================
-   METRIC CARDS
-===================================================== */
 
-div[data-testid="metric-container"]{
+/* =========================
+METRIC CARDS
+========================= */
 
-    background:white;
+
+div[data-testid="stMetric"] {
+
+
+    background:
+    rgba(15,23,42,0.75);
+
+
+    padding:20px;
+
 
     border-radius:18px;
 
-    border:1px solid #E5E7EB;
 
-    padding:22px;
+    border:
+    1px solid #334155;
+
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.05);
+    0 10px 30px rgba(0,0,0,0.35);
+
 
 }
 
-div[data-testid="metric-container"] label{
 
-    color:#6B7280;
 
-    font-size:15px;
+div[data-testid="stMetricLabel"] {
+
+
+    color:#94a3b8 !important;
+
 
 }
 
-div[data-testid="metric-container"] [data-testid="stMetricValue"]{
 
-    font-size:36px;
+
+div[data-testid="stMetricValue"] {
+
+
+    color:#ffffff !important;
+
 
     font-weight:800;
 
-    color:#2563EB;
 
 }
 
 
-/* =====================================================
-   DATAFRAME
-===================================================== */
 
-div[data-testid="stDataFrame"]{
+/* =========================
+CONTAINERS
+========================= */
 
-    border-radius:18px;
 
-    overflow:hidden;
+div[data-testid="stVerticalBlockBorderWrapper"] {
 
-    border:1px solid #E5E7EB;
+
+    background:
+    rgba(15,23,42,0.70);
+
+
+    border-radius:20px;
+
+
+    border:
+    1px solid #334155;
+
+
+    padding:10px;
+
 
 }
 
 
-/* =====================================================
-   BUTTONS
-===================================================== */
 
-.stButton>button{
-
-    background:#2563EB;
-
-    color:white;
-
-    border:none;
-
-    border-radius:12px;
-
-    padding:.65rem 1.4rem;
-
-    font-weight:600;
-
-    transition:.25s;
-
-}
-
-.stButton>button:hover{
-
-    background:#1D4ED8;
-
-    transform:translateY(-1px);
-
-}
+/* =========================
+DATAFRAME
+========================= */
 
 
-/* =====================================================
-   DOWNLOAD BUTTON
-===================================================== */
+div[data-testid="stDataFrame"] {
 
-.stDownloadButton>button{
-
-    width:100%;
-
-    background:#2563EB;
-
-    color:white;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-weight:600;
-
-}
-
-
-/* =====================================================
-   SELECTBOX
-===================================================== */
-
-div[data-baseweb="select"]{
-
-    border-radius:12px;
-
-}
-
-
-/* =====================================================
-   MULTISELECT
-===================================================== */
-
-div[data-baseweb="tag"]{
-
-    background:#DBEAFE;
-
-    color:#1E40AF;
-
-}
-
-
-/* =====================================================
-   PLOTLY
-===================================================== */
-
-.js-plotly-plot{
-
-    border-radius:18px;
-
-}
-
-
-/* =====================================================
-   ALERTS
-===================================================== */
-
-div[data-baseweb="notification"]{
 
     border-radius:16px;
 
-}
 
+    overflow:hidden;
 
-/* =====================================================
-   EXPANDERS
-===================================================== */
-
-details{
-
-    border-radius:18px;
-
-    border:1px solid #E5E7EB;
 
 }
 
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
 
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#CBD5E1;
-
-    border-radius:50px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#94A3B8;
-
-}
+/* =========================
+DOWNLOAD BUTTONS
+========================= */
 
 
-/* =====================================================
-   CAPTIONS
-===================================================== */
+.stDownloadButton button {
 
-.caption{
 
-    color:#6B7280;
+    background:#2563eb;
+
+
+    color:white;
+
+
+    border-radius:12px;
+
+
+    border:none;
+
+
+    font-weight:700;
+
 
 }
 
 
-/* =====================================================
-   LINKS
-===================================================== */
 
-a{
+.stDownloadButton button:hover {
 
-    color:#2563EB;
 
-    text-decoration:none;
+    background:#1d4ed8;
 
-}
-
-a:hover{
-
-    text-decoration:underline;
 
 }
 
 
-/* =====================================================
-   ANIMATION
-===================================================== */
 
-@keyframes fadeUp{
+/* =========================
+ALERTS
+========================= */
 
-    from{
 
-        opacity:0;
+div[data-testid="stAlert"] {
 
-        transform:translateY(12px);
 
-    }
+    border-radius:16px;
 
-    to{
-
-        opacity:1;
-
-        transform:translateY(0px);
-
-    }
 
 }
 
-.block-container{
 
-    animation:fadeUp .45s ease;
+
+/* =========================
+SELECT BOX
+========================= */
+
+
+div[data-baseweb="select"] > div {
+
+
+    background:#111827;
+
+
+    border:
+    1px solid #334155;
+
 
 }
+
+
+
+div[data-baseweb="select"] span {
+
+
+    color:#f8fafc !important;
+
+
+}
+
+
+/* =========================
+TABLE TEXT
+========================= */
+
+
+[data-testid="stDataFrame"] * {
+
+
+    color:#f8fafc !important;
+
+
+}
+
 
 </style>
-        """,
+""",
         unsafe_allow_html=True,
     )

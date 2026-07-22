@@ -1,3 +1,4 @@
+import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -60,14 +61,12 @@ def apply_chart_theme(fig):
     )
 
     fig.update_xaxes(
-
         showgrid=False,
         zeroline=False,
         linecolor=GRID,
     )
 
     fig.update_yaxes(
-
         gridcolor=GRID,
         zeroline=False,
     )
@@ -80,6 +79,9 @@ def apply_chart_theme(fig):
 # ==========================================================
 
 def severity_chart(df):
+
+    if df.empty:
+        return go.Figure()
 
     severity_counts = (
         df["severity"]
@@ -134,6 +136,9 @@ def severity_chart(df):
 # ==========================================================
 
 def anomaly_chart(df):
+
+    if df.empty:
+        return go.Figure()
 
     anomaly_counts = (
         df["is_anomaly"]
@@ -190,6 +195,9 @@ def anomaly_chart(df):
 
 def risk_distribution(df):
 
+    if df.empty:
+        return go.Figure()
+
     fig = px.histogram(
 
         df,
@@ -215,6 +223,10 @@ def risk_distribution(df):
 
 def risk_gauge(df):
 
+    if df.empty:
+        return go.Figure(), 0
+
+
     avg_risk = df["risk_score"].mean()
 
     anomaly_pct = (
@@ -236,6 +248,7 @@ def risk_gauge(df):
         + critical_pct * 0.10
 
     )
+
 
     fig = go.Figure(
 
@@ -296,9 +309,7 @@ def risk_gauge(df):
     )
 
     fig.update_layout(
-
         height=360,
-
         paper_bgcolor=BACKGROUND,
     )
 
@@ -310,6 +321,9 @@ def risk_gauge(df):
 # ==========================================================
 
 def risk_trend_chart(history_df):
+
+    if history_df.empty:
+        return go.Figure()
 
     history_df = history_df.sort_values(
         "Scan"
