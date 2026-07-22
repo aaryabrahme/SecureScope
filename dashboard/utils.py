@@ -21,6 +21,7 @@ class DashboardData:
     risky_users: pd.DataFrame
     high_risk_files: pd.DataFrame
     critical_files: pd.DataFrame
+    risk_trend: pd.DataFrame
 
     @property
     def generated_at(self) -> str:
@@ -61,7 +62,20 @@ def load_dashboard_data() -> DashboardData:
         risky_users=pd.DataFrame(insider_risk.get("top_risky_users", [])),
         high_risk_files=pd.DataFrame(data_security.get("high_risk_files", [])),
         critical_files=pd.DataFrame(data_security.get("critical_files", [])),
+        risk_trend=pd.DataFrame(report.get("risk_trend", [])),
     )
+
+
+def get_data_security_findings() -> pd.DataFrame:
+    return load_dashboard_data().high_risk_files
+
+
+def get_insider_risk_users() -> pd.DataFrame:
+    return load_dashboard_data().risky_users
+
+
+def get_security_score() -> int:
+    return load_dashboard_data().security_score
 
 
 def score_status(score: int) -> tuple[str, str]:
@@ -74,3 +88,32 @@ def score_status(score: int) -> tuple[str, str]:
 
 def available_columns(dataframe: pd.DataFrame, columns: list[str]) -> list[str]:
     return [column for column in columns if column in dataframe.columns]
+
+
+def count_severity(dataframe: pd.DataFrame, severity: str) -> int:
+    if dataframe.empty or "severity" not in dataframe:
+        return 0
+
+    return int(dataframe["severity"].eq(severity).sum())
+
+
+def executive_recommendations(data: DashboardData) -> list[str]:
+    recommendations: list[str] = []
+
+    if data.security_score < 40:
+        recommendations.append("Escalate the highest-risk events to the security operations team for immediate triage.")
+    elif data.security_score < 70:
+        recommendations.append("Prioritize validation of high-risk users and close outstanding data exposure findings.")
+    else:
+        recommendations.append("Maintain continuous monitoring and validate that high-risk findings have documented owners.")
+
+    if not data.critical_files.empty:
+        recommendations.append("Contain critical file exposures and rotate any credentials found in scanned content.")
+
+    if count_severity(data.risky_users, "CRITICAL"):
+        recommendations.append("Review critical insider-risk events with the employee manager and identity team.")
+
+    if data.summary["anomalies_detected"]:
+        recommendations.append("Review anomaly evidence against access policy before closing or escalating each investigation.")
+
+    return recommendations

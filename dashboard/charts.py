@@ -65,3 +65,45 @@ def severity_chart(events: pd.DataFrame) -> go.Figure:
     )
     figure.update_traces(textposition="outside")
     return apply_chart_theme(figure)
+
+
+def risk_distribution_chart(events: pd.DataFrame) -> go.Figure:
+    if events.empty or "risk_score" not in events:
+        return go.Figure()
+
+    figure = px.histogram(
+        events,
+        x="risk_score",
+        nbins=10,
+        color_discrete_sequence=["#50b9c5"],
+    )
+    figure.update_layout(xaxis_title="Risk score", yaxis_title="Priority events")
+    return apply_chart_theme(figure)
+
+
+def anomaly_distribution_chart(events: pd.DataFrame) -> go.Figure:
+    if events.empty or "is_anomaly" not in events:
+        return go.Figure()
+
+    labels = events["is_anomaly"].map({1: "Anomaly", 0: "Expected"}).fillna("Unknown")
+    counts = labels.value_counts().rename_axis("status").reset_index(name="events")
+    figure = px.pie(
+        counts,
+        names="status",
+        values="events",
+        hole=0.62,
+        color="status",
+        color_discrete_map={"Anomaly": "#ef6b73", "Expected": "#50c8a7", "Unknown": "#8fa9c6"},
+    )
+    figure.update_traces(textinfo="percent")
+    return apply_chart_theme(figure)
+
+
+def risk_trend_chart(trend: pd.DataFrame) -> go.Figure:
+    if trend.empty or not {"timestamp", "security_score"}.issubset(trend.columns):
+        return go.Figure()
+
+    figure = px.line(trend, x="timestamp", y="security_score", markers=True)
+    figure.update_traces(line={"color": "#50b9c5", "width": 3})
+    figure.update_layout(xaxis_title="Assessment", yaxis_title="Security score")
+    return apply_chart_theme(figure)

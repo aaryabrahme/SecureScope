@@ -5,9 +5,9 @@ def load_css():
     st.markdown(
         """
         <style>
-        .stApp { background: #07111f; color: #e5edf7; }
-        [data-testid="stSidebar"] { background: #0b1728; border-right: 1px solid #23344c; }
-        .page-hero { background: linear-gradient(120deg, #102d52, #0b6b75); border: 1px solid #32768a; border-radius: 18px; padding: 2rem; margin-bottom: 1.75rem; }
+        .stApp { background: radial-gradient(circle at top right, #102842 0, #07111f 36rem); color: #e5edf7; }
+        [data-testid="stSidebar"] { background: linear-gradient(180deg, #0e2035, #081423); border-right: 1px solid #23344c; }
+        .page-hero { background: linear-gradient(120deg, rgba(16,45,82,.96), rgba(11,107,117,.88)); border: 1px solid #32768a; border-radius: 18px; padding: 2rem; margin-bottom: 1.75rem; box-shadow: 0 20px 45px rgba(0,0,0,.2); }
         .eyebrow { color: #9fd7dd !important; font-size: .75rem; font-weight: 700; letter-spacing: .08rem; }
         .hero-title { color: #ffffff !important; font-size: 2.25rem; font-weight: 750; margin-top: .35rem; }
         .hero-subtitle { color: #dbeafe !important; font-size: 1rem; margin-top: .5rem; }
@@ -15,9 +15,17 @@ def load_css():
         div[data-testid="stMetric"] { background: #0e1d31; border: 1px solid #29435f; border-radius: 14px; padding: 1rem; }
         div[data-testid="stMetricLabel"] { color: #9fb3c8 !important; }
         div[data-testid="stMetricValue"] { color: #ffffff !important; }
-        div[data-testid="stVerticalBlockBorderWrapper"] { background: #0e1d31; border-color: #29435f; border-radius: 14px; }
+        div[data-testid="stVerticalBlockBorderWrapper"] { background: rgba(14,29,49,.88); border-color: #29435f; border-radius: 14px; }
         [data-testid="stDataFrame"] { border: 1px solid #29435f; border-radius: 12px; overflow: hidden; }
         .stDownloadButton button { background: #167b89; color: white; border: 0; border-radius: 8px; font-weight: 650; }
+        .metric-card { min-height: 134px; background: linear-gradient(145deg, rgba(18,39,63,.95), rgba(10,25,43,.96)); border: 1px solid #29435f; border-radius: 15px; box-shadow: 0 14px 28px rgba(0,0,0,.16); padding: 1.15rem; }
+        .metric-card-label { color: #a7bad0 !important; font-size: .78rem; font-weight: 700; letter-spacing: .04rem; text-transform: uppercase; }
+        .metric-card-value { font-size: 2rem; font-weight: 760; line-height: 1.2; margin-top: .9rem; }
+        .metric-card-detail { color: #8fa9c6 !important; font-size: .8rem; margin-top: .65rem; }
+        .status-badge { display: inline-block; border: 1px solid; border-radius: 999px; padding: .35rem .7rem; font-size: .75rem; font-weight: 750; letter-spacing: .04rem; text-transform: uppercase; }
+        .empty-state { border: 1px dashed #38516d; border-radius: 14px; color: #a7bad0 !important; padding: 1.5rem; text-align: center; background: rgba(14,29,49,.55); }
+        .empty-state-title { color: #e5edf7 !important; font-weight: 700; margin-bottom: .35rem; }
+        .stButton > button, .stDownloadButton > button { min-height: 2.5rem; }
         </style>
         """,
         unsafe_allow_html=True,

@@ -15,7 +15,6 @@ PAGE_TITLE = "SecureScope"
 PAGE_ICON = "Shield"
 ASSETS = ROOT_DIR / "assets"
 LOGO = ASSETS / "logo.png"
-ICON = ASSETS / "icon.png"
 
 
 def setup_page():
@@ -34,10 +33,12 @@ def sidebar(generated_at: str | None = None):
             st.image(str(LOGO), width=44)
 
         st.title("SecureScope")
-        st.caption("Security intelligence workspace")
+        st.caption("Enterprise security intelligence")
         st.divider()
-        st.markdown("**Coverage**")
-        st.caption("Data exposure · Insider risk · Executive posture")
+        st.markdown("**Active modules**")
+        st.caption("Posture management")
+        st.caption("Data exposure intelligence")
+        st.caption("Insider-risk investigations")
 
         if generated_at:
             st.divider()
@@ -45,7 +46,7 @@ def sidebar(generated_at: str | None = None):
             st.caption(generated_at)
 
         st.divider()
-        st.caption("Version 1.3 · 2026")
+        st.caption("Platform version 1.3")
 
 
 def page_header(title: str, subtitle: str, generated_at: str | None = None):
@@ -53,7 +54,7 @@ def page_header(title: str, subtitle: str, generated_at: str | None = None):
     st.markdown(
         f"""
         <div class="page-hero">
-            <div class="eyebrow">SECURESCOPE · UNIFIED SECURITY REPORT</div>
+            <div class="eyebrow">SECURESCOPE / UNIFIED INTELLIGENCE</div>
             <div class="hero-title">{title}</div>
             <div class="hero-subtitle">{subtitle}</div>
             <div class="report-timestamp">Report generated: {timestamp}</div>
