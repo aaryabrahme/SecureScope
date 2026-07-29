@@ -492,7 +492,7 @@ F1 Score  : 0.78
 
 ## Risk Explorer
 
-![Risk Explorer](assets/risk-explorer.png)
+![Risk Explorer](assets/risk_explorer.png)
 
 
 ## Security Intelligence
