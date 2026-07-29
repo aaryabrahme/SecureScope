@@ -1,14 +1,15 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Virtual Environment
+# Virtual environment
 .venv/
+venv/
 
-# Generated files
-logs/
-reports/
-models/
+# Streamlit
+.streamlit/
+.streamlit/config.toml
 
 # IDE
 .vscode/
@@ -16,3 +17,10 @@ models/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated reports
+reports/*.json
+reports/*.csv
+
+# Logs
+*.log

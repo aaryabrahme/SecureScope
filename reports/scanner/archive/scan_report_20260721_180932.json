@@ -1,0 +1,96 @@
+[
+    {
+        "file": "employees.csv",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\employees.csv",
+        "findings": [
+            {
+                "type": "EMAIL",
+                "value": "rahul@gmail.com",
+                "risk": "MEDIUM"
+            },
+            {
+                "type": "EMAIL",
+                "value": "priya@gmail.com",
+                "risk": "MEDIUM"
+            },
+            {
+                "type": "PHONE",
+                "value": "9876543210",
+                "risk": "MEDIUM"
+            },
+            {
+                "type": "PHONE",
+                "value": "8765432109",
+                "risk": "MEDIUM"
+            }
+        ],
+        "risk_score": 60,
+        "risk_level": "HIGH"
+    },
+    {
+        "file": "report.pdf",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\report.pdf",
+        "findings": [
+            {
+                "type": "EMAIL",
+                "value": "john@example.com",
+                "risk": "MEDIUM"
+            }
+        ],
+        "risk_score": 15,
+        "risk_level": "LOW"
+    },
+    {
+        "file": "salary.txt",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\salary.txt",
+        "findings": [
+            {
+                "type": "PASSWORD_EXPOSURE",
+                "value": "admin123",
+                "risk": "CRITICAL",
+                "reason": "Plaintext password detected in file"
+            }
+        ],
+        "risk_score": 60,
+        "risk_level": "HIGH"
+    },
+    {
+        "file": "secrets.txt",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\secrets.txt",
+        "findings": [
+            {
+                "type": "EMAIL",
+                "value": "admin@gmail.com",
+                "risk": "MEDIUM"
+            }
+        ],
+        "risk_score": 15,
+        "risk_level": "LOW"
+    },
+    {
+        "file": "employee_offer.docx",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\HR\\employee_offer.docx",
+        "findings": [
+            {
+                "type": "EMAIL",
+                "value": "aarya@example.com",
+                "risk": "MEDIUM"
+            },
+            {
+                "type": "PASSWORD_EXPOSURE",
+                "value": "admin123",
+                "risk": "CRITICAL",
+                "reason": "Plaintext password detected in file"
+            }
+        ],
+        "risk_score": 75,
+        "risk_level": "HIGH"
+    },
+    {
+        "file": "passwords.txt",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\HR\\passwords.txt",
+        "findings": [],
+        "risk_score": 0,
+        "risk_level": "LOW"
+    }
+]

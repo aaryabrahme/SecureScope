@@ -127,40 +127,12 @@ with overview:
     risk_score = float(event.get("risk_score", 0))
 
 
-    st.markdown(
-    f"""
-    <div style="
-        background:#101f35;
-        border:1px solid #ef6b73;
-        border-radius:15px;
-        padding:25px;
-    ">
-
-        <div style="
-            color:#ef6b73;
-            font-size:42px;
-            font-weight:800;
-        ">
-            {int(risk_score)}/100
-        </div>
-
-        <div style="
-            color:#9fb3c8;
-            margin-top:10px;
-        ">
-            Threat confidence
-        </div>
-
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-
-    st.progress(
-        min(max(risk_score / 100, 0), 1)
+    st.metric(
+        label="Threat Confidence",
+        value=f"{int(risk_score)}/100",
     )
 
+    st.progress(risk_score / 100)
 
 
 with context:

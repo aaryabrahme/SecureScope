@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "project": "SecureScope",
+  "generated_at": "2026-07-29 14:43:42",
+  "data_notice": "Scanner findings and anomaly results are local demo analysis outputs; anomaly status is not confirmation of malicious activity.",
+  "summary": {
+    "files_scanned": 6,
+    "sensitive_findings": 9,
+    "high_risk_files": 3,
+    "events_analyzed": 1000,
+    "anomalies_detected": 50
+  },
+  "data_security": {
+    "high_risk_files": [
+      {
+        "file_name": "employees.csv",
+        "file": "employees.csv",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\employees.csv",
+        "findings": [
+          {
+            "type": "EMAIL",
+            "value": "rahul@gmail.com",
+            "risk": "MEDIUM"
+          },
+          {
+            "type": "EMAIL",
+            "value": "priya@gmail.com",
+            "risk": "MEDIUM"
+          },
+          {
+            "type": "PHONE",
+            "value": "9876543210",
+            "risk": "MEDIUM"
+          },
+          {
+            "type": "PHONE",
+            "value": "8765432109",
+            "risk": "MEDIUM"
+          }
+        ],
+        "risk_score": 60,
+        "risk_level": "HIGH"
+      },
+      {
+        "file_name": "employee_offer.docx",
+        "file": "employee_offer.docx",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\HR\\employee_offer.docx",
+        "findings": [
+          {
+            "type": "EMAIL",
+            "value": "aarya@example.com",
+            "risk": "MEDIUM"
+          },
+          {
+            "type": "PASSWORD_EXPOSURE",
+            "value": "admin123",
+            "risk": "CRITICAL",
+            "reason": "Plaintext password detected in file"
+          }
+        ],
+        "risk_score": 75,
+        "risk_level": "HIGH"
+      },
+      {
+        "file_name": "salary.txt",
+        "file": "salary.txt",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\salary.txt",
+        "findings": [
+          {
+            "type": "PASSWORD_EXPOSURE",
+            "value": "admin123",
+            "risk": "CRITICAL",
+            "reason": "Plaintext password detected in file"
+          }
+        ],
+        "risk_score": 60,
+        "risk_level": "HIGH"
+      }
+    ],
+    "critical_files": [
+      {
+        "file_name": "employee_offer.docx",
+        "file": "employee_offer.docx",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\HR\\employee_offer.docx",
+        "findings": [
+          {
+            "type": "EMAIL",
+            "value": "aarya@example.com",
+            "risk": "MEDIUM"
+          },
+          {
+            "type": "PASSWORD_EXPOSURE",
+            "value": "admin123",
+            "risk": "CRITICAL",
+            "reason": "Plaintext password detected in file"
+          }
+        ],
+        "risk_score": 75,
+        "risk_level": "HIGH"
+      },
+      {
+        "file_name": "salary.txt",
+        "file": "salary.txt",
+        "path": "C:\\Aarya\\SecureScope\\sample_data\\salary.txt",
+        "findings": [
+          {
+            "type": "PASSWORD_EXPOSURE",
+            "value": "admin123",
+            "risk": "CRITICAL",
+            "reason": "Plaintext password detected in file"
+          }
+        ],
+        "risk_score": 60,
+        "risk_level": "HIGH"
+      }
+    ]
+  },
+  "insider_risk": {
+    "top_risky_users": [
+      {
+        "employee_id": "EMP163",
+        "file_name": "finance_report.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "HIGH",
+        "login_hour": 5,
+        "files_accessed": 489,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP244",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "VPN",
+        "device": "Managed",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 1,
+        "files_accessed": 363,
+        "reasons": [
+          "After-hours login",
+          "VPN access",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP441",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "UPLOAD",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 2,
+        "files_accessed": 351,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP068",
+        "file_name": "payroll.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "Remote",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 4,
+        "files_accessed": 207,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP257",
+        "file_name": "finance_report.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "HIGH",
+        "login_hour": 2,
+        "files_accessed": 169,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP019",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "EXPORT",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 5,
+        "files_accessed": 438,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP374",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "Remote",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 5,
+        "files_accessed": 293,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP415",
+        "file_name": "finance_report.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "HIGH",
+        "login_hour": 0,
+        "files_accessed": 299,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP363",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "WRITE",
+        "location": "VPN",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 0,
+        "files_accessed": 481,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "VPN access",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      },
+      {
+        "employee_id": "EMP470",
+        "file_name": "salary.xlsx",
+        "scanner_risk_score": 0,
+        "anomaly_risk_score": 100,
+        "final_risk_score": 60,
+        "severity": "HIGH",
+        "risk_score": 60,
+        "risk_status": "ANOMALY",
+        "action": "DOWNLOAD",
+        "location": "Remote",
+        "device": "Personal",
+        "file_sensitivity": "CRITICAL",
+        "login_hour": 4,
+        "files_accessed": 483,
+        "reasons": [
+          "After-hours login",
+          "Personal device",
+          "High volume file access",
+          "Critical file accessed",
+          "ML anomaly detected"
+        ],
+        "scanner_findings": []
+      }
+    ]
+  },
+  "security_score": 75
+}

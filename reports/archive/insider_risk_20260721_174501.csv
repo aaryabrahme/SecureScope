@@ -1,0 +1,1001 @@
+employee_id,login_hour,file_name,file_sensitivity,action,location,device,files_accessed,is_anomaly,risk_status,risk_score,severity,reasons
+EMP003,12,employee_handbook.pdf,LOW,UPLOAD,Office,Managed,3,0,NORMAL,0,LOW,
+EMP474,11,employee_handbook.pdf,LOW,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP362,12,payroll.xlsx,CRITICAL,UPLOAD,Office,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP125,9,payroll.xlsx,CRITICAL,WRITE,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP349,18,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP327,12,team_notes.docx,LOW,SHARE,Office,Managed,26,0,NORMAL,0,LOW,
+EMP138,10,salary.xlsx,CRITICAL,EXPORT,Office,Personal,16,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP050,15,project_plan.xlsx,MEDIUM,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP161,10,finance_report.xlsx,HIGH,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP376,16,team_notes.docx,LOW,WRITE,Office,Managed,14,0,NORMAL,0,LOW,
+EMP354,11,project_plan.xlsx,MEDIUM,READ,Office,Managed,12,0,NORMAL,0,LOW,
+EMP415,15,employee_handbook.pdf,LOW,READ,Remote,Personal,6,0,NORMAL,15,LOW,Personal device
+EMP108,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP067,17,finance_report.xlsx,HIGH,WRITE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP010,11,finance_report.xlsx,HIGH,READ,VPN,Managed,1,0,NORMAL,15,LOW,VPN access
+EMP260,18,employee_handbook.pdf,LOW,READ,Remote,Managed,4,0,NORMAL,0,LOW,
+EMP242,9,payroll.xlsx,CRITICAL,WRITE,Office,Personal,30,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP410,16,employee_handbook.pdf,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP230,9,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP066,8,salary.xlsx,CRITICAL,READ,Office,Personal,2,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP048,12,employee_handbook.pdf,LOW,READ,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP116,12,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,4,0,NORMAL,0,LOW,
+EMP403,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP180,17,team_notes.docx,LOW,DOWNLOAD,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP440,17,finance_report.xlsx,HIGH,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP482,14,salary.xlsx,CRITICAL,READ,Office,Managed,3,0,NORMAL,15,LOW,Critical file accessed
+EMP264,16,project_plan.xlsx,MEDIUM,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP179,12,team_notes.docx,LOW,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP294,16,salary.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP207,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,13,0,NORMAL,0,LOW,
+EMP133,14,project_plan.xlsx,MEDIUM,READ,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP443,16,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,15,0,NORMAL,0,LOW,
+EMP328,15,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP163,5,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,489,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP216,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP084,12,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,13,0,NORMAL,0,LOW,
+EMP339,12,team_notes.docx,LOW,EXPORT,Remote,Managed,6,0,NORMAL,0,LOW,
+EMP279,15,finance_report.xlsx,HIGH,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP244,1,salary.xlsx,CRITICAL,DOWNLOAD,VPN,Managed,363,1,ANOMALY,100,CRITICAL,"After-hours login, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP047,10,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP153,18,payroll.xlsx,CRITICAL,READ,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP271,8,payroll.xlsx,CRITICAL,WRITE,Office,Personal,4,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP352,11,payroll.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP163,16,team_notes.docx,LOW,WRITE,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP490,12,payroll.xlsx,CRITICAL,READ,Remote,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP014,13,team_notes.docx,LOW,WRITE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP205,14,finance_report.xlsx,HIGH,WRITE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP151,13,employee_handbook.pdf,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP379,15,payroll.xlsx,CRITICAL,READ,Remote,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP007,8,employee_handbook.pdf,LOW,DOWNLOAD,VPN,Managed,27,0,NORMAL,15,LOW,VPN access
+EMP124,11,employee_handbook.pdf,LOW,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP354,12,finance_report.xlsx,HIGH,READ,Office,Personal,28,0,NORMAL,15,LOW,Personal device
+EMP359,12,finance_report.xlsx,HIGH,WRITE,Office,Managed,24,0,NORMAL,0,LOW,
+EMP315,18,salary.xlsx,CRITICAL,WRITE,Office,Personal,1,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP022,8,employee_handbook.pdf,LOW,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP016,18,project_plan.xlsx,MEDIUM,READ,VPN,Managed,12,0,NORMAL,15,LOW,VPN access
+EMP429,17,team_notes.docx,LOW,READ,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP436,13,project_plan.xlsx,MEDIUM,UPLOAD,Office,Managed,11,0,NORMAL,0,LOW,
+EMP071,12,salary.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP184,12,finance_report.xlsx,HIGH,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP056,10,salary.xlsx,CRITICAL,READ,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP045,9,employee_handbook.pdf,LOW,READ,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP172,14,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Personal,5,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP241,11,finance_report.xlsx,HIGH,EXPORT,Office,Managed,9,0,NORMAL,0,LOW,
+EMP296,9,payroll.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP273,9,salary.xlsx,CRITICAL,READ,Remote,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP122,15,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP016,11,salary.xlsx,CRITICAL,READ,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP262,16,team_notes.docx,LOW,WRITE,Office,Managed,12,0,NORMAL,0,LOW,
+EMP309,13,team_notes.docx,LOW,UPLOAD,VPN,Managed,19,0,NORMAL,15,LOW,VPN access
+EMP165,12,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP208,8,finance_report.xlsx,HIGH,WRITE,Remote,Managed,13,0,NORMAL,0,LOW,
+EMP236,13,employee_handbook.pdf,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP147,11,salary.xlsx,CRITICAL,READ,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP146,15,salary.xlsx,CRITICAL,READ,Office,Personal,9,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP316,4,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Managed,303,1,NORMAL,75,HIGH,"After-hours login, VPN access, High volume file access, Critical file accessed"
+EMP198,9,finance_report.xlsx,HIGH,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP118,9,team_notes.docx,LOW,READ,Office,Managed,6,0,NORMAL,0,LOW,
+EMP489,16,salary.xlsx,CRITICAL,UPLOAD,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP334,11,salary.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP012,9,employee_handbook.pdf,LOW,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP139,12,finance_report.xlsx,HIGH,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP395,15,finance_report.xlsx,HIGH,READ,VPN,Managed,24,0,NORMAL,15,LOW,VPN access
+EMP433,16,finance_report.xlsx,HIGH,SHARE,Remote,Managed,21,0,NORMAL,0,LOW,
+EMP125,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP291,17,team_notes.docx,LOW,WRITE,VPN,Managed,4,0,NORMAL,15,LOW,VPN access
+EMP441,2,salary.xlsx,CRITICAL,UPLOAD,VPN,Personal,351,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP125,8,employee_handbook.pdf,LOW,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP024,18,employee_handbook.pdf,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP177,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP084,17,employee_handbook.pdf,LOW,WRITE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP328,17,salary.xlsx,CRITICAL,READ,VPN,Managed,30,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP452,14,team_notes.docx,LOW,READ,Remote,Managed,30,0,NORMAL,0,LOW,
+EMP120,12,payroll.xlsx,CRITICAL,WRITE,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP113,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,197,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP296,17,team_notes.docx,LOW,WRITE,Office,Personal,10,0,NORMAL,15,LOW,Personal device
+EMP013,14,employee_handbook.pdf,LOW,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP019,15,salary.xlsx,CRITICAL,READ,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP165,17,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,13,0,NORMAL,0,LOW,
+EMP221,13,payroll.xlsx,CRITICAL,WRITE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP241,18,salary.xlsx,CRITICAL,READ,Remote,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP034,12,team_notes.docx,LOW,WRITE,Office,Managed,17,0,NORMAL,0,LOW,
+EMP110,11,payroll.xlsx,CRITICAL,READ,Remote,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP160,10,project_plan.xlsx,MEDIUM,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP036,11,salary.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP271,13,finance_report.xlsx,HIGH,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP195,12,employee_handbook.pdf,LOW,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP200,18,employee_handbook.pdf,LOW,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP039,16,project_plan.xlsx,MEDIUM,UPLOAD,Office,Managed,29,0,NORMAL,0,LOW,
+EMP178,14,salary.xlsx,CRITICAL,DOWNLOAD,Remote,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP296,11,salary.xlsx,CRITICAL,WRITE,Office,Managed,21,0,NORMAL,15,LOW,Critical file accessed
+EMP499,9,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP068,4,payroll.xlsx,CRITICAL,DOWNLOAD,Remote,Personal,207,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, High volume file access, Critical file accessed, ML anomaly detected"
+EMP343,13,employee_handbook.pdf,LOW,READ,Remote,Managed,20,0,NORMAL,0,LOW,
+EMP299,17,project_plan.xlsx,MEDIUM,READ,Office,Managed,2,0,NORMAL,0,LOW,
+EMP101,18,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,20,0,NORMAL,0,LOW,
+EMP199,16,employee_handbook.pdf,LOW,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP449,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP114,18,finance_report.xlsx,HIGH,SHARE,Remote,Managed,30,0,NORMAL,0,LOW,
+EMP306,9,finance_report.xlsx,HIGH,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP207,18,salary.xlsx,CRITICAL,READ,Office,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP498,15,finance_report.xlsx,HIGH,WRITE,Office,Managed,14,0,NORMAL,0,LOW,
+EMP370,16,salary.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP231,11,project_plan.xlsx,MEDIUM,READ,Office,Personal,28,0,NORMAL,15,LOW,Personal device
+EMP136,10,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP001,17,payroll.xlsx,CRITICAL,READ,VPN,Personal,2,0,ANOMALY,75,HIGH,"Personal device, VPN access, Critical file accessed, ML anomaly detected"
+EMP228,10,employee_handbook.pdf,LOW,WRITE,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP407,5,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Personal,326,1,ANOMALY,90,CRITICAL,"After-hours login, Personal device, High volume file access, ML anomaly detected"
+EMP371,18,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,3,0,NORMAL,0,LOW,
+EMP242,11,employee_handbook.pdf,LOW,READ,Remote,Managed,10,0,NORMAL,0,LOW,
+EMP297,9,team_notes.docx,LOW,READ,Office,Managed,2,0,NORMAL,0,LOW,
+EMP189,13,employee_handbook.pdf,LOW,WRITE,VPN,Managed,26,0,NORMAL,15,LOW,VPN access
+EMP071,14,team_notes.docx,LOW,WRITE,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP190,9,team_notes.docx,LOW,WRITE,Remote,Personal,13,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP104,17,salary.xlsx,CRITICAL,READ,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP068,11,payroll.xlsx,CRITICAL,WRITE,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP311,17,finance_report.xlsx,HIGH,WRITE,Office,Managed,15,0,NORMAL,0,LOW,
+EMP359,17,payroll.xlsx,CRITICAL,READ,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP043,18,finance_report.xlsx,HIGH,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP457,17,employee_handbook.pdf,LOW,READ,Office,Personal,17,0,NORMAL,15,LOW,Personal device
+EMP357,16,payroll.xlsx,CRITICAL,READ,Remote,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP155,8,team_notes.docx,LOW,WRITE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP233,10,employee_handbook.pdf,LOW,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP336,15,team_notes.docx,LOW,UPLOAD,Remote,Managed,21,0,NORMAL,0,LOW,
+EMP065,8,team_notes.docx,LOW,READ,VPN,Managed,27,0,NORMAL,15,LOW,VPN access
+EMP012,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP241,16,team_notes.docx,LOW,WRITE,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP362,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP260,12,team_notes.docx,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP127,18,employee_handbook.pdf,LOW,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP218,9,team_notes.docx,LOW,READ,Office,Personal,27,0,NORMAL,15,LOW,Personal device
+EMP176,11,team_notes.docx,LOW,WRITE,Office,Managed,22,0,NORMAL,0,LOW,
+EMP320,12,team_notes.docx,LOW,WRITE,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP338,15,team_notes.docx,LOW,EXPORT,Office,Managed,20,0,NORMAL,0,LOW,
+EMP267,12,payroll.xlsx,CRITICAL,READ,VPN,Managed,16,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP011,16,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP063,8,project_plan.xlsx,MEDIUM,EXPORT,Office,Personal,14,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP099,11,team_notes.docx,LOW,READ,Remote,Managed,9,0,NORMAL,0,LOW,
+EMP360,12,project_plan.xlsx,MEDIUM,UPLOAD,Office,Managed,5,0,NORMAL,0,LOW,
+EMP408,16,finance_report.xlsx,HIGH,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP310,12,project_plan.xlsx,MEDIUM,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP389,12,salary.xlsx,CRITICAL,WRITE,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP447,18,payroll.xlsx,CRITICAL,READ,Office,Personal,26,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP018,12,payroll.xlsx,CRITICAL,WRITE,Office,Personal,10,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP325,18,employee_handbook.pdf,LOW,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP345,15,payroll.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP122,14,salary.xlsx,CRITICAL,READ,Office,Personal,23,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP453,11,team_notes.docx,LOW,WRITE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP267,17,payroll.xlsx,CRITICAL,READ,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP059,9,salary.xlsx,CRITICAL,READ,Remote,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP294,12,project_plan.xlsx,MEDIUM,EXPORT,Office,Personal,27,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP113,10,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,18,0,NORMAL,0,LOW,
+EMP405,8,payroll.xlsx,CRITICAL,WRITE,Office,Managed,21,0,NORMAL,15,LOW,Critical file accessed
+EMP324,10,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,15,0,NORMAL,0,LOW,
+EMP122,11,finance_report.xlsx,HIGH,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP203,12,employee_handbook.pdf,LOW,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP097,9,finance_report.xlsx,HIGH,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP360,11,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP232,12,project_plan.xlsx,MEDIUM,READ,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP146,10,project_plan.xlsx,MEDIUM,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP479,15,employee_handbook.pdf,LOW,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP306,11,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP407,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,20,0,NORMAL,0,LOW,
+EMP190,14,team_notes.docx,LOW,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP047,18,finance_report.xlsx,HIGH,READ,Office,Personal,2,0,NORMAL,15,LOW,Personal device
+EMP150,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP120,16,employee_handbook.pdf,LOW,READ,Remote,Managed,11,0,NORMAL,0,LOW,
+EMP471,16,project_plan.xlsx,MEDIUM,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP451,14,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,27,0,NORMAL,0,LOW,
+EMP143,15,employee_handbook.pdf,LOW,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP495,13,employee_handbook.pdf,LOW,READ,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP352,18,salary.xlsx,CRITICAL,READ,Office,Personal,30,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP413,13,employee_handbook.pdf,LOW,READ,Office,Personal,19,0,NORMAL,15,LOW,Personal device
+EMP409,12,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,26,0,NORMAL,0,LOW,
+EMP215,9,team_notes.docx,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP136,14,finance_report.xlsx,HIGH,WRITE,Office,Managed,6,0,NORMAL,0,LOW,
+EMP250,15,project_plan.xlsx,MEDIUM,DELETE,Office,Managed,15,0,NORMAL,0,LOW,
+EMP217,9,salary.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP470,9,team_notes.docx,LOW,READ,Remote,Managed,18,0,NORMAL,0,LOW,
+EMP249,15,employee_handbook.pdf,LOW,WRITE,Office,Managed,19,0,NORMAL,0,LOW,
+EMP214,10,employee_handbook.pdf,LOW,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP220,17,salary.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP027,14,team_notes.docx,LOW,WRITE,Remote,Managed,14,0,NORMAL,0,LOW,
+EMP224,14,salary.xlsx,CRITICAL,READ,Remote,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP490,18,payroll.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP063,10,team_notes.docx,LOW,DOWNLOAD,Office,Managed,15,0,NORMAL,0,LOW,
+EMP301,11,team_notes.docx,LOW,DOWNLOAD,Office,Managed,26,0,NORMAL,0,LOW,
+EMP277,15,salary.xlsx,CRITICAL,READ,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP215,11,salary.xlsx,CRITICAL,EXPORT,Remote,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP302,14,employee_handbook.pdf,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP198,11,payroll.xlsx,CRITICAL,SHARE,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP139,8,salary.xlsx,CRITICAL,READ,Remote,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP290,11,payroll.xlsx,CRITICAL,SHARE,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP131,17,employee_handbook.pdf,LOW,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP485,18,team_notes.docx,LOW,DELETE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP450,12,employee_handbook.pdf,LOW,READ,VPN,Managed,4,0,NORMAL,15,LOW,VPN access
+EMP048,15,team_notes.docx,LOW,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP378,9,employee_handbook.pdf,LOW,UPLOAD,Office,Managed,18,0,NORMAL,0,LOW,
+EMP477,14,finance_report.xlsx,HIGH,WRITE,Office,Managed,4,0,NORMAL,0,LOW,
+EMP213,16,project_plan.xlsx,MEDIUM,UPLOAD,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP293,16,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,14,0,NORMAL,0,LOW,
+EMP320,17,payroll.xlsx,CRITICAL,READ,Remote,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP467,15,salary.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP254,8,salary.xlsx,CRITICAL,SHARE,Remote,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP485,9,project_plan.xlsx,MEDIUM,READ,Office,Managed,16,0,NORMAL,0,LOW,
+EMP257,2,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,169,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP009,18,salary.xlsx,CRITICAL,READ,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP037,18,employee_handbook.pdf,LOW,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP462,17,finance_report.xlsx,HIGH,WRITE,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP193,9,finance_report.xlsx,HIGH,WRITE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP185,16,employee_handbook.pdf,LOW,WRITE,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP165,12,salary.xlsx,CRITICAL,READ,Office,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP283,9,team_notes.docx,LOW,READ,Office,Managed,16,0,NORMAL,0,LOW,
+EMP098,12,payroll.xlsx,CRITICAL,READ,Remote,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP422,10,employee_handbook.pdf,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP435,17,team_notes.docx,LOW,WRITE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP425,11,finance_report.xlsx,HIGH,UPLOAD,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP021,12,payroll.xlsx,CRITICAL,WRITE,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP071,16,payroll.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP264,11,employee_handbook.pdf,LOW,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP332,13,payroll.xlsx,CRITICAL,EXPORT,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP391,10,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP122,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,326,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP018,9,salary.xlsx,CRITICAL,EXPORT,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP420,11,employee_handbook.pdf,LOW,WRITE,Office,Managed,1,0,NORMAL,0,LOW,
+EMP290,18,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,25,0,NORMAL,0,LOW,
+EMP173,16,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,11,0,NORMAL,0,LOW,
+EMP061,8,employee_handbook.pdf,LOW,READ,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP490,16,salary.xlsx,CRITICAL,WRITE,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP187,15,payroll.xlsx,CRITICAL,READ,Remote,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP429,14,employee_handbook.pdf,LOW,WRITE,Office,Managed,28,0,NORMAL,0,LOW,
+EMP400,9,salary.xlsx,CRITICAL,WRITE,Remote,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP214,17,salary.xlsx,CRITICAL,WRITE,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP154,11,employee_handbook.pdf,LOW,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP017,11,project_plan.xlsx,MEDIUM,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP095,11,team_notes.docx,LOW,WRITE,Office,Managed,22,0,NORMAL,0,LOW,
+EMP061,10,project_plan.xlsx,MEDIUM,SHARE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP361,14,project_plan.xlsx,MEDIUM,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP451,12,finance_report.xlsx,HIGH,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP052,13,salary.xlsx,CRITICAL,READ,Remote,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP288,17,team_notes.docx,LOW,SHARE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP241,8,employee_handbook.pdf,LOW,WRITE,Office,Personal,8,0,NORMAL,15,LOW,Personal device
+EMP387,11,finance_report.xlsx,HIGH,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP320,13,project_plan.xlsx,MEDIUM,WRITE,Office,Personal,17,0,NORMAL,15,LOW,Personal device
+EMP332,13,payroll.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP192,8,finance_report.xlsx,HIGH,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP204,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,24,0,NORMAL,0,LOW,
+EMP373,9,employee_handbook.pdf,LOW,DELETE,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP467,12,team_notes.docx,LOW,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP276,14,salary.xlsx,CRITICAL,SHARE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP498,11,employee_handbook.pdf,LOW,READ,VPN,Managed,27,0,NORMAL,15,LOW,VPN access
+EMP258,11,finance_report.xlsx,HIGH,EXPORT,Office,Managed,28,0,NORMAL,0,LOW,
+EMP226,13,team_notes.docx,LOW,WRITE,Office,Managed,14,0,NORMAL,0,LOW,
+EMP238,18,finance_report.xlsx,HIGH,WRITE,Office,Managed,1,0,NORMAL,0,LOW,
+EMP151,11,employee_handbook.pdf,LOW,READ,Office,Managed,30,0,NORMAL,0,LOW,
+EMP040,12,team_notes.docx,LOW,DOWNLOAD,Office,Managed,27,0,NORMAL,0,LOW,
+EMP257,12,team_notes.docx,LOW,DOWNLOAD,Office,Managed,29,0,NORMAL,0,LOW,
+EMP108,16,project_plan.xlsx,MEDIUM,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP096,9,employee_handbook.pdf,LOW,READ,Office,Managed,1,0,NORMAL,0,LOW,
+EMP392,11,employee_handbook.pdf,LOW,WRITE,VPN,Managed,30,0,NORMAL,15,LOW,VPN access
+EMP050,15,finance_report.xlsx,HIGH,WRITE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP282,16,employee_handbook.pdf,LOW,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP273,11,finance_report.xlsx,HIGH,READ,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP159,18,employee_handbook.pdf,LOW,WRITE,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP399,13,finance_report.xlsx,HIGH,WRITE,Remote,Managed,24,0,NORMAL,0,LOW,
+EMP300,8,payroll.xlsx,CRITICAL,WRITE,Office,Personal,4,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP199,15,project_plan.xlsx,MEDIUM,UPLOAD,Remote,Managed,21,0,NORMAL,0,LOW,
+EMP004,14,project_plan.xlsx,MEDIUM,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP486,11,salary.xlsx,CRITICAL,READ,Remote,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP098,8,employee_handbook.pdf,LOW,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP124,11,finance_report.xlsx,HIGH,READ,Remote,Managed,30,0,NORMAL,0,LOW,
+EMP458,15,salary.xlsx,CRITICAL,WRITE,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP252,10,project_plan.xlsx,MEDIUM,SHARE,Remote,Managed,8,0,NORMAL,0,LOW,
+EMP191,18,finance_report.xlsx,HIGH,WRITE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP295,13,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP403,14,project_plan.xlsx,MEDIUM,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP048,15,employee_handbook.pdf,LOW,WRITE,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP447,8,payroll.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP475,12,salary.xlsx,CRITICAL,READ,Office,Personal,1,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP371,11,salary.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP359,12,employee_handbook.pdf,LOW,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP076,9,project_plan.xlsx,MEDIUM,WRITE,VPN,Managed,2,0,NORMAL,15,LOW,VPN access
+EMP134,16,project_plan.xlsx,MEDIUM,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP458,16,salary.xlsx,CRITICAL,READ,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP257,17,finance_report.xlsx,HIGH,UPLOAD,Remote,Managed,2,0,NORMAL,0,LOW,
+EMP315,13,employee_handbook.pdf,LOW,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP449,10,project_plan.xlsx,MEDIUM,SHARE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP365,16,employee_handbook.pdf,LOW,DOWNLOAD,Office,Managed,9,0,NORMAL,0,LOW,
+EMP231,12,employee_handbook.pdf,LOW,READ,Remote,Managed,4,0,NORMAL,0,LOW,
+EMP222,9,employee_handbook.pdf,LOW,WRITE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP500,13,salary.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP047,9,payroll.xlsx,CRITICAL,READ,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP286,12,project_plan.xlsx,MEDIUM,READ,VPN,Managed,10,0,NORMAL,15,LOW,VPN access
+EMP309,14,finance_report.xlsx,HIGH,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP471,16,salary.xlsx,CRITICAL,READ,VPN,Managed,6,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP019,5,salary.xlsx,CRITICAL,EXPORT,VPN,Personal,438,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP076,17,payroll.xlsx,CRITICAL,READ,Remote,Personal,3,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP283,8,project_plan.xlsx,MEDIUM,WRITE,Office,Personal,30,0,NORMAL,15,LOW,Personal device
+EMP411,16,payroll.xlsx,CRITICAL,WRITE,VPN,Managed,12,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP058,10,team_notes.docx,LOW,WRITE,Office,Personal,6,0,NORMAL,15,LOW,Personal device
+EMP042,8,employee_handbook.pdf,LOW,EXPORT,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP374,5,salary.xlsx,CRITICAL,DOWNLOAD,Remote,Personal,293,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, High volume file access, Critical file accessed, ML anomaly detected"
+EMP100,13,salary.xlsx,CRITICAL,WRITE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP205,18,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,4,0,NORMAL,0,LOW,
+EMP395,8,employee_handbook.pdf,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP005,15,employee_handbook.pdf,LOW,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP281,14,employee_handbook.pdf,LOW,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP226,9,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP335,8,payroll.xlsx,CRITICAL,READ,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP353,13,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP123,4,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,183,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP374,18,payroll.xlsx,CRITICAL,EXPORT,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP117,9,project_plan.xlsx,MEDIUM,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP075,8,payroll.xlsx,CRITICAL,READ,Remote,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP256,16,team_notes.docx,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP238,18,team_notes.docx,LOW,READ,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP394,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,1,0,NORMAL,0,LOW,
+EMP193,10,salary.xlsx,CRITICAL,READ,Remote,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP039,18,finance_report.xlsx,HIGH,WRITE,Remote,Managed,24,0,NORMAL,0,LOW,
+EMP496,12,finance_report.xlsx,HIGH,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP253,15,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP067,17,salary.xlsx,CRITICAL,DELETE,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP242,15,finance_report.xlsx,HIGH,DELETE,Office,Managed,13,0,NORMAL,0,LOW,
+EMP280,15,payroll.xlsx,CRITICAL,READ,Remote,Personal,2,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP426,9,employee_handbook.pdf,LOW,READ,Office,Managed,30,0,NORMAL,0,LOW,
+EMP005,10,employee_handbook.pdf,LOW,WRITE,Office,Managed,15,0,NORMAL,0,LOW,
+EMP273,12,project_plan.xlsx,MEDIUM,WRITE,Office,Personal,10,0,NORMAL,15,LOW,Personal device
+EMP198,18,finance_report.xlsx,HIGH,WRITE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP248,5,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Managed,190,1,ANOMALY,90,CRITICAL,"After-hours login, VPN access, High volume file access, ML anomaly detected"
+EMP348,18,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP475,3,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,171,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP188,13,payroll.xlsx,CRITICAL,READ,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP259,17,team_notes.docx,LOW,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP353,8,payroll.xlsx,CRITICAL,DELETE,Remote,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP166,18,finance_report.xlsx,HIGH,UPLOAD,Office,Managed,14,0,NORMAL,0,LOW,
+EMP343,13,employee_handbook.pdf,LOW,DOWNLOAD,Office,Managed,8,0,NORMAL,0,LOW,
+EMP192,8,employee_handbook.pdf,LOW,WRITE,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP333,13,payroll.xlsx,CRITICAL,WRITE,Office,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP131,16,payroll.xlsx,CRITICAL,WRITE,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP032,14,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP133,10,payroll.xlsx,CRITICAL,READ,Remote,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP241,12,employee_handbook.pdf,LOW,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP411,9,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,27,0,NORMAL,0,LOW,
+EMP229,10,salary.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP278,12,finance_report.xlsx,HIGH,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP181,16,employee_handbook.pdf,LOW,READ,Office,Managed,12,0,NORMAL,0,LOW,
+EMP175,17,employee_handbook.pdf,LOW,WRITE,VPN,Managed,25,0,NORMAL,15,LOW,VPN access
+EMP092,13,employee_handbook.pdf,LOW,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP024,10,employee_handbook.pdf,LOW,READ,Remote,Managed,14,0,NORMAL,0,LOW,
+EMP263,15,project_plan.xlsx,MEDIUM,READ,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP186,9,payroll.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP047,8,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,22,0,NORMAL,0,LOW,
+EMP432,18,team_notes.docx,LOW,READ,Remote,Managed,17,0,NORMAL,0,LOW,
+EMP010,18,team_notes.docx,LOW,READ,Remote,Managed,29,0,NORMAL,0,LOW,
+EMP159,13,salary.xlsx,CRITICAL,READ,Remote,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP173,14,project_plan.xlsx,MEDIUM,READ,VPN,Managed,27,0,NORMAL,15,LOW,VPN access
+EMP023,10,employee_handbook.pdf,LOW,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP152,11,salary.xlsx,CRITICAL,WRITE,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP238,9,project_plan.xlsx,MEDIUM,READ,Remote,Managed,20,0,NORMAL,0,LOW,
+EMP038,16,salary.xlsx,CRITICAL,READ,Remote,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP116,13,payroll.xlsx,CRITICAL,EXPORT,Office,Managed,3,0,NORMAL,15,LOW,Critical file accessed
+EMP131,18,finance_report.xlsx,HIGH,READ,Remote,Personal,22,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP449,12,payroll.xlsx,CRITICAL,SHARE,Remote,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP499,17,finance_report.xlsx,HIGH,WRITE,Remote,Managed,6,0,NORMAL,0,LOW,
+EMP352,17,employee_handbook.pdf,LOW,READ,VPN,Managed,2,0,NORMAL,15,LOW,VPN access
+EMP236,17,finance_report.xlsx,HIGH,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP295,11,payroll.xlsx,CRITICAL,WRITE,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP478,12,payroll.xlsx,CRITICAL,READ,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP331,9,project_plan.xlsx,MEDIUM,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP388,8,employee_handbook.pdf,LOW,SHARE,Office,Managed,14,0,NORMAL,0,LOW,
+EMP437,14,finance_report.xlsx,HIGH,READ,Remote,Managed,29,0,NORMAL,0,LOW,
+EMP444,15,team_notes.docx,LOW,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP265,12,employee_handbook.pdf,LOW,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP280,12,team_notes.docx,LOW,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP392,9,payroll.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP173,12,employee_handbook.pdf,LOW,WRITE,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP164,10,salary.xlsx,CRITICAL,READ,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP294,11,finance_report.xlsx,HIGH,READ,Office,Personal,23,0,NORMAL,15,LOW,Personal device
+EMP300,10,payroll.xlsx,CRITICAL,WRITE,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP075,14,salary.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP235,9,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,13,0,NORMAL,0,LOW,
+EMP308,8,salary.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP334,18,salary.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP375,14,team_notes.docx,LOW,WRITE,VPN,Managed,6,0,NORMAL,15,LOW,VPN access
+EMP201,10,finance_report.xlsx,HIGH,WRITE,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP139,9,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP146,15,salary.xlsx,CRITICAL,READ,Office,Personal,26,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP184,11,salary.xlsx,CRITICAL,READ,Office,Managed,3,0,NORMAL,15,LOW,Critical file accessed
+EMP430,10,salary.xlsx,CRITICAL,READ,Office,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP402,13,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP213,8,finance_report.xlsx,HIGH,READ,Office,Personal,19,0,NORMAL,15,LOW,Personal device
+EMP447,16,finance_report.xlsx,HIGH,READ,Office,Managed,30,0,NORMAL,0,LOW,
+EMP041,16,payroll.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP132,12,team_notes.docx,LOW,READ,Office,Personal,24,0,NORMAL,15,LOW,Personal device
+EMP307,17,finance_report.xlsx,HIGH,WRITE,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP169,16,project_plan.xlsx,MEDIUM,READ,Office,Managed,2,0,NORMAL,0,LOW,
+EMP130,17,team_notes.docx,LOW,DOWNLOAD,Office,Personal,21,0,NORMAL,15,LOW,Personal device
+EMP234,8,employee_handbook.pdf,LOW,UPLOAD,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP266,15,payroll.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP415,0,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,299,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP432,16,finance_report.xlsx,HIGH,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP361,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP175,10,team_notes.docx,LOW,UPLOAD,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP118,15,finance_report.xlsx,HIGH,WRITE,Office,Managed,24,0,NORMAL,0,LOW,
+EMP499,8,payroll.xlsx,CRITICAL,UPLOAD,Remote,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP394,2,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,204,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP054,12,finance_report.xlsx,HIGH,READ,VPN,Managed,24,0,NORMAL,15,LOW,VPN access
+EMP259,14,finance_report.xlsx,HIGH,WRITE,Office,Managed,12,0,NORMAL,0,LOW,
+EMP270,8,payroll.xlsx,CRITICAL,READ,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP319,10,finance_report.xlsx,HIGH,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP272,11,payroll.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP466,12,employee_handbook.pdf,LOW,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP301,9,finance_report.xlsx,HIGH,READ,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP423,11,finance_report.xlsx,HIGH,WRITE,Office,Managed,30,0,NORMAL,0,LOW,
+EMP363,0,salary.xlsx,CRITICAL,WRITE,VPN,Personal,481,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP292,10,salary.xlsx,CRITICAL,READ,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP221,10,team_notes.docx,LOW,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP112,14,salary.xlsx,CRITICAL,READ,Remote,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP007,15,project_plan.xlsx,MEDIUM,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP141,12,team_notes.docx,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP035,8,salary.xlsx,CRITICAL,READ,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP344,12,team_notes.docx,LOW,WRITE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP489,10,project_plan.xlsx,MEDIUM,READ,Office,Managed,12,0,NORMAL,0,LOW,
+EMP097,17,employee_handbook.pdf,LOW,WRITE,Office,Managed,28,0,NORMAL,0,LOW,
+EMP153,12,employee_handbook.pdf,LOW,READ,Office,Managed,14,0,NORMAL,0,LOW,
+EMP307,8,finance_report.xlsx,HIGH,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP388,13,team_notes.docx,LOW,EXPORT,Office,Managed,19,0,NORMAL,0,LOW,
+EMP006,18,employee_handbook.pdf,LOW,UPLOAD,Office,Managed,16,0,NORMAL,0,LOW,
+EMP223,13,salary.xlsx,CRITICAL,WRITE,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP091,17,salary.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP114,11,salary.xlsx,CRITICAL,EXPORT,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP264,9,project_plan.xlsx,MEDIUM,EXPORT,Office,Personal,18,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP439,14,team_notes.docx,LOW,READ,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP274,11,team_notes.docx,LOW,READ,Office,Personal,21,0,NORMAL,15,LOW,Personal device
+EMP318,14,payroll.xlsx,CRITICAL,READ,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP417,18,project_plan.xlsx,MEDIUM,READ,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP492,13,finance_report.xlsx,HIGH,WRITE,Remote,Managed,14,0,NORMAL,0,LOW,
+EMP096,13,team_notes.docx,LOW,DOWNLOAD,Office,Managed,1,0,NORMAL,0,LOW,
+EMP044,1,payroll.xlsx,CRITICAL,DOWNLOAD,Remote,Managed,361,1,NORMAL,60,HIGH,"After-hours login, High volume file access, Critical file accessed"
+EMP198,9,team_notes.docx,LOW,READ,Office,Personal,27,0,NORMAL,15,LOW,Personal device
+EMP248,15,team_notes.docx,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP250,13,salary.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP083,9,salary.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP289,12,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP142,16,payroll.xlsx,CRITICAL,READ,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP147,18,team_notes.docx,LOW,READ,Remote,Managed,10,0,NORMAL,0,LOW,
+EMP200,12,employee_handbook.pdf,LOW,UPLOAD,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP415,16,payroll.xlsx,CRITICAL,READ,Remote,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP303,9,salary.xlsx,CRITICAL,READ,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP035,16,salary.xlsx,CRITICAL,READ,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP489,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP203,15,payroll.xlsx,CRITICAL,READ,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP275,8,salary.xlsx,CRITICAL,READ,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP363,15,team_notes.docx,LOW,SHARE,Office,Managed,12,0,NORMAL,0,LOW,
+EMP155,3,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,344,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP476,8,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,11,0,NORMAL,0,LOW,
+EMP036,18,payroll.xlsx,CRITICAL,READ,Office,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP301,10,team_notes.docx,LOW,WRITE,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP240,8,project_plan.xlsx,MEDIUM,READ,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP195,10,payroll.xlsx,CRITICAL,READ,Office,Managed,3,0,NORMAL,15,LOW,Critical file accessed
+EMP349,11,employee_handbook.pdf,LOW,WRITE,Office,Managed,15,0,NORMAL,0,LOW,
+EMP045,14,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,11,0,NORMAL,0,LOW,
+EMP079,14,payroll.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP470,4,salary.xlsx,CRITICAL,DOWNLOAD,Remote,Personal,483,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, High volume file access, Critical file accessed, ML anomaly detected"
+EMP260,16,project_plan.xlsx,MEDIUM,READ,Remote,Managed,27,0,NORMAL,0,LOW,
+EMP126,8,employee_handbook.pdf,LOW,READ,Office,Managed,30,0,NORMAL,0,LOW,
+EMP478,13,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Managed,13,0,NORMAL,15,LOW,VPN access
+EMP145,13,salary.xlsx,CRITICAL,READ,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP081,8,finance_report.xlsx,HIGH,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP347,18,payroll.xlsx,CRITICAL,READ,Remote,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP233,8,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP293,18,employee_handbook.pdf,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP195,11,salary.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP429,18,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP056,14,payroll.xlsx,CRITICAL,DOWNLOAD,Remote,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP345,15,finance_report.xlsx,HIGH,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP264,14,project_plan.xlsx,MEDIUM,SHARE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP034,10,project_plan.xlsx,MEDIUM,READ,Office,Personal,21,0,NORMAL,15,LOW,Personal device
+EMP269,18,finance_report.xlsx,HIGH,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP493,8,payroll.xlsx,CRITICAL,READ,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP269,9,finance_report.xlsx,HIGH,READ,Office,Managed,30,0,NORMAL,0,LOW,
+EMP302,13,team_notes.docx,LOW,READ,Office,Managed,14,0,NORMAL,0,LOW,
+EMP069,13,payroll.xlsx,CRITICAL,SHARE,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP494,11,finance_report.xlsx,HIGH,UPLOAD,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP154,12,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Personal,28,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP244,17,payroll.xlsx,CRITICAL,READ,Remote,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP382,10,finance_report.xlsx,HIGH,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP328,11,employee_handbook.pdf,LOW,WRITE,Office,Managed,10,0,NORMAL,0,LOW,
+EMP285,15,salary.xlsx,CRITICAL,READ,Office,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP070,14,employee_handbook.pdf,LOW,UPLOAD,VPN,Managed,5,0,NORMAL,15,LOW,VPN access
+EMP350,9,team_notes.docx,LOW,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP107,15,payroll.xlsx,CRITICAL,READ,Office,Personal,26,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP040,18,project_plan.xlsx,MEDIUM,DOWNLOAD,Remote,Managed,17,0,NORMAL,0,LOW,
+EMP161,16,payroll.xlsx,CRITICAL,READ,Remote,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP093,9,payroll.xlsx,CRITICAL,DELETE,VPN,Managed,25,0,ANOMALY,60,HIGH,"VPN access, Critical file accessed, ML anomaly detected"
+EMP050,15,payroll.xlsx,CRITICAL,WRITE,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP103,11,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP113,14,team_notes.docx,LOW,WRITE,Remote,Managed,6,0,NORMAL,0,LOW,
+EMP014,13,payroll.xlsx,CRITICAL,READ,Remote,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP337,14,salary.xlsx,CRITICAL,READ,Remote,Personal,3,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP198,17,employee_handbook.pdf,LOW,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP210,9,payroll.xlsx,CRITICAL,READ,Remote,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP105,13,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP332,12,team_notes.docx,LOW,READ,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP173,12,employee_handbook.pdf,LOW,READ,Remote,Managed,22,0,NORMAL,0,LOW,
+EMP296,10,team_notes.docx,LOW,READ,Remote,Managed,20,0,NORMAL,0,LOW,
+EMP484,16,employee_handbook.pdf,LOW,EXPORT,Office,Managed,13,0,NORMAL,0,LOW,
+EMP141,16,payroll.xlsx,CRITICAL,SHARE,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP369,13,salary.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP108,13,salary.xlsx,CRITICAL,READ,Office,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP280,17,salary.xlsx,CRITICAL,READ,Remote,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP355,17,team_notes.docx,LOW,READ,Remote,Managed,22,0,NORMAL,0,LOW,
+EMP410,11,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP259,10,salary.xlsx,CRITICAL,READ,Remote,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP333,14,payroll.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP026,18,salary.xlsx,CRITICAL,READ,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP429,8,payroll.xlsx,CRITICAL,READ,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP138,15,team_notes.docx,LOW,EXPORT,Office,Managed,14,0,NORMAL,0,LOW,
+EMP067,13,finance_report.xlsx,HIGH,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP338,14,employee_handbook.pdf,LOW,READ,Office,Managed,2,0,NORMAL,0,LOW,
+EMP190,4,salary.xlsx,CRITICAL,SHARE,VPN,Personal,333,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP270,12,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP401,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,166,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP380,16,payroll.xlsx,CRITICAL,READ,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP332,9,finance_report.xlsx,HIGH,WRITE,Office,Managed,11,0,NORMAL,0,LOW,
+EMP469,11,finance_report.xlsx,HIGH,WRITE,Remote,Managed,8,0,NORMAL,0,LOW,
+EMP426,0,salary.xlsx,CRITICAL,READ,VPN,Personal,378,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP183,18,employee_handbook.pdf,LOW,READ,Office,Managed,16,0,NORMAL,0,LOW,
+EMP063,8,finance_report.xlsx,HIGH,SHARE,Office,Managed,6,0,NORMAL,0,LOW,
+EMP356,10,finance_report.xlsx,HIGH,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP431,13,project_plan.xlsx,MEDIUM,READ,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP450,12,project_plan.xlsx,MEDIUM,READ,Office,Managed,3,0,NORMAL,0,LOW,
+EMP340,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP096,3,salary.xlsx,CRITICAL,DOWNLOAD,VPN,Managed,271,1,NORMAL,75,HIGH,"After-hours login, VPN access, High volume file access, Critical file accessed"
+EMP144,17,salary.xlsx,CRITICAL,WRITE,Office,Personal,13,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP030,11,team_notes.docx,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP463,13,project_plan.xlsx,MEDIUM,WRITE,VPN,Managed,14,0,NORMAL,15,LOW,VPN access
+EMP071,9,payroll.xlsx,CRITICAL,WRITE,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP388,16,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP447,12,payroll.xlsx,CRITICAL,READ,Remote,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP130,15,salary.xlsx,CRITICAL,WRITE,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP326,15,finance_report.xlsx,HIGH,EXPORT,Office,Managed,11,0,NORMAL,0,LOW,
+EMP088,9,team_notes.docx,LOW,READ,Remote,Managed,2,0,NORMAL,0,LOW,
+EMP370,18,team_notes.docx,LOW,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP286,11,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP121,12,project_plan.xlsx,MEDIUM,READ,Remote,Managed,5,0,NORMAL,0,LOW,
+EMP370,15,team_notes.docx,LOW,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP389,18,employee_handbook.pdf,LOW,READ,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP356,13,project_plan.xlsx,MEDIUM,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP218,9,payroll.xlsx,CRITICAL,READ,Remote,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP391,18,payroll.xlsx,CRITICAL,WRITE,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP347,16,finance_report.xlsx,HIGH,READ,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP302,10,payroll.xlsx,CRITICAL,READ,Remote,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP059,8,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP335,18,payroll.xlsx,CRITICAL,READ,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP414,18,team_notes.docx,LOW,READ,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP014,18,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP377,10,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,15,0,NORMAL,0,LOW,
+EMP268,13,salary.xlsx,CRITICAL,UPLOAD,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP305,18,salary.xlsx,CRITICAL,UPLOAD,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP048,14,employee_handbook.pdf,LOW,READ,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP028,2,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,390,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP330,18,salary.xlsx,CRITICAL,SHARE,Office,Personal,11,0,ANOMALY,60,HIGH,"Personal device, Critical file accessed, ML anomaly detected"
+EMP123,12,employee_handbook.pdf,LOW,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP209,18,team_notes.docx,LOW,UPLOAD,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP453,13,finance_report.xlsx,HIGH,UPLOAD,Office,Managed,12,0,NORMAL,0,LOW,
+EMP464,16,finance_report.xlsx,HIGH,READ,Office,Personal,8,0,NORMAL,15,LOW,Personal device
+EMP378,17,employee_handbook.pdf,LOW,DELETE,Office,Managed,1,0,NORMAL,0,LOW,
+EMP159,11,finance_report.xlsx,HIGH,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP415,18,employee_handbook.pdf,LOW,EXPORT,VPN,Managed,23,0,ANOMALY,45,MEDIUM,"VPN access, ML anomaly detected"
+EMP349,15,salary.xlsx,CRITICAL,READ,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP185,13,employee_handbook.pdf,LOW,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP282,13,project_plan.xlsx,MEDIUM,READ,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP113,12,finance_report.xlsx,HIGH,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP091,11,team_notes.docx,LOW,WRITE,Remote,Managed,30,0,NORMAL,0,LOW,
+EMP447,10,payroll.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP011,17,payroll.xlsx,CRITICAL,READ,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP077,13,salary.xlsx,CRITICAL,READ,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP336,16,salary.xlsx,CRITICAL,READ,VPN,Managed,25,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP217,14,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,10,0,NORMAL,0,LOW,
+EMP315,12,finance_report.xlsx,HIGH,READ,VPN,Managed,21,0,NORMAL,15,LOW,VPN access
+EMP406,10,payroll.xlsx,CRITICAL,READ,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP074,13,salary.xlsx,CRITICAL,DOWNLOAD,Office,Personal,12,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP161,8,payroll.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP391,11,team_notes.docx,LOW,WRITE,Office,Managed,17,0,NORMAL,0,LOW,
+EMP188,9,salary.xlsx,CRITICAL,WRITE,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP282,9,payroll.xlsx,CRITICAL,READ,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP082,18,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,4,0,NORMAL,0,LOW,
+EMP329,18,team_notes.docx,LOW,READ,Office,Managed,21,0,NORMAL,0,LOW,
+EMP396,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,249,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP255,11,employee_handbook.pdf,LOW,WRITE,Remote,Managed,7,0,NORMAL,0,LOW,
+EMP327,10,payroll.xlsx,CRITICAL,WRITE,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP299,0,salary.xlsx,CRITICAL,DOWNLOAD,VPN,Managed,300,1,ANOMALY,100,CRITICAL,"After-hours login, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP015,10,salary.xlsx,CRITICAL,READ,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP296,15,salary.xlsx,CRITICAL,READ,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP225,9,project_plan.xlsx,MEDIUM,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP029,12,team_notes.docx,LOW,WRITE,Office,Managed,7,0,NORMAL,0,LOW,
+EMP215,13,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP315,14,project_plan.xlsx,MEDIUM,READ,VPN,Personal,3,0,ANOMALY,60,HIGH,"Personal device, VPN access, ML anomaly detected"
+EMP477,9,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,20,0,NORMAL,0,LOW,
+EMP491,8,team_notes.docx,LOW,WRITE,Office,Personal,4,0,NORMAL,15,LOW,Personal device
+EMP476,10,employee_handbook.pdf,LOW,READ,Office,Personal,7,0,NORMAL,15,LOW,Personal device
+EMP028,11,finance_report.xlsx,HIGH,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP469,11,project_plan.xlsx,MEDIUM,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP335,18,employee_handbook.pdf,LOW,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP250,0,payroll.xlsx,CRITICAL,WRITE,VPN,Personal,237,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP204,11,salary.xlsx,CRITICAL,EXPORT,Remote,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP285,5,payroll.xlsx,CRITICAL,WRITE,VPN,Personal,452,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP046,14,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,17,0,NORMAL,0,LOW,
+EMP229,16,team_notes.docx,LOW,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP027,14,payroll.xlsx,CRITICAL,READ,Remote,Personal,10,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP220,12,employee_handbook.pdf,LOW,WRITE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP311,13,salary.xlsx,CRITICAL,READ,Office,Personal,30,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP260,12,project_plan.xlsx,MEDIUM,DOWNLOAD,Remote,Managed,6,0,NORMAL,0,LOW,
+EMP005,15,salary.xlsx,CRITICAL,EXPORT,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP413,3,finance_report.xlsx,HIGH,UPLOAD,Remote,Personal,367,1,ANOMALY,90,CRITICAL,"After-hours login, Personal device, High volume file access, ML anomaly detected"
+EMP222,14,salary.xlsx,CRITICAL,READ,Remote,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP079,11,project_plan.xlsx,MEDIUM,READ,Office,Managed,16,0,NORMAL,0,LOW,
+EMP181,9,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP350,16,team_notes.docx,LOW,READ,Remote,Personal,7,0,NORMAL,15,LOW,Personal device
+EMP487,11,team_notes.docx,LOW,READ,Remote,Managed,5,0,NORMAL,0,LOW,
+EMP347,14,salary.xlsx,CRITICAL,READ,Remote,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP053,13,finance_report.xlsx,HIGH,SHARE,Office,Managed,2,0,NORMAL,0,LOW,
+EMP336,18,team_notes.docx,LOW,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP114,14,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP470,12,project_plan.xlsx,MEDIUM,READ,Remote,Managed,2,0,NORMAL,0,LOW,
+EMP425,18,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,23,0,NORMAL,0,LOW,
+EMP482,14,payroll.xlsx,CRITICAL,DOWNLOAD,Remote,Personal,20,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP496,13,finance_report.xlsx,HIGH,EXPORT,Office,Managed,9,0,NORMAL,0,LOW,
+EMP343,16,employee_handbook.pdf,LOW,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP191,15,finance_report.xlsx,HIGH,WRITE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP074,13,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,11,0,NORMAL,0,LOW,
+EMP108,17,team_notes.docx,LOW,WRITE,Remote,Managed,14,0,NORMAL,0,LOW,
+EMP417,10,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,22,0,NORMAL,0,LOW,
+EMP191,15,team_notes.docx,LOW,DOWNLOAD,Office,Managed,6,0,NORMAL,0,LOW,
+EMP150,10,salary.xlsx,CRITICAL,WRITE,Remote,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP026,10,team_notes.docx,LOW,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP500,17,payroll.xlsx,CRITICAL,WRITE,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP116,9,team_notes.docx,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP481,4,salary.xlsx,CRITICAL,DOWNLOAD,Remote,Managed,476,1,ANOMALY,90,CRITICAL,"After-hours login, High volume file access, Critical file accessed, ML anomaly detected"
+EMP184,9,salary.xlsx,CRITICAL,WRITE,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP253,14,finance_report.xlsx,HIGH,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP464,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,1,0,NORMAL,0,LOW,
+EMP239,14,finance_report.xlsx,HIGH,DOWNLOAD,Office,Managed,8,0,NORMAL,0,LOW,
+EMP004,18,salary.xlsx,CRITICAL,READ,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP090,4,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,239,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP140,14,finance_report.xlsx,HIGH,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP132,10,payroll.xlsx,CRITICAL,READ,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP010,12,employee_handbook.pdf,LOW,READ,Office,Personal,20,0,NORMAL,15,LOW,Personal device
+EMP306,10,finance_report.xlsx,HIGH,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP348,18,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,8,0,NORMAL,0,LOW,
+EMP329,9,project_plan.xlsx,MEDIUM,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP164,14,salary.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP107,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,325,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP219,16,payroll.xlsx,CRITICAL,READ,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP127,17,salary.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP081,9,salary.xlsx,CRITICAL,READ,Office,Managed,21,0,NORMAL,15,LOW,Critical file accessed
+EMP487,10,salary.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP204,9,employee_handbook.pdf,LOW,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP350,10,salary.xlsx,CRITICAL,WRITE,VPN,Managed,1,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP030,17,payroll.xlsx,CRITICAL,READ,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP275,10,payroll.xlsx,CRITICAL,READ,Remote,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP370,11,salary.xlsx,CRITICAL,READ,Remote,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP395,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP454,3,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Personal,220,1,ANOMALY,90,CRITICAL,"After-hours login, Personal device, High volume file access, ML anomaly detected"
+EMP213,12,finance_report.xlsx,HIGH,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP170,15,employee_handbook.pdf,LOW,WRITE,Office,Managed,11,0,NORMAL,0,LOW,
+EMP039,15,team_notes.docx,LOW,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP053,13,employee_handbook.pdf,LOW,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP491,18,payroll.xlsx,CRITICAL,DOWNLOAD,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP285,16,finance_report.xlsx,HIGH,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP011,13,project_plan.xlsx,MEDIUM,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP286,17,employee_handbook.pdf,LOW,DOWNLOAD,Remote,Managed,14,0,NORMAL,0,LOW,
+EMP408,10,payroll.xlsx,CRITICAL,WRITE,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP319,10,employee_handbook.pdf,LOW,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP496,16,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP059,9,finance_report.xlsx,HIGH,READ,Office,Managed,2,0,NORMAL,0,LOW,
+EMP365,13,salary.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP048,18,salary.xlsx,CRITICAL,WRITE,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP403,17,employee_handbook.pdf,LOW,WRITE,Remote,Managed,5,0,NORMAL,0,LOW,
+EMP358,14,team_notes.docx,LOW,READ,Office,Personal,11,0,NORMAL,15,LOW,Personal device
+EMP086,18,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP414,12,payroll.xlsx,CRITICAL,WRITE,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP111,17,team_notes.docx,LOW,READ,Office,Managed,29,0,NORMAL,0,LOW,
+EMP282,18,team_notes.docx,LOW,READ,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP250,11,team_notes.docx,LOW,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP371,9,employee_handbook.pdf,LOW,DELETE,Office,Managed,10,0,NORMAL,0,LOW,
+EMP303,11,finance_report.xlsx,HIGH,DELETE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP279,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP103,13,salary.xlsx,CRITICAL,EXPORT,Remote,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP414,10,finance_report.xlsx,HIGH,DELETE,Office,Managed,7,0,NORMAL,0,LOW,
+EMP338,16,salary.xlsx,CRITICAL,READ,Remote,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP216,18,project_plan.xlsx,MEDIUM,WRITE,Office,Personal,3,0,NORMAL,15,LOW,Personal device
+EMP114,18,salary.xlsx,CRITICAL,READ,Remote,Personal,10,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP235,18,payroll.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP419,14,project_plan.xlsx,MEDIUM,READ,Remote,Managed,18,0,NORMAL,0,LOW,
+EMP202,15,payroll.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP247,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP327,14,payroll.xlsx,CRITICAL,READ,Remote,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP213,14,salary.xlsx,CRITICAL,READ,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP142,14,employee_handbook.pdf,LOW,READ,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP167,17,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP037,8,team_notes.docx,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP376,2,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Personal,298,1,ANOMALY,90,CRITICAL,"After-hours login, Personal device, High volume file access, ML anomaly detected"
+EMP260,12,finance_report.xlsx,HIGH,WRITE,Office,Managed,23,0,NORMAL,0,LOW,
+EMP297,14,salary.xlsx,CRITICAL,WRITE,Office,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP260,14,salary.xlsx,CRITICAL,READ,Remote,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP246,16,payroll.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP247,9,employee_handbook.pdf,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP386,16,team_notes.docx,LOW,READ,Remote,Managed,28,0,NORMAL,0,LOW,
+EMP309,9,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,4,0,NORMAL,0,LOW,
+EMP409,14,payroll.xlsx,CRITICAL,WRITE,Remote,Personal,20,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP112,15,project_plan.xlsx,MEDIUM,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP425,18,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP374,15,employee_handbook.pdf,LOW,READ,VPN,Managed,18,0,NORMAL,15,LOW,VPN access
+EMP249,17,project_plan.xlsx,MEDIUM,READ,Office,Managed,15,0,NORMAL,0,LOW,
+EMP041,8,finance_report.xlsx,HIGH,UPLOAD,Office,Managed,14,0,NORMAL,0,LOW,
+EMP420,14,salary.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP124,15,payroll.xlsx,CRITICAL,UPLOAD,Office,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP336,18,salary.xlsx,CRITICAL,READ,Remote,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP238,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP053,9,finance_report.xlsx,HIGH,READ,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP408,17,employee_handbook.pdf,LOW,WRITE,Office,Managed,12,0,NORMAL,0,LOW,
+EMP054,10,payroll.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP297,16,employee_handbook.pdf,LOW,READ,Office,Managed,16,0,NORMAL,0,LOW,
+EMP153,11,payroll.xlsx,CRITICAL,READ,Remote,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP399,14,project_plan.xlsx,MEDIUM,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP351,15,finance_report.xlsx,HIGH,READ,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP398,11,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,20,0,NORMAL,0,LOW,
+EMP258,17,employee_handbook.pdf,LOW,DELETE,Remote,Managed,20,0,NORMAL,0,LOW,
+EMP156,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP006,18,salary.xlsx,CRITICAL,READ,VPN,Personal,22,0,ANOMALY,75,HIGH,"Personal device, VPN access, Critical file accessed, ML anomaly detected"
+EMP449,13,salary.xlsx,CRITICAL,READ,Remote,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP217,14,payroll.xlsx,CRITICAL,READ,VPN,Managed,13,0,NORMAL,30,LOW,"VPN access, Critical file accessed"
+EMP481,16,salary.xlsx,CRITICAL,READ,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP486,13,finance_report.xlsx,HIGH,READ,Remote,Managed,17,0,NORMAL,0,LOW,
+EMP191,17,finance_report.xlsx,HIGH,READ,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP295,18,team_notes.docx,LOW,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP090,17,team_notes.docx,LOW,DOWNLOAD,Remote,Managed,17,0,NORMAL,0,LOW,
+EMP346,11,employee_handbook.pdf,LOW,READ,Office,Personal,11,0,NORMAL,15,LOW,Personal device
+EMP259,13,finance_report.xlsx,HIGH,WRITE,Office,Managed,30,0,NORMAL,0,LOW,
+EMP444,17,finance_report.xlsx,HIGH,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP442,8,finance_report.xlsx,HIGH,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP141,12,payroll.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP105,12,employee_handbook.pdf,LOW,READ,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP151,18,employee_handbook.pdf,LOW,WRITE,Office,Managed,7,0,NORMAL,0,LOW,
+EMP005,15,payroll.xlsx,CRITICAL,UPLOAD,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP437,8,salary.xlsx,CRITICAL,DOWNLOAD,Remote,Personal,15,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP153,17,finance_report.xlsx,HIGH,SHARE,Office,Managed,20,0,NORMAL,0,LOW,
+EMP357,12,salary.xlsx,CRITICAL,READ,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP263,14,salary.xlsx,CRITICAL,READ,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP267,18,employee_handbook.pdf,LOW,SHARE,Office,Managed,10,0,NORMAL,0,LOW,
+EMP179,13,salary.xlsx,CRITICAL,EXPORT,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP279,13,team_notes.docx,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP125,16,payroll.xlsx,CRITICAL,READ,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP008,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,1,0,NORMAL,0,LOW,
+EMP484,11,employee_handbook.pdf,LOW,EXPORT,Office,Managed,18,0,NORMAL,0,LOW,
+EMP309,10,team_notes.docx,LOW,WRITE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP138,9,salary.xlsx,CRITICAL,READ,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP325,14,finance_report.xlsx,HIGH,READ,VPN,Managed,2,0,NORMAL,15,LOW,VPN access
+EMP292,17,payroll.xlsx,CRITICAL,EXPORT,Remote,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP306,12,salary.xlsx,CRITICAL,SHARE,Remote,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP273,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,6,0,NORMAL,0,LOW,
+EMP261,14,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP028,10,finance_report.xlsx,HIGH,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP387,11,team_notes.docx,LOW,DOWNLOAD,Remote,Personal,28,0,ANOMALY,45,MEDIUM,"Personal device, ML anomaly detected"
+EMP428,17,employee_handbook.pdf,LOW,WRITE,Office,Managed,17,0,NORMAL,0,LOW,
+EMP391,8,payroll.xlsx,CRITICAL,READ,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP059,10,payroll.xlsx,CRITICAL,EXPORT,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP206,16,salary.xlsx,CRITICAL,READ,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP136,9,team_notes.docx,LOW,DELETE,Remote,Managed,10,0,NORMAL,0,LOW,
+EMP371,13,employee_handbook.pdf,LOW,WRITE,Office,Managed,23,0,NORMAL,0,LOW,
+EMP345,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,12,0,NORMAL,0,LOW,
+EMP162,11,payroll.xlsx,CRITICAL,WRITE,Office,Personal,15,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP301,8,salary.xlsx,CRITICAL,SHARE,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP458,16,payroll.xlsx,CRITICAL,READ,Remote,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP053,16,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,19,0,NORMAL,0,LOW,
+EMP463,11,finance_report.xlsx,HIGH,READ,Remote,Personal,15,0,NORMAL,15,LOW,Personal device
+EMP203,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP214,17,employee_handbook.pdf,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP201,12,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP080,18,finance_report.xlsx,HIGH,READ,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP300,9,project_plan.xlsx,MEDIUM,READ,Office,Personal,19,0,NORMAL,15,LOW,Personal device
+EMP384,16,salary.xlsx,CRITICAL,READ,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP362,12,salary.xlsx,CRITICAL,READ,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP142,14,employee_handbook.pdf,LOW,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP318,13,employee_handbook.pdf,LOW,WRITE,Office,Managed,22,0,NORMAL,0,LOW,
+EMP281,8,finance_report.xlsx,HIGH,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP340,10,salary.xlsx,CRITICAL,UPLOAD,Office,Managed,22,0,NORMAL,15,LOW,Critical file accessed
+EMP288,18,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP417,17,salary.xlsx,CRITICAL,READ,Office,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP282,13,salary.xlsx,CRITICAL,WRITE,Office,Managed,13,0,NORMAL,15,LOW,Critical file accessed
+EMP369,8,employee_handbook.pdf,LOW,READ,Office,Managed,6,0,NORMAL,0,LOW,
+EMP203,18,finance_report.xlsx,HIGH,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP466,10,payroll.xlsx,CRITICAL,DELETE,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP015,13,salary.xlsx,CRITICAL,EXPORT,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP340,5,finance_report.xlsx,HIGH,WRITE,VPN,Personal,309,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP402,12,salary.xlsx,CRITICAL,WRITE,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP149,13,project_plan.xlsx,MEDIUM,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP077,17,team_notes.docx,LOW,EXPORT,Office,Managed,18,0,NORMAL,0,LOW,
+EMP223,12,team_notes.docx,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP305,9,employee_handbook.pdf,LOW,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP146,17,employee_handbook.pdf,LOW,DOWNLOAD,Office,Managed,23,0,NORMAL,0,LOW,
+EMP140,17,finance_report.xlsx,HIGH,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP004,12,team_notes.docx,LOW,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP158,13,employee_handbook.pdf,LOW,DELETE,Remote,Managed,29,0,NORMAL,0,LOW,
+EMP061,15,payroll.xlsx,CRITICAL,READ,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP277,8,payroll.xlsx,CRITICAL,EXPORT,Remote,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP460,17,finance_report.xlsx,HIGH,READ,Office,Personal,17,0,NORMAL,15,LOW,Personal device
+EMP444,10,payroll.xlsx,CRITICAL,READ,Remote,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP480,15,employee_handbook.pdf,LOW,READ,Remote,Managed,11,0,NORMAL,0,LOW,
+EMP304,17,employee_handbook.pdf,LOW,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP266,15,finance_report.xlsx,HIGH,READ,Remote,Managed,30,0,NORMAL,0,LOW,
+EMP059,8,project_plan.xlsx,MEDIUM,EXPORT,Office,Managed,18,0,NORMAL,0,LOW,
+EMP237,10,project_plan.xlsx,MEDIUM,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP419,14,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,8,0,NORMAL,0,LOW,
+EMP205,13,team_notes.docx,LOW,READ,Office,Managed,12,0,NORMAL,0,LOW,
+EMP402,13,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP284,18,employee_handbook.pdf,LOW,READ,Office,Managed,24,0,NORMAL,0,LOW,
+EMP453,16,payroll.xlsx,CRITICAL,READ,Office,Managed,5,0,NORMAL,15,LOW,Critical file accessed
+EMP091,13,payroll.xlsx,CRITICAL,WRITE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP295,9,payroll.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP375,15,employee_handbook.pdf,LOW,DOWNLOAD,VPN,Managed,5,0,NORMAL,15,LOW,VPN access
+EMP221,9,salary.xlsx,CRITICAL,WRITE,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP128,9,finance_report.xlsx,HIGH,READ,Remote,Managed,2,0,NORMAL,0,LOW,
+EMP237,9,employee_handbook.pdf,LOW,WRITE,Office,Personal,10,0,NORMAL,15,LOW,Personal device
+EMP219,18,finance_report.xlsx,HIGH,READ,Remote,Managed,29,0,NORMAL,0,LOW,
+EMP087,18,salary.xlsx,CRITICAL,READ,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP070,11,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Managed,16,0,NORMAL,15,LOW,VPN access
+EMP169,15,salary.xlsx,CRITICAL,READ,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP197,10,team_notes.docx,LOW,WRITE,Office,Managed,18,0,NORMAL,0,LOW,
+EMP346,9,salary.xlsx,CRITICAL,READ,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP316,12,salary.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP481,17,salary.xlsx,CRITICAL,WRITE,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP406,17,employee_handbook.pdf,LOW,EXPORT,Office,Managed,18,0,NORMAL,0,LOW,
+EMP175,12,project_plan.xlsx,MEDIUM,DELETE,Remote,Managed,1,0,NORMAL,0,LOW,
+EMP173,5,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,494,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP172,2,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,350,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP370,13,salary.xlsx,CRITICAL,READ,Office,Personal,15,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP165,17,employee_handbook.pdf,LOW,READ,Office,Managed,19,0,NORMAL,0,LOW,
+EMP329,2,salary.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,354,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP267,9,employee_handbook.pdf,LOW,READ,Remote,Managed,8,0,NORMAL,0,LOW,
+EMP402,16,payroll.xlsx,CRITICAL,WRITE,Office,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP062,15,team_notes.docx,LOW,READ,VPN,Personal,26,0,ANOMALY,60,HIGH,"Personal device, VPN access, ML anomaly detected"
+EMP050,11,employee_handbook.pdf,LOW,DELETE,Office,Managed,22,0,NORMAL,0,LOW,
+EMP014,17,salary.xlsx,CRITICAL,UPLOAD,Remote,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP288,15,project_plan.xlsx,MEDIUM,WRITE,Remote,Managed,22,0,NORMAL,0,LOW,
+EMP048,16,salary.xlsx,CRITICAL,WRITE,Office,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP167,18,project_plan.xlsx,MEDIUM,READ,Remote,Managed,3,0,NORMAL,0,LOW,
+EMP091,14,employee_handbook.pdf,LOW,READ,VPN,Managed,17,0,NORMAL,15,LOW,VPN access
+EMP048,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,21,0,NORMAL,0,LOW,
+EMP179,11,project_plan.xlsx,MEDIUM,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP163,15,salary.xlsx,CRITICAL,WRITE,Remote,Managed,27,0,NORMAL,15,LOW,Critical file accessed
+EMP395,12,payroll.xlsx,CRITICAL,WRITE,Office,Personal,12,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP475,8,salary.xlsx,CRITICAL,READ,Remote,Managed,16,0,NORMAL,15,LOW,Critical file accessed
+EMP326,9,team_notes.docx,LOW,DOWNLOAD,Office,Managed,11,0,NORMAL,0,LOW,
+EMP288,14,employee_handbook.pdf,LOW,EXPORT,Office,Managed,8,0,NORMAL,0,LOW,
+EMP014,14,salary.xlsx,CRITICAL,WRITE,Office,Managed,14,0,NORMAL,15,LOW,Critical file accessed
+EMP500,10,payroll.xlsx,CRITICAL,READ,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP433,15,team_notes.docx,LOW,READ,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP280,8,team_notes.docx,LOW,DOWNLOAD,Office,Managed,5,0,NORMAL,0,LOW,
+EMP185,12,finance_report.xlsx,HIGH,READ,Office,Managed,18,0,NORMAL,0,LOW,
+EMP373,13,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,19,0,NORMAL,0,LOW,
+EMP108,13,project_plan.xlsx,MEDIUM,READ,Remote,Managed,5,0,NORMAL,0,LOW,
+EMP240,12,salary.xlsx,CRITICAL,READ,Office,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP387,8,team_notes.docx,LOW,READ,VPN,Managed,30,0,NORMAL,15,LOW,VPN access
+EMP006,12,finance_report.xlsx,HIGH,READ,Office,Managed,26,0,NORMAL,0,LOW,
+EMP380,15,finance_report.xlsx,HIGH,WRITE,Remote,Managed,17,0,NORMAL,0,LOW,
+EMP051,11,payroll.xlsx,CRITICAL,WRITE,Office,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP360,8,team_notes.docx,LOW,READ,VPN,Managed,26,0,NORMAL,15,LOW,VPN access
+EMP413,9,team_notes.docx,LOW,READ,Office,Managed,10,0,NORMAL,0,LOW,
+EMP098,11,finance_report.xlsx,HIGH,READ,Office,Managed,6,0,NORMAL,0,LOW,
+EMP003,13,team_notes.docx,LOW,READ,Office,Managed,14,0,NORMAL,0,LOW,
+EMP413,10,finance_report.xlsx,HIGH,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP342,17,employee_handbook.pdf,LOW,DOWNLOAD,Office,Personal,2,0,NORMAL,15,LOW,Personal device
+EMP237,17,finance_report.xlsx,HIGH,WRITE,Remote,Managed,15,0,NORMAL,0,LOW,
+EMP229,17,payroll.xlsx,CRITICAL,READ,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP059,4,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,377,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP414,18,salary.xlsx,CRITICAL,READ,Office,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP017,17,employee_handbook.pdf,LOW,WRITE,Office,Managed,20,0,NORMAL,0,LOW,
+EMP093,3,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,331,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP432,10,salary.xlsx,CRITICAL,WRITE,Office,Managed,28,0,NORMAL,15,LOW,Critical file accessed
+EMP058,8,employee_handbook.pdf,LOW,READ,Office,Managed,27,0,NORMAL,0,LOW,
+EMP372,16,employee_handbook.pdf,LOW,DELETE,VPN,Managed,6,0,ANOMALY,45,MEDIUM,"VPN access, ML anomaly detected"
+EMP471,18,payroll.xlsx,CRITICAL,UPLOAD,Office,Managed,10,0,NORMAL,15,LOW,Critical file accessed
+EMP262,11,employee_handbook.pdf,LOW,SHARE,Office,Managed,19,0,NORMAL,0,LOW,
+EMP115,16,team_notes.docx,LOW,SHARE,VPN,Managed,15,0,NORMAL,15,LOW,VPN access
+EMP267,15,salary.xlsx,CRITICAL,READ,Office,Managed,24,0,NORMAL,15,LOW,Critical file accessed
+EMP346,15,finance_report.xlsx,HIGH,READ,Office,Managed,14,0,NORMAL,0,LOW,
+EMP197,10,project_plan.xlsx,MEDIUM,READ,Office,Managed,8,0,NORMAL,0,LOW,
+EMP113,15,finance_report.xlsx,HIGH,WRITE,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP106,12,payroll.xlsx,CRITICAL,WRITE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP474,9,employee_handbook.pdf,LOW,WRITE,Office,Managed,22,0,NORMAL,0,LOW,
+EMP274,8,team_notes.docx,LOW,UPLOAD,Office,Managed,6,0,NORMAL,0,LOW,
+EMP119,9,finance_report.xlsx,HIGH,READ,Office,Managed,17,0,NORMAL,0,LOW,
+EMP437,18,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,23,0,NORMAL,0,LOW,
+EMP499,10,project_plan.xlsx,MEDIUM,READ,Office,Personal,17,0,NORMAL,15,LOW,Personal device
+EMP118,11,employee_handbook.pdf,LOW,DELETE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP272,15,salary.xlsx,CRITICAL,SHARE,Remote,Personal,1,0,ANOMALY,60,HIGH,"Personal device, Critical file accessed, ML anomaly detected"
+EMP249,15,finance_report.xlsx,HIGH,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP058,8,payroll.xlsx,CRITICAL,WRITE,Office,Managed,4,0,NORMAL,15,LOW,Critical file accessed
+EMP479,14,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP379,16,payroll.xlsx,CRITICAL,DOWNLOAD,Remote,Managed,8,0,NORMAL,15,LOW,Critical file accessed
+EMP258,17,team_notes.docx,LOW,READ,Office,Managed,4,0,NORMAL,0,LOW,
+EMP048,8,project_plan.xlsx,MEDIUM,UPLOAD,Remote,Managed,23,0,NORMAL,0,LOW,
+EMP475,10,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,16,0,NORMAL,0,LOW,
+EMP441,8,salary.xlsx,CRITICAL,WRITE,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP316,10,team_notes.docx,LOW,WRITE,Remote,Managed,19,0,NORMAL,0,LOW,
+EMP148,5,salary.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,223,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP357,10,finance_report.xlsx,HIGH,WRITE,Office,Managed,29,0,NORMAL,0,LOW,
+EMP487,10,payroll.xlsx,CRITICAL,READ,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP305,15,finance_report.xlsx,HIGH,READ,Remote,Managed,12,0,NORMAL,0,LOW,
+EMP341,14,finance_report.xlsx,HIGH,WRITE,Remote,Managed,10,0,NORMAL,0,LOW,
+EMP165,15,payroll.xlsx,CRITICAL,READ,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP128,11,employee_handbook.pdf,LOW,READ,Office,Managed,9,0,NORMAL,0,LOW,
+EMP376,16,team_notes.docx,LOW,EXPORT,Office,Managed,18,0,NORMAL,0,LOW,
+EMP054,17,payroll.xlsx,CRITICAL,WRITE,Office,Managed,18,0,NORMAL,15,LOW,Critical file accessed
+EMP441,16,salary.xlsx,CRITICAL,WRITE,Remote,Managed,6,0,NORMAL,15,LOW,Critical file accessed
+EMP422,13,salary.xlsx,CRITICAL,READ,Remote,Managed,15,0,NORMAL,15,LOW,Critical file accessed
+EMP464,16,finance_report.xlsx,HIGH,READ,Office,Managed,28,0,NORMAL,0,LOW,
+EMP015,15,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,26,0,NORMAL,0,LOW,
+EMP391,11,payroll.xlsx,CRITICAL,READ,VPN,Personal,15,0,ANOMALY,75,HIGH,"Personal device, VPN access, Critical file accessed, ML anomaly detected"
+EMP411,18,project_plan.xlsx,MEDIUM,READ,Remote,Managed,25,0,NORMAL,0,LOW,
+EMP325,9,salary.xlsx,CRITICAL,READ,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP442,15,payroll.xlsx,CRITICAL,READ,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP032,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,299,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP083,9,finance_report.xlsx,HIGH,READ,Remote,Managed,20,0,NORMAL,0,LOW,
+EMP372,12,project_plan.xlsx,MEDIUM,DOWNLOAD,Office,Managed,28,0,NORMAL,0,LOW,
+EMP354,15,team_notes.docx,LOW,WRITE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP356,1,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,443,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP281,13,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,7,0,NORMAL,15,LOW,Critical file accessed
+EMP254,5,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Managed,447,1,ANOMALY,100,CRITICAL,"After-hours login, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP421,14,payroll.xlsx,CRITICAL,UPLOAD,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP478,15,payroll.xlsx,CRITICAL,READ,Office,Managed,30,0,NORMAL,15,LOW,Critical file accessed
+EMP180,16,employee_handbook.pdf,LOW,READ,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP201,1,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,316,1,NORMAL,90,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed"
+EMP397,12,project_plan.xlsx,MEDIUM,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP342,14,project_plan.xlsx,MEDIUM,READ,Office,Managed,7,0,NORMAL,0,LOW,
+EMP290,15,finance_report.xlsx,HIGH,READ,Office,Managed,25,0,NORMAL,0,LOW,
+EMP051,15,payroll.xlsx,CRITICAL,WRITE,Remote,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP064,13,project_plan.xlsx,MEDIUM,READ,Office,Managed,13,0,NORMAL,0,LOW,
+EMP303,12,payroll.xlsx,CRITICAL,READ,Office,Managed,1,0,NORMAL,15,LOW,Critical file accessed
+EMP383,8,project_plan.xlsx,MEDIUM,READ,Office,Managed,22,0,NORMAL,0,LOW,
+EMP411,18,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Managed,26,0,NORMAL,0,LOW,
+EMP233,18,project_plan.xlsx,MEDIUM,READ,Office,Personal,28,0,NORMAL,15,LOW,Personal device
+EMP029,18,finance_report.xlsx,HIGH,READ,Office,Managed,14,0,NORMAL,0,LOW,
+EMP250,8,payroll.xlsx,CRITICAL,READ,Office,Managed,17,0,NORMAL,15,LOW,Critical file accessed
+EMP180,12,finance_report.xlsx,HIGH,DOWNLOAD,Remote,Managed,22,0,NORMAL,0,LOW,
+EMP240,16,finance_report.xlsx,HIGH,UPLOAD,Office,Managed,23,0,NORMAL,0,LOW,
+EMP320,0,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Personal,292,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, ML anomaly detected"
+EMP087,18,payroll.xlsx,CRITICAL,READ,Office,Managed,11,0,NORMAL,15,LOW,Critical file accessed
+EMP001,16,employee_handbook.pdf,LOW,DOWNLOAD,Remote,Managed,16,0,NORMAL,0,LOW,
+EMP055,11,finance_report.xlsx,HIGH,READ,Office,Managed,23,0,NORMAL,0,LOW,
+EMP011,14,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP336,12,finance_report.xlsx,HIGH,WRITE,Office,Managed,9,0,NORMAL,0,LOW,
+EMP265,0,payroll.xlsx,CRITICAL,DOWNLOAD,VPN,Personal,472,1,ANOMALY,100,CRITICAL,"After-hours login, Personal device, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP203,12,payroll.xlsx,CRITICAL,DELETE,Remote,Personal,24,0,ANOMALY,60,HIGH,"Personal device, Critical file accessed, ML anomaly detected"
+EMP132,16,finance_report.xlsx,HIGH,WRITE,Office,Managed,25,0,NORMAL,0,LOW,
+EMP473,18,project_plan.xlsx,MEDIUM,READ,Office,Managed,5,0,NORMAL,0,LOW,
+EMP440,10,project_plan.xlsx,MEDIUM,DELETE,Office,Managed,21,0,NORMAL,0,LOW,
+EMP409,14,team_notes.docx,LOW,WRITE,Office,Managed,13,0,NORMAL,0,LOW,
+EMP176,11,team_notes.docx,LOW,READ,Office,Managed,20,0,NORMAL,0,LOW,
+EMP229,11,payroll.xlsx,CRITICAL,SHARE,Office,Personal,16,0,NORMAL,30,LOW,"Personal device, Critical file accessed"
+EMP015,15,team_notes.docx,LOW,DELETE,Office,Managed,3,0,NORMAL,0,LOW,
+EMP048,15,payroll.xlsx,CRITICAL,WRITE,Office,Managed,26,0,NORMAL,15,LOW,Critical file accessed
+EMP490,16,salary.xlsx,CRITICAL,READ,Office,Managed,2,0,NORMAL,15,LOW,Critical file accessed
+EMP126,15,employee_handbook.pdf,LOW,WRITE,Remote,Managed,29,0,NORMAL,0,LOW,
+EMP158,3,salary.xlsx,CRITICAL,WRITE,VPN,Managed,344,1,ANOMALY,100,CRITICAL,"After-hours login, VPN access, High volume file access, Critical file accessed, ML anomaly detected"
+EMP027,18,salary.xlsx,CRITICAL,WRITE,Office,Managed,19,0,NORMAL,15,LOW,Critical file accessed
+EMP352,15,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,25,0,NORMAL,15,LOW,Critical file accessed
+EMP038,8,finance_report.xlsx,HIGH,READ,Office,Managed,11,0,NORMAL,0,LOW,
+EMP328,17,finance_report.xlsx,HIGH,READ,Office,Personal,20,0,NORMAL,15,LOW,Personal device
+EMP002,12,salary.xlsx,CRITICAL,DOWNLOAD,Office,Managed,9,0,NORMAL,15,LOW,Critical file accessed
+EMP376,12,salary.xlsx,CRITICAL,READ,Office,Managed,12,0,NORMAL,15,LOW,Critical file accessed
+EMP272,13,salary.xlsx,CRITICAL,READ,Remote,Managed,23,0,NORMAL,15,LOW,Critical file accessed
+EMP148,14,payroll.xlsx,CRITICAL,WRITE,Office,Managed,20,0,NORMAL,15,LOW,Critical file accessed
+EMP057,18,team_notes.docx,LOW,DOWNLOAD,Office,Managed,26,0,NORMAL,0,LOW,
+EMP362,3,finance_report.xlsx,HIGH,DOWNLOAD,VPN,Managed,156,1,ANOMALY,90,CRITICAL,"After-hours login, VPN access, High volume file access, ML anomaly detected"
+EMP099,8,payroll.xlsx,CRITICAL,WRITE,Office,Managed,29,0,NORMAL,15,LOW,Critical file accessed
+EMP138,14,project_plan.xlsx,MEDIUM,WRITE,Office,Managed,30,0,NORMAL,0,LOW,
