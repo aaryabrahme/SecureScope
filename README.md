@@ -1,20 +1,55 @@
-# 🔐 SecureScope
+<p align="center">
+  <img src="assets/logo.png" width="130" alt="SecureScope Logo">
+</p>
 
-## AI-Powered DSPM & Insider Risk Detection Platform
+<h1 align="center">
+  SecureScope
+</h1>
 
-SecureScope is an AI-powered security analysis platform designed to discover sensitive data exposure, detect potential security risks, and identify suspicious insider activity using machine learning and risk-based analysis.
+<p align="center">
+  <b>AI-Powered DSPM & Insider Risk Detection Platform</b>
+</p>
 
-The platform combines **Data Security Posture Management (DSPM)** concepts with **ML-based anomaly detection** to help organizations understand where sensitive information exists and identify unusual user behavior.
+<p align="center">
+  An AI-driven cybersecurity intelligence platform for sensitive data discovery,
+  insider threat detection, risk analysis, and security visualization.
+</p>
+
+
+---
+
+# 🔐 Overview
+
+SecureScope is an AI-powered security intelligence platform that combines **Data Security Posture Management (DSPM)** concepts with **Machine Learning based Insider Risk Detection**.
+
+The platform helps security teams:
+
+- Discover sensitive data exposure
+- Identify security risks
+- Detect abnormal employee behaviour
+- Calculate risk scores
+- Investigate suspicious activities
+- Generate security intelligence reports
+
+
+SecureScope simulates a modern cybersecurity workflow by combining:
+
+- Data discovery
+- Sensitive information classification
+- ML anomaly detection
+- Risk scoring
+- Security analytics dashboard
+
 
 ---
 
 # 🚀 Features
 
-## Phase 1 — Data Discovery & Classification
+## 🔍 Sensitive Data Discovery & Classification
 
 SecureScope scans files and identifies sensitive information exposure.
 
-### Capabilities:
+### Capabilities
 
 ✅ File discovery and scanning  
 ✅ Sensitive data detection  
@@ -23,10 +58,10 @@ SecureScope scans files and identifies sensitive information exposure.
 ✅ Password exposure detection  
 ✅ High entropy secret detection  
 ✅ Risk scoring engine  
-✅ Automated JSON reports  
+✅ Automated security reports  
 
 
-Example detections:
+### Detected Information Types
 
 ```
 EMAIL
@@ -35,89 +70,111 @@ PASSWORD_EXPOSURE
 HIGH_ENTROPY_SECRET
 ```
 
+
 ---
 
-# Phase 2 — AI Insider Risk Detection
+# 🤖 AI Insider Risk Detection
 
-SecureScope analyzes user activity logs and detects abnormal behavior using machine learning.
+SecureScope analyzes security activity logs and identifies abnormal behaviour using machine learning.
 
-### Capabilities:
+### Capabilities
 
 ✅ Synthetic security event generation  
-✅ Feature engineering  
+✅ Feature engineering pipeline  
 ✅ Isolation Forest anomaly detection  
-✅ Behavioral risk scoring  
-✅ Executive security summary  
-✅ Top risk event ranking  
-✅ CSV report export  
-✅ JSON report export  
+✅ Behavioural risk scoring  
+✅ Risk event ranking  
+✅ Security summary generation  
+✅ CSV report generation  
+✅ JSON report generation  
 ✅ Logging system  
 ✅ ML model persistence  
 
 
-Detected risk factors:
+### Detected Risk Indicators
 
-```
-After-hours activity
-VPN access
-Personal device usage
-Large file downloads
-Critical file access
-Abnormal behavior patterns
-```
+- After-hours activity
+- VPN access
+- Personal device usage
+- Large file downloads
+- Critical file access
+- Unusual login behaviour
+- Abnormal access patterns
+
+
+---
+
+# 📊 Security Intelligence Dashboard
+
+SecureScope provides an interactive Streamlit dashboard for security investigation.
+
+### Dashboard Features
+
+✅ Executive security overview  
+✅ Risk metrics visualization  
+✅ Security posture analysis  
+✅ Risk Explorer  
+✅ Investigation workspace  
+✅ Employee risk analysis  
+✅ Severity filtering  
+✅ Action filtering  
+✅ Location filtering  
+✅ Risk rationale display  
+✅ Report exploration  
+
 
 ---
 
 # 🏗️ Architecture
 
 
-## Phase 1 Architecture
-
-
-```
-Files
- |
- v
-File Scanner
- |
- v
-Sensitive Data Detector
- |
- v
-Secret Detector
- |
- v
-Risk Engine
- |
- v
-JSON Security Report
-```
-
-
-## Phase 2 Architecture
-
+## Complete System Flow
 
 ```
-Security Logs
- |
- v
-Feature Engineering
- |
- v
-Isolation Forest Model
- |
- v
-Anomaly Detection
- |
- v
-Risk Engine
- |
- v
-Summary + Ranking
- |
- v
-CSV / JSON Reports
+                    SecureScope
+
+                         |
+        ------------------------------------
+        |                                  |
+        v                                  v
+
+ Data Discovery Engine              Insider Risk Engine
+
+        |                                  |
+
+ File Scanner                      Security Logs
+
+        |                                  |
+
+ Sensitive Data Detection          Feature Engineering
+
+        |                                  |
+
+ Secret Detection                  Isolation Forest ML
+
+        |                                  |
+
+ Risk Scoring                      Anomaly Detection
+
+        |                                  |
+
+ Security Reports                  Risk Calculation
+
+        ------------------------------------
+
+                         |
+
+                         v
+
+              Unified Security Intelligence
+
+                         |
+
+                         v
+
+              Streamlit Security Dashboard
 ```
+
 
 ---
 
@@ -137,11 +194,19 @@ CSV / JSON Reports
 - NumPy
 
 
-## Data Processing
+## Security Analysis
 
-- Pandas
-- Regex
+- Regex Pattern Matching
 - Entropy Analysis
+- Sensitive Data Classification
+- Risk Scoring
+
+
+## Dashboard
+
+- Streamlit
+- Custom CSS
+- Interactive Data Tables
 
 
 ## Reporting
@@ -166,8 +231,14 @@ CSV / JSON Reports
 SecureScope/
 
 │
+├── scanner/
+│   ├── File discovery
+│   ├── Sensitive data detection
+│   ├── Secret detection
+│   └── Risk calculation
+│
+│
 ├── anomaly/
-│   │
 │   ├── main.py
 │   ├── pipeline.py
 │   ├── features.py
@@ -180,36 +251,46 @@ SecureScope/
 │   └── model_manager.py
 │
 │
+├── dashboard/
+│   ├── 0_Home.py
+│   ├── pages/
+│   ├── components.py
+│   ├── theme.py
+│   ├── styles.py
+│   └── utils.py
+│
+│
 ├── sample_data/
 │
-├── reports/
-│
-├── logs/
-│
-├── models/
+├── assets/
+│   └── logo.png
 │
 ├── requirements.txt
 │
-└── README.md
-
+├── README.md
+│
+└── .gitignore
 ```
+
 
 ---
 
 # ⚙️ Installation
 
 
-Clone the repository:
+## Clone Repository
 
 ```bash
 git clone https://github.com/aaryabrahme/SecureScope.git
 ```
 
-Navigate into the project:
+
+Navigate into project:
 
 ```bash
 cd SecureScope
 ```
+
 
 Create virtual environment:
 
@@ -217,8 +298,8 @@ Create virtual environment:
 python -m venv .venv
 ```
 
-Activate environment:
 
+Activate environment:
 
 Windows:
 
@@ -233,19 +314,20 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+
 ---
 
 # ▶️ Usage
 
 
-Run SecureScope:
+## Run Insider Risk Detection Pipeline
 
 ```bash
 python -m anomaly.main
 ```
 
 
-The system will:
+The pipeline will:
 
 1. Load security logs
 2. Generate features
@@ -256,10 +338,19 @@ The system will:
 
 ---
 
-# 📊 Sample Output
+## Run Dashboard
+
+```bash
+streamlit run dashboard/0_Home.py
+```
 
 
-Example security summary:
+---
+
+# 📊 Sample Security Summary
+
+
+Example output:
 
 ```
 ========== SecureScope Summary ==========
@@ -274,20 +365,12 @@ Anomalies Detected : 50
 Average Risk Score : 14.74
 
 Highest Risk Score : 100
-
-
-Severity Breakdown
-
-LOW        : 920
-MEDIUM     : 30
-HIGH       : 35
-CRITICAL   : 15
 ```
 
 
 ---
 
-# 🚨 Example Risk Event
+# 🚨 Example High Risk Event
 
 
 ```
@@ -304,15 +387,18 @@ Status      : ANOMALY
 Risk Score  : 100
 
 Severity    : CRITICAL
+```
 
 
-Reasons:
+Risk Factors:
 
+```
 - After-hours login
 - Personal device usage
 - Large file access
 - ML anomaly detected
 ```
+
 
 ---
 
@@ -325,10 +411,9 @@ SecureScope automatically generates:
 ```
 reports/
 
-├── insider_risk_YYYYMMDD_HHMMSS.csv
+├── insider_risk_TIMESTAMP.csv
 
-└── insider_risk_YYYYMMDD_HHMMSS.json
-
+└── insider_risk_TIMESTAMP.json
 ```
 
 
@@ -349,30 +434,28 @@ Saved ML models:
 models/
 
 └── isolation_forest.pkl
-
 ```
+
 
 ---
 
 # 🔬 Machine Learning Approach
 
 
-## Algorithm
+## Algorithm Used
 
-Isolation Forest
-
-
-## Why Isolation Forest?
+### Isolation Forest
 
 
-Isolation Forest is effective for detecting unusual behavior because anomalies are easier to isolate than normal patterns.
+Isolation Forest is an unsupervised anomaly detection algorithm that identifies unusual behaviour by isolating abnormal observations.
 
 
 The model analyzes:
 
-- Login behavior
+
+- Login behaviour
 - File access frequency
-- Device usage
+- Device information
 - Location
 - File sensitivity
 - User actions
@@ -385,6 +468,7 @@ The model analyzes:
 
 Example evaluation:
 
+
 ```
 Accuracy  : 98%
 
@@ -393,69 +477,56 @@ Precision : 0.78
 Recall    : 0.78
 
 F1 Score  : 0.78
-
 ```
 
----
-
-# 🔮 Roadmap
-
-
-## Phase 3 — Security Dashboard
-
-Planned:
-
-⬜ Interactive dashboard  
-⬜ Risk visualization  
-⬜ Employee risk profiles  
-⬜ Filtering and search  
-⬜ Real-time monitoring  
-
-
-## Phase 4 — Security API
-
-Planned:
-
-⬜ REST API  
-⬜ Authentication  
-⬜ Cloud deployment  
-⬜ SIEM integration  
-
 
 ---
+
 # 📸 Screenshots
 
-## Phase 1 — Sensitive Data Discovery
 
-### PII Detection
+## Security Dashboard
 
-![PII Detection](assets/phase1_pii_detection.png)
-
-
-### Secret Detection
-
-![Secret Detection](assets/phase1_secret_detection.png)
+![Dashboard](assets/dashboard.png)
 
 
-## Phase 2 — Insider Risk Detection
+## Risk Explorer
 
-### Security Summary
-
-![Summary](assets/phase2_summary.png)
+![Risk Explorer](assets/risk-explorer.png)
 
 
-### Risk Ranking
+## Security Intelligence
 
-![Ranking](assets/phase2_ranking.png)
+![Intelligence](assets/intelligence.png)
 
 
-### Generated Reports
+## Reports
 
-![Reports](assets/phase2_reports.png)
+![Reports](assets/reports.png)
+
+
+
+---
+
+# 🔮 Future Improvements
+
+
+Potential enhancements:
+
+
+- Real-time security monitoring
+- SIEM integration
+- Cloud deployment
+- Authentication system
+- Role-based access control
+- Threat intelligence integration
+- AI security assistant
+
 
 ---
 
 # 🤝 Contribution
+
 
 Contributions, suggestions, and improvements are welcome.
 
@@ -464,6 +535,7 @@ Contributions, suggestions, and improvements are welcome.
 
 # 📜 License
 
+
 MIT License
 
 
@@ -471,6 +543,12 @@ MIT License
 
 # 👨‍💻 Author
 
-Aarya Brahme
+
+**Aarya Brahme**
 
 AI & Data Science Engineering Student
+
+
+GitHub:
+
+https://github.com/aaryabrahme
