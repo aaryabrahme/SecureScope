@@ -1,11 +1,8 @@
-from pathlib import Path
 from datetime import datetime
-import shutil
+from typing import Any
 
+from config import REPORTS_DIR
 from logger import logger
-
-
-REPORTS_DIR = Path("reports")
 
 LATEST_DIR = REPORTS_DIR / "latest"
 

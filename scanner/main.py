@@ -1,6 +1,6 @@
 import time
 
-from config import SAMPLE_DATA_DIR
+from config import SAMPLE_DATA_DIR, ensure_runtime_directories
 from logger import logger
 
 from scanner.console import (
@@ -22,11 +22,17 @@ def main() -> None:
     """
 
     logger.info("Starting SecureScope scanner...")
+    ensure_runtime_directories()
 
     start_time = time.perf_counter()
 
     scanner = FileScanner(SAMPLE_DATA_DIR)
     files = scanner.discover_files()
+
+    if not files:
+        raise FileNotFoundError(
+            f"No supported files found under scanner input directory: {SAMPLE_DATA_DIR}"
+        )
 
     total_files = 0
     total_findings = 0

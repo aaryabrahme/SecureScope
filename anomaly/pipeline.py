@@ -37,10 +37,6 @@ def run_pipeline() -> pd.DataFrame:
     logger.info("Preparing features...")
     X = prepare_features(df)
 
-    feature_columns = X.columns
-
-    feature_schema = None
-
     logger.info("Loading trained model...")
     model = load_model()
 
@@ -58,10 +54,8 @@ def run_pipeline() -> pd.DataFrame:
         )
 
 
-        save_model(
-            model,
-            X.columns
-        )
+        feature_schema = list(X.columns)
+        save_model(model, feature_schema)
 
 
     else:
@@ -71,10 +65,7 @@ def run_pipeline() -> pd.DataFrame:
         )
 
 
-    X = X.reindex(
-        columns=feature_schema,
-        fill_value=0
-    )
+    X = X.reindex(columns=list(feature_schema), fill_value=0)
 
     logger.info("Detecting anomalies...")
     predictions = detect_anomalies(model, X)

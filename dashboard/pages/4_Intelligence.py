@@ -57,25 +57,25 @@ premium_divider()
 section_header("Data security intelligence", "Scanner results consolidated into the unified report.")
 metrics = st.columns(4)
 with metrics[0]:
-    metric_card("Files scanned", data_security["files_scanned"], "Data sources assessed", "neutral", "SCAN")
+    metric_card("Files scanned", data_security["files_scanned"], "Data sources assessed", "neutral")
 with metrics[1]:
-    metric_card("Sensitive findings", data_security["sensitive_findings"], "PII and secret detections", "warning", "FIND")
+    metric_card("Sensitive findings", data_security["sensitive_findings"], "PII and secret detections", "warning")
 with metrics[2]:
-    metric_card("High-risk files", data_security["high_risk_files"], "Require exposure review", "danger", "FILE")
+    metric_card("High-risk files", data_security["high_risk_files"], "Require exposure review", "danger")
 with metrics[3]:
-    metric_card("Critical exposures", data_security["critical_exposures"], "Files with critical findings", "danger", "CRIT")
+    metric_card("Critical exposures", data_security["critical_exposures"], "Files with critical findings", "danger")
 
 premium_divider()
 section_header("Insider-risk intelligence", "ML-informed priority events included by the unified report.")
 metrics = st.columns(4)
 with metrics[0]:
-    metric_card("Events analyzed", insider_risk["events_analyzed"], "Activity records assessed", "neutral", "EVENT")
+    metric_card("Events analyzed", insider_risk["events_analyzed"], "Activity records assessed", "neutral")
 with metrics[1]:
-    metric_card("Anomalies detected", insider_risk["anomalies_detected"], "Across all analyzed activity", "danger", "ANOM")
+    metric_card("Anomalies detected", insider_risk["anomalies_detected"], "Across all analyzed activity", "danger")
 with metrics[2]:
-    metric_card("Critical users", insider_risk["critical_users"], "In the prioritized event queue", "danger", "USER")
+    metric_card("Critical users", insider_risk["critical_users"], "In the prioritized event queue", "danger")
 with metrics[3]:
-    metric_card("Highest risk score", f"{insider_risk['highest_risk_score']}/100", "Within priority events", "warning", "RISK")
+    metric_card("Highest risk score", f"{insider_risk['highest_risk_score']}/100", "Within priority events", "warning")
 
 premium_divider()
 section_header("Top risky users", "Priority events are sorted by risk score for rapid security-team triage.")
@@ -86,7 +86,7 @@ else:
     risk_table(top_users, available_columns(top_users, ["employee_id", "risk_score", "severity", "action", "location", "device"]))
 
 premium_divider()
-section_header("AI security summary", "Executive assessment based on the current unified-report signals.")
+section_header("Security assessment summary", "Executive assessment based on the current unified-report signals.")
 st.info(
     intelligence_summary(
         security_score,

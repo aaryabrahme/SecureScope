@@ -29,6 +29,7 @@ def scan_file(file_path: Path) -> dict[str, Any]:
 
     if not file_text:
         return {
+            "file_name": file_path.name,
             "file": file_path.name,
             "path": str(file_path),
             "findings": [],
@@ -60,6 +61,7 @@ def scan_file(file_path: Path) -> dict[str, Any]:
     )
 
     return {
+        "file_name": file_path.name,
         "file": file_path.name,
         "path": str(file_path),
         "findings": findings,

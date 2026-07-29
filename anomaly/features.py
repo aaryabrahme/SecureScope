@@ -45,9 +45,13 @@ def load_dataset() -> pd.DataFrame:
         ACCESS_LOG_PATH
     )
 
-    df = pd.read_csv(
-        ACCESS_LOG_PATH
-    )
+    if not ACCESS_LOG_PATH.exists():
+        raise FileNotFoundError(
+            f"Access-log dataset not found: {ACCESS_LOG_PATH}. "
+            "Generate or provide datasets/access_logs.csv before running the anomaly pipeline."
+        )
+
+    df = pd.read_csv(ACCESS_LOG_PATH)
 
     missing_columns = REQUIRED_COLUMNS - set(df.columns)
 

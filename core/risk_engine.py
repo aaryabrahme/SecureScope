@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import Any
 
 from logger import logger
 
@@ -30,7 +30,7 @@ def calculate_final_severity(score: int) -> str:
 def calculate_unified_risk(
     scanner_risk: int,
     anomaly_risk: int,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Combine scanner and anomaly risks.
 
@@ -41,7 +41,7 @@ def calculate_unified_risk(
         Behaviour risk
     """
 
-    logger.info(
+    logger.debug(
         "Calculating unified risk | Scanner=%d Anomaly=%d",
         scanner_risk,
         anomaly_risk,
@@ -81,9 +81,9 @@ def calculate_unified_risk(
 def create_risk_event(
     employee_id: str,
     file_name: str,
-    scanner_report: Dict,
-    anomaly_report: Dict,
-) -> Dict[str, Any]:
+    scanner_report: dict[str, Any],
+    anomaly_report: dict[str, Any],
+) -> dict[str, Any]:
     """
     Create a unified SecureScope event.
     """
@@ -113,9 +113,8 @@ def create_risk_event(
 
         "file_name": file_name,
 
-        "scanner_risk": scanner_score,
-
-        "anomaly_risk": anomaly_score,
+        "scanner_risk_score": scanner_score,
+        "anomaly_risk_score": anomaly_score,
 
         "final_risk_score": unified[
             "final_risk_score"
@@ -125,14 +124,15 @@ def create_risk_event(
             "severity"
         ],
 
-        "scanner_findings": scanner_report.get(
-            "findings",
-            []
-        ),
-
-        "anomaly_reasons": anomaly_report.get(
-            "reasons",
-            []
-        ),
+        "risk_score": unified["final_risk_score"],
+        "risk_status": anomaly_report.get("risk_status", "NORMAL"),
+        "action": anomaly_report.get("action", "UNKNOWN"),
+        "location": anomaly_report.get("location", "UNKNOWN"),
+        "device": anomaly_report.get("device", "UNKNOWN"),
+        "file_sensitivity": anomaly_report.get("file_sensitivity", "UNKNOWN"),
+        "login_hour": anomaly_report.get("login_hour"),
+        "files_accessed": anomaly_report.get("files_accessed"),
+        "reasons": anomaly_report.get("reasons", []),
+        "scanner_findings": scanner_report.get("findings", []),
 
     }

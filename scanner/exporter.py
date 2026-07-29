@@ -1,16 +1,12 @@
-from pathlib import Path
 from datetime import datetime
+import json
+from typing import Any
 
+from config import SCANNER_REPORTS_DIR
 from logger import logger
 
-
-REPORTS_DIR = Path("reports")
-
-SCANNER_DIR = REPORTS_DIR / "scanner"
-
-LATEST_DIR = SCANNER_DIR / "latest"
-
-ARCHIVE_DIR = SCANNER_DIR / "archive"
+LATEST_DIR = SCANNER_REPORTS_DIR / "latest"
+ARCHIVE_DIR = SCANNER_REPORTS_DIR / "archive"
 
 
 
@@ -28,7 +24,7 @@ def create_report_dirs():
 
 
 
-def export_json(reports):
+def export_json(reports: list[dict[str, Any]]):
 
     create_report_dirs()
 
@@ -46,9 +42,6 @@ def export_json(reports):
     latest_file = LATEST_DIR / (
         "scan_report.json"
     )
-
-
-    import json
 
 
     # archive version

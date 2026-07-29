@@ -4,6 +4,47 @@ from components import empty_state, risk_table, status_badge
 from theme import page_header, premium_divider, section_header, setup_page, sidebar
 from utils import available_columns, load_dashboard_data
 
+def generate_risk_factors(event) -> list[str]:
+
+    factors = []
+
+    if event.get("severity") in ["CRITICAL", "HIGH"]:
+        factors.append("🚨 High severity event")
+
+    if event.get("file_sensitivity") == "CRITICAL":
+        factors.append("🔐 Critical file accessed")
+
+    if event.get("location") in ["Remote", "VPN"]:
+        factors.append("🌐 Remote access")
+
+    if event.get("device") == "Personal":
+        factors.append("💻 Personal device")
+
+    if event.get("login_hour") is not None:
+
+        try:
+            hour = int(event.get("login_hour"))
+
+            if hour < 6 or hour > 22:
+                factors.append("🌙 Unusual login time")
+
+        except (TypeError, ValueError):
+            pass
+
+    if event.get("files_accessed"):
+
+        try:
+            if int(event.get("files_accessed")) > 100:
+                factors.append("📂 Large file activity")
+
+        except (TypeError, ValueError):
+            pass
+
+
+    if not factors:
+        factors.append("No abnormal indicators detected")
+
+    return factors
 
 def format_reasons(reasons) -> list[str]:
     if isinstance(reasons, list):
@@ -69,22 +110,100 @@ selected_index = st.selectbox("Select event", event_labels.index, format_func=ev
 event = events.loc[selected_index]
 
 overview, context = st.columns([2, 3])
+
+
 with overview:
-    status_badge(str(event.get("severity", "Unknown")), str(event.get("severity", "")).lower())
-    st.metric("Risk score", f"{event.get('risk_score', 0)}/100")
-    st.progress(min(max(float(event.get("risk_score", 0)) / 100, 0), 1))
+
+    severity = str(event.get("severity", "Unknown"))
+
+    status_badge(
+        severity,
+        severity.lower()
+    )
+
+
+    st.markdown("### Risk Score")
+
+    risk_score = float(event.get("risk_score", 0))
+
+
+    st.markdown(
+    f"""
+    <div style="
+        background:#101f35;
+        border:1px solid #ef6b73;
+        border-radius:15px;
+        padding:25px;
+    ">
+
+        <div style="
+            color:#ef6b73;
+            font-size:42px;
+            font-weight:800;
+        ">
+            {int(risk_score)}/100
+        </div>
+
+        <div style="
+            color:#9fb3c8;
+            margin-top:10px;
+        ">
+            Threat confidence
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+    st.progress(
+        min(max(risk_score / 100, 0), 1)
+    )
+
+
+
 with context:
+
+
+    st.markdown("### Investigation Context")
+
+
     detail_columns = st.columns(2)
+
+
     with detail_columns[0]:
-        st.caption("Activity context")
-        st.write(f"Employee: {event.get('employee_id', 'Unknown')}")
-        st.write(f"Action: {event.get('action', 'Unknown')}")
-        st.write(f"File: {event.get('file_name', 'Unknown')}")
+
+        st.caption("Activity")
+
+        st.write(
+            f"👤 Employee: {event.get('employee_id', 'Unknown')}"
+        )
+
+        st.write(
+            f"📄 File: {event.get('file_name', 'Unknown')}"
+        )
+
+        st.write(
+            f"⚡ Action: {event.get('action', 'Unknown')}"
+        )
+
+
     with detail_columns[1]:
-        st.caption("Access context")
-        st.write(f"Location: {event.get('location', 'Unknown')}")
-        st.write(f"Device: {event.get('device', 'Unknown')}")
-        st.write(f"Sensitivity: {event.get('file_sensitivity', 'Unknown')}")
+
+        st.caption("Access")
+
+        st.write(
+            f"🌍 Location: {event.get('location', 'Unknown')}"
+        )
+
+        st.write(
+            f"💻 Device: {event.get('device', 'Unknown')}"
+        )
+
+        st.write(
+            f"🔐 Sensitivity: {event.get('file_sensitivity', 'Unknown')}"
+        )
 
 premium_divider()
 section_header("Risk rationale", "Signals included by the insider-risk analysis.")

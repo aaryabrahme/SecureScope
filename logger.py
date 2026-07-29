@@ -29,6 +29,8 @@ def setup_logger() -> logging.Logger:
     )
 
 
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+
     file_handler = RotatingFileHandler(
         LOG_FILE,
         maxBytes=5_000_000,

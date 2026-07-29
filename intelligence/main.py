@@ -8,9 +8,7 @@ def main():
     report = create_security_report()
 
     print()
-    print(
-        "SecureScope Intelligence Report Generated"
-    )
+    print("SecureScope unified intelligence report generated")
 
     print(
         report

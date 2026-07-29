@@ -27,13 +27,6 @@ def calculate_risk(
 
         risk = finding.get("risk")
 
-        print(
-            "DEBUG RISK:",
-            risk,
-            "WEIGHT:",
-            RISK_WEIGHTS.get(risk)
-        )
-
         score += RISK_WEIGHTS.get(
             risk,
             0

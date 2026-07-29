@@ -12,7 +12,6 @@ from dashboard.components import empty_state, metric_card, risk_table, status_ba
 from dashboard.theme import page_header, premium_divider, section_header, setup_page, sidebar
 from dashboard.utils import available_columns, count_severity, load_dashboard_data, score_status
 
-
 setup_page()
 
 try:

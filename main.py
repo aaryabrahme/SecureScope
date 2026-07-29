@@ -1,151 +1,55 @@
+"""Run the complete SecureScope local demo pipeline."""
+
 import subprocess
-import json
-from pathlib import Path
 import sys
 
+from config import (
+    ANOMALY_LATEST_REPORT,
+    CORRELATED_EVENTS_PATH,
+    SCANNER_LATEST_REPORT,
+    UNIFIED_SECURITY_REPORT_PATH,
+    ensure_runtime_directories,
+)
+from core.correlation import correlate_reports, save_final_report
+from intelligence.aggregator import create_security_report
 from logger import logger
 
-from core.correlation import (
-    correlate_reports,
-    save_final_report,
-)
+
+def run_module(module_name: str) -> None:
+    logger.info("Running module: %s", module_name)
+    result = subprocess.run([sys.executable, "-m", module_name], capture_output=True, text=True)
+    if result.returncode:
+        raise RuntimeError(f"{module_name} failed:\n{result.stderr.strip()}")
+    if result.stdout:
+        print(result.stdout)
 
 
-def run_module(module_name):
-    """
-    Execute a SecureScope module.
-    """
-
-    logger.info(
-        "Running module: %s",
-        module_name
-    )
-
-    result = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            module_name
-        ],
-        capture_output=True,
-        text=True,
-    )
-
-
-    if result.returncode != 0:
-
-        logger.error(
-            "%s failed",
-            module_name
-        )
-
-        print(result.stderr)
-
-        raise RuntimeError(
-            f"{module_name} failed"
-        )
-
-
-    print(result.stdout)
-
-
-
-def find_latest_report(prefix):
-
-    reports_dir = Path("reports")
-
-    files = list(
-        reports_dir.glob(
-            f"{prefix}*.json"
-        )
-    )
-
-
-    if not files:
-        raise FileNotFoundError(
-            f"No report found for {prefix}"
-        )
-
-
-    return max(
-        files,
-        key=lambda file: file.stat().st_mtime
-    )
-
-
-
-def main():
-
+def main() -> None:
+    ensure_runtime_directories()
     print("=" * 70)
-    print("              SecureScope Platform")
+    print("SecureScope local security-analysis demo")
     print("=" * 70)
 
+    run_module("scanner.main")
+    run_module("anomaly.main")
 
-    # -------------------------
-    # Phase 1
-    # -------------------------
+    for report_path, label in (
+        (SCANNER_LATEST_REPORT, "scanner"),
+        (ANOMALY_LATEST_REPORT, "anomaly"),
+    ):
+        if not report_path.exists():
+            raise FileNotFoundError(f"{label.title()} stage did not produce required report: {report_path}")
 
-    run_module(
-        "scanner.main"
+    events = correlate_reports(SCANNER_LATEST_REPORT, ANOMALY_LATEST_REPORT)
+    save_final_report(events, CORRELATED_EVENTS_PATH)
+    unified_report = create_security_report(
+        SCANNER_LATEST_REPORT,
+        ANOMALY_LATEST_REPORT,
+        CORRELATED_EVENTS_PATH,
+        UNIFIED_SECURITY_REPORT_PATH,
     )
-
-
-    scanner_report = Path(
-        "reports/scanner/latest/scan_report.json"
-    )
-
-
-    # -------------------------
-    # Phase 2
-    # -------------------------
-
-    run_module(
-        "anomaly.main"
-    )
-
-
-    anomaly_report = Path(
-        "reports/latest/insider_risk.json"
-    )
-
-
-    # -------------------------
-    # Phase 3
-    # -------------------------
-
-    logger.info(
-        "Starting risk correlation..."
-    )
-
-
-    final_events = correlate_reports(
-        scanner_report,
-        anomaly_report,
-    )
-
-
-    final_report = save_final_report(
-        final_events
-    )
-
-
-    print()
-
-    print("=" * 70)
-    print("          SecureScope Complete")
-    print("=" * 70)
-
-    print()
-
-    print(
-        f"Final Report: {final_report}"
-    )
-
-
-    logger.info(
-        "SecureScope execution completed successfully"
-    )
-
+    print(f"Unified report: {unified_report}")
+    print("Note: demo anomaly results are risk indicators, not confirmed malicious activity.")
 
 
 if __name__ == "__main__":

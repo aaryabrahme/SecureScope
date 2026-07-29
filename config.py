@@ -87,6 +87,12 @@ MODEL_REPORTS_DIR = (
     "model"
 )
 
+SCANNER_LATEST_REPORT = SCANNER_REPORTS_DIR / "latest" / "scan_report.json"
+ANOMALY_LATEST_REPORT = REPORTS_DIR / "latest" / "insider_risk.json"
+UNIFIED_REPORTS_DIR = REPORTS_DIR / "unified"
+CORRELATED_EVENTS_PATH = UNIFIED_REPORTS_DIR / "security_events.json"
+UNIFIED_SECURITY_REPORT_PATH = UNIFIED_REPORTS_DIR / "security_report.json"
+
 
 
 # =====================================
@@ -103,6 +109,23 @@ LOG_FILE = (
     LOGS_DIR /
     "securescope.log"
 )
+
+
+def ensure_runtime_directories() -> None:
+    """Create directories required by local pipeline execution."""
+    for directory in (
+        DATASET_DIR,
+        SAMPLE_DATA_DIR,
+        MODEL_DIR,
+        REPORTS_DIR,
+        SCANNER_REPORTS_DIR / "latest",
+        SCANNER_REPORTS_DIR / "archive",
+        REPORTS_DIR / "latest",
+        REPORTS_DIR / "archive",
+        UNIFIED_REPORTS_DIR,
+        LOGS_DIR,
+    ):
+        directory.mkdir(parents=True, exist_ok=True)
 
 
 

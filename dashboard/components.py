@@ -1,5 +1,4 @@
 from html import escape
-
 import pandas as pd
 import streamlit as st
 
@@ -17,19 +16,24 @@ STATUS_COLORS = {
 }
 
 
-def metric_card(label: str, value: str | int, detail: str, tone: str = "neutral", icon: str = ""):
+def metric_card(
+    label: str,
+    value: str | int,
+    detail: str,
+    tone: str = "neutral",
+    icon: str = "",
+):
     color = STATUS_COLORS.get(tone, STATUS_COLORS["neutral"])
-    st.markdown(
-        f"""
-        <div class="metric-card">
-            <div class="metric-card-label">{escape(icon)} {escape(label)}</div>
-            <div class="metric-card-value" style="color:{color}">{escape(str(value))}</div>
-            <div class="metric-card-detail">{escape(detail)}</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
 
+    html = f"""
+<div class="metric-card">
+    <div class="metric-card-label">{icon} {label}</div>
+    <div class="metric-card-value" style="color:{color}">{value}</div>
+    <div class="metric-card-detail">{detail}</div>
+</div>
+"""
+
+    st.markdown(html, unsafe_allow_html=True)
 
 def status_badge(label: str, tone: str = "neutral"):
     color = STATUS_COLORS.get(tone, STATUS_COLORS["neutral"])

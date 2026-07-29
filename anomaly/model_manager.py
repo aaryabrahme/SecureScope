@@ -2,10 +2,10 @@ import joblib
 from sklearn.ensemble import IsolationForest
 
 from logger import logger
-from config import MODEL_PATH
+from config import FEATURE_SCHEMA_PATH, MODEL_PATH
 
 
-FEATURE_PATH = MODEL_PATH.parent / "feature_schema.pkl"
+FEATURE_PATH = FEATURE_SCHEMA_PATH
 
 
 

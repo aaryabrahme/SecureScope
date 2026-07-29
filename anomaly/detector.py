@@ -64,7 +64,7 @@ def detect_anomalies(
 
     predictions = model.predict(features)
 
-    return predictions.tolist()
+    return predictions.tolist() if hasattr(predictions, "tolist") else list(predictions)
 
 
 def add_predictions(

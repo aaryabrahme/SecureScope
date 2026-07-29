@@ -8,9 +8,9 @@ from typing import Any
 import pandas as pd
 import streamlit as st
 
+from config import UNIFIED_SECURITY_REPORT_PATH
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-REPORT_PATH = BASE_DIR / "reports" / "unified" / "security_report.json"
+REPORT_PATH = UNIFIED_SECURITY_REPORT_PATH
 
 
 @dataclass(frozen=True)
@@ -33,12 +33,17 @@ def _read_report(report_mtime: float) -> dict[str, Any]:
     del report_mtime
 
     with REPORT_PATH.open(encoding="utf-8") as report_file:
-        return json.load(report_file)
+        report = json.load(report_file)
+    if not isinstance(report, dict):
+        raise ValueError(f"Unified report must be a JSON object: {REPORT_PATH}")
+    return report
 
 
 def load_security_report() -> dict[str, Any]:
     if not REPORT_PATH.exists():
-        raise FileNotFoundError(f"Missing unified report: {REPORT_PATH}")
+        raise FileNotFoundError(
+            f"Missing unified report: {REPORT_PATH}. Run `python main.py` from the repository root."
+        )
 
     return _read_report(REPORT_PATH.stat().st_mtime)
 
