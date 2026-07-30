@@ -508,6 +508,15 @@ F1 Score  : 0.78
 
 ---
 
+## 🌐 Live Demo
+
+Try SecureScope:
+
+https://securescope.streamlit.app
+
+
+---
+
 # 🔮 Future Improvements
 
 
